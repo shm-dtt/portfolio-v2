@@ -4,6 +4,7 @@ import { ArrowUp } from "@phosphor-icons/react/dist/ssr";
 import { useEffect, useState } from "react";
 
 const Footer: React.FC = () => {
+  const [lastUpdated, setLastUpdated] = useState<string>('');
   const timeOptions: Intl.DateTimeFormatOptions = {
     timeZone: "Asia/Kolkata",
     hour12: true,
@@ -21,8 +22,28 @@ const Footer: React.FC = () => {
     }, 10000);
   });
 
+  useEffect(() => {
+    const fetchRepoInfo = async () => {
+      try {
+        const response = await fetch('https://api.github.com/repos/shm-dsgn/portfolio-v2');
+        const data = await response.json();
+        const lastPushedAt = new Date(data.pushed_at);
+        const formattedLastPushedAt = lastPushedAt.toLocaleString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        });
+        setLastUpdated(formattedLastPushedAt);
+      } catch (error) {
+        console.error('Error fetching GitHub repo info:', error);
+      }
+    };
+
+    fetchRepoInfo();
+  }, [lastUpdated]);
+
   return (
-    <div>
+    <div >
       
       <div className="grid grid-cols-2 gap-x-7 gap-y-7 md:grid-cols-12 md:gap-x-10 lg:gap-y-10">
         <div className="flex flex-col md:col-span-6 lg:col-span-6">
@@ -85,6 +106,7 @@ const Footer: React.FC = () => {
           <span className="font-medium text-secondary-100 uppercase">
             {time} GMT+5:30
           </span>
+          <span className="italic text-sm">Last updated: {lastUpdated}</span>
         </div>
         <div className="w-full md:col-span-3 lg:col-span-3 h-fit flex justify-end">
           <div>
