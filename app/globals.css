@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Hide scrollbar */
+/* For Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Keep scrollbar functionality */
+/* Define styles for scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* or any other color you prefer */
+}
+
+/* Define styles for scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #888; /* or any other color you prefer */
+}

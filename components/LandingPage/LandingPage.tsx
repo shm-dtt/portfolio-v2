@@ -1,17 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Great_Vibes, Playfair_Display } from "next/font/google";
-import localFont from "next/font/local";
-
-const ppMondwest = localFont({
-  src: "../../public/fonts/PPMondwest-Regular.otf",
-  weight: "200",
-});
-const greatVibes = Great_Vibes({
-  subsets: ["latin"],
-  weight: "400",
-});
-const playfairDisplay = Playfair_Display({ subsets: ["latin"], weight: "400" });
+import { greatVibes, playfairDisplay, ppMondwest } from "../../app/fonts/Fonts";
 
 const LandingPage: React.FC = () => {
   const [windowsWidth, setWindowsWidth] = useState(0);
@@ -45,8 +34,8 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen items-center justify-center bg-light-black">
-      <div className="font-bold flex flex-col items-center justify-center relative top-12 z-1 text-primary-gray pointer-events-none lg:text-7xl md:text-5xl text-4xl text-center">
+    <div className=" flex flex-col h-screen items-center justify-center bg-light-black">
+      <div className=" flex flex-col items-center justify-center relative top-12 z-1 pointer-events-none text-primary-gray lg:text-7xl md:text-5xl text-4xl text-center">
         <div>
           <span className={greatVibes.className}>S</span>
           <span className={playfairDisplay.className}>OHAM</span>
