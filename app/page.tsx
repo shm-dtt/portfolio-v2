@@ -1,8 +1,8 @@
 import Footer from "@/components/Footer/Footer";
-import Image from "next/image";
+import LandingPage from "@/components/LandingPage/LandingPage";
 
 export default function Home() {
-  return <div className="">
-    <Footer />
+  return <div>
+    <LandingPage />
   </div>;
 }
