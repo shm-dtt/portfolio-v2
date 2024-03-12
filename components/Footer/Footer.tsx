@@ -3,10 +3,11 @@ import {
   poppins
 } from "@/app/fonts/Fonts";
 import { useEffect, useState } from "react";
+import { Data } from "@/app/data/Data";
 
 const Footer: React.FC = () => {
   const timeOptions: Intl.DateTimeFormatOptions = {
-    timeZone: "Asia/Kolkata",
+    timeZone: Data.timeZone,
     hour12: true,
     hour: "numeric",
     minute: "numeric",
@@ -28,10 +29,10 @@ const Footer: React.FC = () => {
         className={`px-4 pb-4 flex justify-between items-end bg-light-black text-gray-300 ${poppins.className} lg:text-sm text-xs`}
       >
         <p className=" text-left flex flex-col ">
-          <span>© 2024</span>
+          <span>© {Data.year}</span>
         </p>
         <p className=" text-right flex flex-col">
-          <span>Bangalore, India</span>
+          <span>{Data.location}, {Data.country}</span>
           <span>{time}</span>
         </p>
       </div>

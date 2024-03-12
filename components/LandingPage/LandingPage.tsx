@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { greatVibes, playfairDisplay, ppMondwest } from "../../app/fonts/Fonts";
+import { Data } from "@/app/data/Data";
 
 const LandingPage: React.FC = () => {
   const [windowsWidth, setWindowsWidth] = useState(0);
@@ -35,21 +36,21 @@ const LandingPage: React.FC = () => {
 
   return (
     <div className=" flex flex-col h-screen items-center justify-center bg-light-black">
-      <div className=" flex flex-col items-center justify-center relative top-12 z-1 pointer-events-none text-primary-gray lg:text-7xl md:text-5xl text-4xl text-center">
+      <div className=" flex flex-col items-center justify-center relative top-6 z-1 pointer-events-none text-primary-gray lg:text-7xl md:text-5xl text-4xl text-center uppercase">
         <div>
-          <span className={greatVibes.className}>S</span>
-          <span className={playfairDisplay.className}>OHAM</span>
+          <span className={greatVibes.className}>{Data.firstName.charAt(0)}</span>
+          <span className={playfairDisplay.className}>{Data.firstName.slice(1)}</span>
           &nbsp;
-          <span className={greatVibes.className}>D</span>
-          <span className={playfairDisplay.className}>UTTA</span>
+          <span className={greatVibes.className}>{Data.lastName.charAt(0)}</span>
+          <span className={playfairDisplay.className}>{Data.lastName.slice(1)}</span>
         </div>
-        <span className={playfairDisplay.className}>FULL STACK</span>
-        <span className={`${ppMondwest.className} mt-2`}>☼ DEVELOPER ☀</span>
+        <span className={playfairDisplay.className}>{Data.position_firstLine}</span>
+        <span className={`${ppMondwest.className} mt-4`}>{Data.position_secondLine}</span>
         <span className={playfairDisplay.className}>
-          CURRENTLY @&nbsp;NOKIA
+          CURRENTLY @&nbsp;{Data.currentCompany}
         </span>
-        <span className={`${ppMondwest.className} mt-2`}>
-          BASED IN BANGALORE
+        <span className={`${ppMondwest.className} mt-4`}>
+          Based in {Data.location}
         </span>
       </div>
       <div className="flex h-full w-full overflow-hidden absolute">
