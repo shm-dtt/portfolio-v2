@@ -1,17 +1,17 @@
 "use client";
-import { poppins } from "@/app/fonts/Fonts";
+import { inter } from "@/app/fonts/Fonts";
 import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
     <>
       <div
-        className={`p-4 flex justify-between items-end bg-light-black text-gray-300 ${poppins.className} lg:text-sm text-xs`}
+        className={`p-6 flex justify-between items-end bg-light-black text-gray-300 ${inter.className} lg:text-sm text-xs`}
       >
-        <p className=" uppercase ">
+        <p className=" uppercase">
           <span>Soham Dutta</span>
         </p>
-        <p className=" flex uppercase gap-5 font-semibold">
+        <p className=" flex uppercase lg:gap-10 gap-5 font-medium">
           <Link href="https://github.com/shm-dsgn" target="_blank">
             Github
           </Link>

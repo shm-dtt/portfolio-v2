@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { opacity, slideUp } from './animation';
-import { poppins } from '../../app/fonts/Fonts';
+import { inter } from '../../app/fonts/Fonts';
 
 const words = ["Hello","নমস্কার", "नमस्कार", "Bonjour", "Ciao", "Olà", "こんにちは", "Guten tag!" ]
 
@@ -47,7 +47,7 @@ const Preloader: React.FC = () => {
 
     return (
         <motion.div variants={slideUp} initial="initial" exit="exit" className=" h-screen w-screen flex items-center justify-center fixed z-1000 bg-white">
-            <motion.p variants={opacity} initial="initial" animate="enter" className={`flex text-black text-4xl items-center absolute z-10 ${poppins.className}`}>
+            <motion.p variants={opacity} initial="initial" animate="enter" className={`flex text-black text-4xl items-center absolute z-10 ${inter.className}`}>
                 <span className=' block w-3 h-3 bg-black mr-3 rounded-full'></span>{words[index]}
             </motion.p>
         </motion.div>
