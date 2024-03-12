@@ -6,6 +6,7 @@ export const Data = {
     location: "Bengaluru",
     country: "India",
     timeZone: "Asia/Kolkata",
+    gmtOffset: "+5:30",
     year: 2024,
     currentCompany: "Nokia",
     position_firstLine: "Full Stack",

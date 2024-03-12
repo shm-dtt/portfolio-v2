@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
         </p>
         <p className=" text-right flex flex-col">
           <span>{Data.location}, {Data.country}</span>
-          <span>{time}</span>
+          <span>{time} GMT{Data.gmtOffset}</span>
         </p>
       </div>
     </>
