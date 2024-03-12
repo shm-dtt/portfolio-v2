@@ -45,11 +45,11 @@ const LandingPage: React.FC = () => {
           <span className={playfairDisplay.className}>{Data.lastName.slice(1)}</span>
         </div>
         <span className={playfairDisplay.className}>{Data.position_firstLine}</span>
-        <span className={`${ppMondwest.className} mt-4`}>{Data.position_secondLine}</span>
+        <span className={`${ppMondwest.className} lg:mt-4 mt-2`}>{Data.position_secondLine}</span>
         <span className={playfairDisplay.className}>
           CURRENTLY @&nbsp;{Data.currentCompany}
         </span>
-        <span className={`${ppMondwest.className} mt-4`}>
+        <span className={`${ppMondwest.className} lg:mt-4 mt-2`}>
           Based in {Data.location}
         </span>
       </div>
