@@ -5,6 +5,7 @@ import LandingPage from "@/components/LandingPage/LandingPage";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/Preloader/Preloader";
+import Contact from "@/components/Contact/Contact";
 
 export default function Home() {
 
@@ -30,6 +31,7 @@ export default function Home() {
       </AnimatePresence>
     <Header/>
     <LandingPage />
+    <Contact/>
     <Footer/>
   </div>;
 }
