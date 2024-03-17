@@ -10,7 +10,7 @@ const Testimonials: React.FC = () => {
       <p
         className={`${playfairDisplay.className} lg:text-5xl text-3xl uppercase `}
       >
-        Don't take my word for it
+        Don&apos;t take my word for it
       </p>
       </div>
       <div className=" mx-4 mb-8">
