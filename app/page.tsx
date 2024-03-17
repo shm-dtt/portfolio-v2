@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/Preloader/Preloader";
 import Contact from "@/components/Contact/Contact";
+import Experience from "@/components/Experience/Experience";
+import Testimonials from "@/components/Testimonials/Testimonials";
 
 export default function Home() {
 
@@ -18,7 +20,7 @@ export default function Home() {
 
           setTimeout( () => {
             setIsLoading(false);
-            //document.body.style.cursor = 'default'
+            //document.body.style.cursor = 'default''
             window.scrollTo(0,0);
           }, 2000)
       }
@@ -26,11 +28,13 @@ export default function Home() {
   }, [])
 
   return <div>
-    <AnimatePresence mode='wait'>
+    {/* <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
-      </AnimatePresence>
+      </AnimatePresence> */}
     <Header/>
     <LandingPage />
+    {/* <Experience/> */}
+    <Testimonials/>
     <Contact/>
     <Footer/>
   </div>;

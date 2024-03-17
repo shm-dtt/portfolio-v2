@@ -6,15 +6,21 @@ const Contact: React.FC = () => {
   return (
     <div className=" flex flex-col items-center justify-center bg-light-black text-white">
       <p
-        className={`${playfairDisplay.className} lg:text-4xl text-3xl uppercase`}
+        className={`${playfairDisplay.className} lg:text-5xl text-3xl uppercase`}
       >
-        Contacts
+        Contact
       </p>
-      <div className={`${inter.className} flex justify-around w-screen my-6`}>
-        <Link href="mailto:sohamdutta2001@gmail.com">
-          sohamdutta2001@gmail.com
-        </Link>
-        <Link href="tel:+919339855194">(+91) 933-985-5194</Link>
+      <div
+        className={`${inter.className} flex justify-around w-screen my-6`}
+      >
+        {/* Add conatct form here */}
+
+        <div className="flex flex-col items-center">
+          <p className=" text-gray-400 text-md">or directly email me at</p>
+          <Link href="mailto:sohamdutta2001@gmail.com" className=" underline text-lg">
+            sohamdutta2001@gmail.com
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,15 +1,22 @@
 "use client";
 import { inter } from "@/app/fonts/Fonts";
+import Image from "next/image";
 import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
     <>
       <div
-        className={`p-6 flex justify-between items-end bg-light-black text-gray-300 ${inter.className} lg:text-sm text-xs`}
+        className={`p-4 flex justify-between items-center bg-light-black text-gray-300 ${inter.className} lg:text-sm text-xs`}
       >
         <p className=" uppercase">
-          <span>Soham Dutta</span>
+          <span className=" lg:inline-block hidden">Soham Dutta</span>
+          <Image
+            src="/favicon.ico"
+            alt="logo"
+            width={24}
+            height={24}
+            className="inline-block lg:hidden"/>
         </p>
         <p className=" flex uppercase lg:gap-10 gap-5 font-medium">
           <Link href="https://github.com/shm-dsgn" target="_blank">
@@ -22,7 +29,7 @@ const Header: React.FC = () => {
             href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
             target="_blank"
           >
-            Resume
+            Resume/CV
           </Link>
         </p>
       </div>
