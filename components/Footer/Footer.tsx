@@ -24,14 +24,14 @@ const Footer: React.FC = () => {
   return (
     <>
       <div
-        className={`p-4 flex justify-between items-end bg-light-black text-white ${inter.className} lg:text-sm text-xs`}
+        className={`p-4 flex text-white ${inter.className} text-sm gap-8`}
       >
         <p className=" text-left flex flex-col gap-3">
-          <span className=" text-gray-400">VERSION</span>
+          <span className=" text-gray-400 text-xs">VERSION</span>
           <span>© {Data.year} Edition</span>
         </p>
-        <p className=" text-right flex flex-col gap-3">
-          <span className=" text-gray-400">LOCAL TIME</span>
+        <p className=" text-left flex flex-col gap-3">
+          <span className=" text-gray-400 text-xs">LOCAL TIME</span>
           <span>
             {time} GMT{Data.gmtOffset}
           </span>

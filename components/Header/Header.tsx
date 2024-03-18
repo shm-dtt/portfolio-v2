@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   return (
     <>
       <div
-        className={`p-4 flex justify-between items-center bg-light-black text-gray-300 ${inter.className} lg:text-sm text-xs`}
+        className={`p-4 flex justify-between items-center text-gray-300 ${inter.className} lg:text-sm text-xs`}
       >
         <p className=" uppercase">
           <span className=" lg:inline-block hidden">Soham Dutta</span>
