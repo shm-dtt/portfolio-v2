@@ -4,6 +4,7 @@
 
 body {
   background-color: #121212;
+  overflow: hidden;
 }
 
 /* Hide scrollbar */

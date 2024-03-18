@@ -15,12 +15,14 @@ export default function Home() {
   useEffect( () => {
     (
       async () => {
+
           const LocomotiveScroll = await import('locomotive-scroll').then( (module) => module.default);
           const locomotiveScroll = new LocomotiveScroll();
 
           setTimeout( () => {
             setIsLoading(false);
             //document.body.style.cursor = 'default''
+            document.body.style.overflow = 'visible';
             window.scrollTo(0,0);
           }, 2000)
       }
@@ -28,9 +30,9 @@ export default function Home() {
   }, [])
 
   return <div>
-    {/* <AnimatePresence mode='wait'>
+    <AnimatePresence mode='wait'>
         {isLoading && <Preloader />}
-      </AnimatePresence> */}
+      </AnimatePresence>
     <Header/>
     <LandingPage />
     {/* <Experience/> */}
