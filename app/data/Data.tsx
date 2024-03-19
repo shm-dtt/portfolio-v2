@@ -19,13 +19,13 @@ export const testimonials = [
       role: "Software Engineer at ZapCom Group lnc",
       statement:
         "A really good front end developer with great communication and team management skills. He is also a fast learner and adapts to various environments quickly.",
-      color: "#181818",
+      color: "#191919",
     },
     {
-      name: "Demo Name",
-      role: "Team Lead Engineer at Google",
+      name: "Aniket Pathak",
+      role: "SDE Intern at Nokia",
       statement:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra dignissim mauris. Sed tempus, augue eget maximus vehicula, risus odio fermentum neque, in fringilla mauris felis dignissim leo.",
+        "Soham and I worked together in the same team during our internship at Nokia. Being a great friend and a team player, he is one of the most knowledgeable people I have met in field of Full Stack Development with an eye for UI/UX and Frontend Design. A down to earth and humble guy, I have learned a lot working with him.",
       color: "#232323",
     },
     {
