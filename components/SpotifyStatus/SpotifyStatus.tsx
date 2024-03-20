@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 import getNowPlayingItem from "./SpotifyAPI";
@@ -15,7 +15,7 @@ interface SpotifyData {
 }
 
 const SpotifyStatus: React.FC = () => {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [offline, setOffline] = useState<boolean>(true);
   const [result, setResult] = useState<SpotifyData>({
     albumImageUrl: "",
     artist: "",
@@ -27,9 +27,11 @@ const SpotifyStatus: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       getNowPlayingItem().then((result) => {
-        if (result !== false) {
+        if (result === false) {
+          setOffline(true);
+        } else {
           setResult(result);
-          setLoading(false);
+          setOffline(false);
         }
       });
     }, 3000);
@@ -42,7 +44,7 @@ const SpotifyStatus: React.FC = () => {
   return (
     <div className={` flex ${inter.className} justify-center `}>
       <div className="flex items-center rounded-md mx-4 bg-neutral-800 p-4 gap-4 text-white w-screen">
-        {result.isPlaying ? (
+        {!offline && (
           <>
             <Image
               src={result.albumImageUrl}
@@ -52,16 +54,25 @@ const SpotifyStatus: React.FC = () => {
               className="rounded-md"
             />
             <div className="flex flex-col">
-                <p className=" text-xs uppercase text-neutral-400 flex items-center gap-2 mb-2"><SpotifyLogo width={16}/>Currently Playing</p>
-            <p className="text-sm">
-            {result.title} <span className=" text-xs text-neutral-400">by</span>{" "}
-            {result.artist}
-            </p>
+              <p className=" text-xs uppercase text-neutral-400 flex items-center gap-2 mb-2">
+                <SpotifyLogo width={16} />
+                <p>
+                  {result.isPlaying
+                    ? "Currently Playing"
+                    : "Currently paused playing"}
+                </p>
+              </p>
+              <p className="text-sm">
+                {result.title}{" "}
+                <span className=" text-xs text-neutral-400">by</span>{" "}
+                {result.artist}
+              </p>
             </div>
           </>
-        ) : (
+        )}
+        {offline && (
           <>
-            <SpotifyLogo width={20}/>
+            <SpotifyLogo width={20} />
             <p>Currently Offline</p>
           </>
         )}
