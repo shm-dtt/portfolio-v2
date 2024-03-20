@@ -25,9 +25,9 @@ const Footer: React.FC = () => {
   });
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center mt-6">
       <div
-        className={`p-4 ${inter.className} flex md:justify-between md:flex-row flex-col text-white gap-8`}
+        className={`p-4 ${inter.className} flex md:justify-between md:flex-row md:items-center flex-col text-white gap-8`}
       >
         <div className="flex text-sm gap-8">
           <p className="flex flex-col gap-3">

@@ -8,6 +8,7 @@ import Preloader from "@/components/Preloader/Preloader";
 import Contact from "@/components/Contact/Contact";
 import Experience from "@/components/Experience/Experience";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
 
 export default function Home() {
 
@@ -38,6 +39,7 @@ export default function Home() {
     {/* <Experience/> */}
     <Testimonials/>
     <Contact/>
+    <SpotifyStatus/>
     <Footer/>
   </div>;
 }
