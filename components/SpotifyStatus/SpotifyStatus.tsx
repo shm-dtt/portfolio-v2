@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
 import getNowPlayingItem from "./SpotifyAPI";
 import { inter } from "@/app/fonts/Fonts";
