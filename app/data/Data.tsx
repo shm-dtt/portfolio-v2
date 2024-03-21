@@ -53,18 +53,28 @@ export const testimonials = [
 
   export const projects = [
     {
-      name: "Blog On",
-    },
-    {
-      name: "YT Playlist Duration",
-    },
-    {
       name: "Ecommerce API",
+      year: 2024,
+      tech: "Spring Boot, Java, MySQL",
     },
     {
       name: "Twiter Clone",
+      year: 2024,
+      tech: "MERN Stack, GraphQL",
+    },
+    {
+      name: "Blog On",
+      year: 2023,
+      tech: "MERN Stack, TensorFlowJS",
+    },
+    {
+      name: "YT Playlist Duration",
+      year: 2023,
+      tech: "HTML, JavaScript",
     },
     {
       name: "Brain Games",
+      year: 2023,
+      tech: "React JS, Firebase",
     },
   ];
