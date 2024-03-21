@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
         <div className="flex text-sm gap-8">
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Version</span>
-            <span>© {Data.year} Edition</span>
+            <span>© {Data.year} Edition(v2)</span>
           </p>
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Local Time</span>
@@ -57,10 +57,10 @@ const Footer: React.FC = () => {
               Discord
             </Link>
             <Link
-              href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
+              href="https://dribbble.com/shm-dsgn"
               target="_blank"
             >
-              Resume
+              Dribbble
             </Link>
           </div>
         </div>

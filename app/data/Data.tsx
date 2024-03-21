@@ -28,25 +28,25 @@ export const testimonials = [
         "Soham and I worked together in the same team during our internship at Nokia. Being a great friend and a team player, he is one of the most knowledgeable people I have met in field of Full Stack Development with an eye for UI/UX and Frontend Design. A down to earth and humble guy, I have learned a lot working with him.",
       color: "#232323",
     },
-    {
-      name: "Demo Name",
-      role: "Team Lead Engineer at Google",
-      statement:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra dignissim mauris. Sed tempus, augue eget maximus vehicula, risus odio fermentum neque, in fringilla mauris felis dignissim leo.",
-      color: "#2E2E2E",
-    },
-    {
-      name: "Demo Name",
-      role: "Team Lead Engineer at Google",
-      statement:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra dignissim mauris. Sed tempus, augue eget maximus vehicula, risus odio fermentum neque, in fringilla mauris felis dignissim leo.",
-      color: "#3E3E3E",
-    },
-    {
-      name: "Demo Name",
-      role: "Team Lead Engineer at Google",
-      statement:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra dignissim mauris. Sed tempus, augue eget maximus vehicula, risus odio fermentum neque, in fringilla mauris felis dignissim leo.",
-      color: "#515151",
-    },
+    // {
+    //   name: "Demo Name",
+    //   role: "Team Lead Engineer at Google",
+    //   statement:
+    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra dignissim mauris. Sed tempus, augue eget maximus vehicula, risus odio fermentum neque, in fringilla mauris felis dignissim leo.",
+    //   color: "#2E2E2E",
+    // },
+    // {
+    //   name: "Demo Name",
+    //   role: "Team Lead Engineer at Google",
+    //   statement:
+    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra dignissim mauris. Sed tempus, augue eget maximus vehicula, risus odio fermentum neque, in fringilla mauris felis dignissim leo.",
+    //   color: "#3E3E3E",
+    // },
+    // {
+    //   name: "Demo Name",
+    //   role: "Team Lead Engineer at Google",
+    //   statement:
+    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra dignissim mauris. Sed tempus, augue eget maximus vehicula, risus odio fermentum neque, in fringilla mauris felis dignissim leo.",
+    //   color: "#515151",
+    // },
   ];

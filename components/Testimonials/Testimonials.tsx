@@ -8,7 +8,7 @@ const Testimonials: React.FC = () => {
     <div className=" flex flex-col">
       <div className="text-white text-center">
       <p
-        className={`${playfairDisplay.className} lg:text-5xl text-3xl uppercase `}
+        className={`${playfairDisplay.className} lg:text-5xl text-4xl uppercase `}
       >
         Reviews
       </p>

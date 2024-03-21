@@ -59,7 +59,7 @@ const SpotifyStatus: React.FC = () => {
                 <p>
                   {result.isPlaying
                     ? "Currently Playing"
-                    : "Currently paused playing"}
+                    : "Currently Paused"}
                 </p>
               </p>
               <p className="text-sm">
