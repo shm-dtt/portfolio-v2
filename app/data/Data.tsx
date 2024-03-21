@@ -30,7 +30,7 @@ export const testimonials = [
     },
     {
       name: "Sibananda Sahu",
-      role: "Intern at Synopsis Inc, Ex-Intern at Reliance Jio PLatforms Ltd",
+      role: "Intern at Synopsis Inc",
       statement:
         "Working with Soham has been an absolute pleasure! I can attest to his versatility and proficiency in web technologies. From UI/UX design to Spring Boot development and React JS expertise, he consistently delivers top-notch solutions with precision and creativity. His attention to detail and innovative approach always ensure outstanding results.",
       color: "#2E2E2E",
