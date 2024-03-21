@@ -28,13 +28,13 @@ export const testimonials = [
         "Soham and I worked together in the same team during our internship at Nokia. Being a great friend and a team player, he is one of the most knowledgeable people I have met in field of Full Stack Development with an eye for UI/UX and Frontend Design. A down to earth and humble guy, I have learned a lot working with him.",
       color: "#232323",
     },
-    // {
-    //   name: "Demo Name",
-    //   role: "Team Lead Engineer at Google",
-    //   statement:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce viverra dignissim mauris. Sed tempus, augue eget maximus vehicula, risus odio fermentum neque, in fringilla mauris felis dignissim leo.",
-    //   color: "#2E2E2E",
-    // },
+    {
+      name: "Sibananda Sahu",
+      role: "Intern at Synopsis Inc, Ex-Intern at Reliance Jio PLatforms Ltd",
+      statement:
+        "Working with Soham has been an absolute pleasure! I can attest to his versatility and proficiency in web technologies. From UI/UX design to Spring Boot development and React JS expertise, he consistently delivers top-notch solutions with precision and creativity. His attention to detail and innovative approach always ensure outstanding results.",
+      color: "#2E2E2E",
+    },
     // {
     //   name: "Demo Name",
     //   role: "Team Lead Engineer at Google",
