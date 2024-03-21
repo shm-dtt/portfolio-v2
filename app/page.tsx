@@ -9,6 +9,7 @@ import Contact from "@/components/Contact/Contact";
 import Experience from "@/components/Experience/Experience";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
+import Projects from "@/components/Projects/Projects";
 
 export default function Home() {
 
@@ -36,6 +37,7 @@ export default function Home() {
       </AnimatePresence>
     <Header/>
     <LandingPage />
+    <Projects/>
     {/* <Experience/> */}
     <Testimonials/>
     <Contact/>

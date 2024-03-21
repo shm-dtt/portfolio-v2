@@ -50,3 +50,21 @@ export const testimonials = [
     //   color: "#515151",
     // },
   ];
+
+  export const projects = [
+    {
+      name: "Blog On",
+    },
+    {
+      name: "YT Playlist Duration",
+    },
+    {
+      name: "Ecommerce API",
+    },
+    {
+      name: "Twiter Clone",
+    },
+    {
+      name: "Brain Games",
+    },
+  ];
