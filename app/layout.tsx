@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Soham Dutta • Full Stack Developer",
-        type: "image/jpg",
+        type: "image/jpeg",
       },
     ],
 
