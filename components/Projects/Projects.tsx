@@ -16,8 +16,8 @@ const Projects: React.FC = () => {
       <div className={`mx-4 mb-32 mt-16 ${inter.className}`}>
         <div className="text-neutral-300 flex justify-between items-center uppercase text-xs mb-4">
           <p className="flex-1">Project</p>
-          <p className="md:flex-1 flex-none">Technology</p>
-          <p className="md:block hidden">Year</p>
+          <p className="md:flex-1 flex-none md:block hidden">Technology</p>
+          <p className="">Year</p>
         </div>
         {projects.map((project, i) => {
           return <Card key={`p_${i}`} {...project} i={i} />;

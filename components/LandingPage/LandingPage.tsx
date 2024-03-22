@@ -1,14 +1,21 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { greatVibes, playfairDisplay, ppMondwest } from "@/app/fonts/Fonts";
 import { Data } from "@/app/data/Data";
+import {motion, useScroll} from "framer-motion";
 
 const LandingPage: React.FC = () => {
   const [windowsWidth, setWindowsWidth] = useState(0);
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["end 0.5", "start start"]
+  })
 
   useEffect(() => {
     setWindowsWidth(window.innerWidth);
   }, []);
+
 
   const getBlocks = () => {
     const blockSize = windowsWidth * 0.05;
@@ -35,7 +42,7 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <div className=" flex flex-col h-screen items-center justify-center bg-light-black">
+    <motion.div ref={container} style={{opacity: scrollYProgress}} className=" flex flex-col h-screen items-center justify-center bg-light-black">
       <div className=" flex flex-col items-center justify-center z-1 pointer-events-none text-white lg:text-7xl md:text-6xl text-5xl text-center uppercase">
         <div>
           <span className={greatVibes.className}>{Data.firstName.charAt(0)}</span>
@@ -63,7 +70,7 @@ const LandingPage: React.FC = () => {
             );
           })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

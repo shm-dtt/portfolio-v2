@@ -58,8 +58,8 @@ const Card: React.FC<CardProps> = ({ name, year, tech, i }) => {
       }}
     >
       <p className="flex-1">{name}</p>
-      <p className="md:flex-1 flex-none">{tech}</p>
-      <p className="md:block hidden">{year}</p>
+      <p className="md:flex-1 flex-none md:block hidden">{tech}</p>
+      <p className="">{year}</p>
     </div>
   );
 };
