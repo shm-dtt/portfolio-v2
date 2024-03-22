@@ -11,7 +11,8 @@ export const metadata: Metadata = {
     url: "https://portfolio-v2-xi-five.vercel.app/",
     images: [
       {
-        url: "https://portfolio-v2-xi-five.vercel.app/opengraph-image.jpg",
+        url: "https://sohamdutta-portfolio.s3.ap-south-1.amazonaws.com/opengraph-image.jpg",
+        secureUrl: "https://sohamdutta-portfolio.s3.ap-south-1.amazonaws.com/opengraph-image.jpg",
         width: 1200,
         height: 630,
         alt: "Soham Dutta • Full Stack Developer",
