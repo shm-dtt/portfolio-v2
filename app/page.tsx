@@ -40,7 +40,7 @@ export default function Home() {
     <Projects/>
     {/* <Experience/> */}
     <Testimonials/>
-    <Contact/>
+    {/* <Contact/> */}
     <SpotifyStatus/>
     <Footer/>
   </div>;

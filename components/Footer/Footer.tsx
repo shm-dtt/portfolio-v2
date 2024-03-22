@@ -42,34 +42,25 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="flex flex-col text-sm gap-3">
-          <span className=" text-gray-400 text-xs uppercase">Other Links</span>
-          <div className="flex gap-4">
+          <span className=" text-gray-400 text-xs uppercase">Other Socials & Links</span>
+          <div className="flex gap-8">
             <Link href="https://shm-dsgn-v1.netlify.app/" target="_blank">
-              Portfolio-v1
+              Portfolio-2023(v1)
             </Link>
-            <Link href="https://www.reddit.com/user/shm_dsgn/" target="_blank">
-              Reddit
+            <Link href="https://github.com/shm-dsgn" target="_blank">
+              Github
             </Link>
-            <Link
-              href="https://discordapp.com/users/486019185017880596"
-              target="_blank"
-            >
-              Discord
-            </Link>
-            <Link
-              href="https://dribbble.com/shm-dsgn"
-              target="_blank"
-            >
-              Dribbble
+            <Link href="https://www.linkedin.com/in/shm-dsgn" target="_blank">
+              Linkedin
             </Link>
           </div>
         </div>
       </div>
       <div
-        className={` my-6 text-gray-500 text-xs ${inter.className} inline-flex gap-2 items-center flex-row justify-center`}
+        className={` mx-4 my-6 text-gray-500 text-xs ${inter.className} inline-flex gap-2 items-center flex-row justify-center`}
       >
-        Built with NextJs <NextJsLogo/>
-        and deployed in <VercelLogo/>
+        Built with NextJs <NextJsLogo />
+        and deployed in <VercelLogo />
       </div>
     </div>
   );
