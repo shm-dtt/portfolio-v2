@@ -43,7 +43,7 @@ const LandingPage: React.FC = () => {
 
   return (
     <motion.div ref={container} style={{opacity: scrollYProgress}} className=" flex flex-col h-screen items-center justify-center bg-light-black">
-      <div className=" flex flex-col items-center justify-center z-1 pointer-events-none text-white lg:text-7xl md:text-6xl text-5xl text-center uppercase">
+      <div className=" flex flex-col items-center justify-center z-1 pointer-events-none text-white lg:text-7xl md:text-6xl text-4xl text-center uppercase">
         <div>
           <span className={greatVibes.className}>{Data.firstName.charAt(0)}</span>
           <span className={playfairDisplay.className}>{Data.firstName.slice(1)}</span>

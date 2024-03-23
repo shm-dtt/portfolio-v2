@@ -1,15 +1,19 @@
+import React, { useState } from "react";
 import { projects } from "@/app/data/Data";
 import { inter, playfairDisplay } from "@/app/fonts/Fonts";
-import React from "react";
 import Card from "./Card";
 
 const Projects: React.FC = () => {
+  const [openedIndex, setOpenedIndex] = useState<number | null>(null);
+
+  const toggleCard = (index: number) => {
+    setOpenedIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   return (
-    <div className=" flex flex-col">
+    <div className="flex flex-col">
       <div className="text-white text-center">
-        <p
-          className={`${playfairDisplay.className} lg:text-5xl text-4xl uppercase `}
-        >
+        <p className={`${playfairDisplay.className} lg:text-5xl text-4xl uppercase `}>
           Projects
         </p>
       </div>
@@ -19,9 +23,15 @@ const Projects: React.FC = () => {
           <p className="md:flex-1 flex-none md:block hidden">Technology</p>
           <p className="">Year</p>
         </div>
-        {projects.map((project, i) => {
-          return <Card key={`p_${i}`} {...project} i={i} />;
-        })}
+        {projects.map((project, i) => (
+          <Card
+            key={`p_${i}`}
+            i={i}
+            {...project}
+            isOpened={i === openedIndex}
+            toggleCard={() => toggleCard(i)}
+          />
+        ))}
       </div>
     </div>
   );
