@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div
-        className={` mx-4 my-6 text-gray-500 text-xs ${inter.className} inline-flex gap-2 items-center flex-row justify-center`}
+        className={` mx-4 my-6 text-white text-xs ${inter.className} inline-flex gap-2 items-center flex-row justify-center`}
       >
         Built with NextJs <NextJsLogo />
         and deployed in <VercelLogo />
