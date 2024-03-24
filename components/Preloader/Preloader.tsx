@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { opacity, slideUp } from './animation';
-import { inter } from '../../app/fonts/Fonts';
+import { inter } from '@/utils/fonts/Fonts';
 
 const words = ["Hello","নমস্কার", "नमस्कार", "Bonjour", "Ciao", "Olà", "こんにちは", "Guten tag!" ]
 

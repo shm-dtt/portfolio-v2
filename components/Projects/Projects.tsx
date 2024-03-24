@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { projects } from "@/app/data/Data";
-import { inter, playfairDisplay } from "@/app/fonts/Fonts";
+import { projects } from "@/utils/data/Data";
+import { inter, playfairDisplay } from "@/utils/fonts/Fonts";
 import Card from "./Card";
 
 const Projects: React.FC = () => {

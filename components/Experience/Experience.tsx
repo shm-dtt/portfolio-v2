@@ -1,4 +1,4 @@
-import { playfairDisplay } from "@/app/fonts/Fonts";
+import { playfairDisplay } from "@/utils/fonts/Fonts";
 import React from "react";
 
 const Experience: React.FC = () => {

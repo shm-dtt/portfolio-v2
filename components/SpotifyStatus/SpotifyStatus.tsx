@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import getNowPlayingItem from "./SpotifyAPI";
-import { inter } from "@/app/fonts/Fonts";
-import SpotifyLogo from "./SpotifyLogo";
+import { inter } from "@/utils/fonts/Fonts";
+import SpotifyLogo from "../../utils/logos/SpotifyLogo";
 import Image from "next/image";
 
 interface SpotifyData {

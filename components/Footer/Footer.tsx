@@ -1,10 +1,11 @@
 "use client";
-import { inter } from "@/app/fonts/Fonts";
+import { inter } from "@/utils/fonts/Fonts";
 import { useEffect, useState } from "react";
-import { Data } from "@/app/data/Data";
+import { Data } from "@/utils/data/Data";
 import Link from "next/link";
-import VercelLogo from "./VercelLogo";
-import NextJsLogo from "./NextJsLogo";
+import VercelLogo from "../../utils/logos/VercelLogo";
+import NextJsLogo from "../../utils/logos/NextJsLogo";
+import HoverButton from "../HoverButton/HoverButton";
 
 const Footer: React.FC = () => {
   const timeOptions: Intl.DateTimeFormatOptions = {
@@ -45,13 +46,13 @@ const Footer: React.FC = () => {
           <span className=" text-gray-400 text-xs uppercase">Other Socials & Links</span>
           <div className="flex gap-8">
             <Link href="https://shm-dsgn-v1.netlify.app/" target="_blank">
-              Portfolio-2023(v1)
+              <HoverButton text="Portfolio-2023(v1)" />
             </Link>
             <Link href="https://github.com/shm-dsgn" target="_blank">
-              Github
+              <HoverButton text="GitHub" />
             </Link>
             <Link href="https://www.linkedin.com/in/shm-dsgn" target="_blank">
-              Linkedin
+              <HoverButton text="LinkedIn" />
             </Link>
           </div>
         </div>

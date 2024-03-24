@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { greatVibes, playfairDisplay, ppMondwest } from "@/app/fonts/Fonts";
-import { Data } from "@/app/data/Data";
+import { greatVibes, playfairDisplay, ppMondwest } from "@/utils/fonts/Fonts";
+import { Data } from "@/utils/data/Data";
 import {motion, useScroll} from "framer-motion";
 
 const LandingPage: React.FC = () => {

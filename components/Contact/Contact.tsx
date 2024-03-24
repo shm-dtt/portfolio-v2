@@ -1,4 +1,4 @@
-import { playfairDisplay, inter } from "@/app/fonts/Fonts";
+import { playfairDisplay, inter } from "@/utils/fonts/Fonts";
 import Link from "next/link";
 import React from "react";
 

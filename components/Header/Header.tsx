@@ -1,5 +1,6 @@
 "use client";
-import { inter } from "@/app/fonts/Fonts";
+import { inter } from "@/utils/fonts/Fonts";
+import HoverButton from "@/components/HoverButton/HoverButton";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,10 +16,10 @@ const Header: React.FC = () => {
             href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
             target="_blank"
           >
-            Resume
+            <HoverButton text="Resume"/>
           </Link>
           <Link href="mailto:sohamdutta2001@gmail.com" target="_blank">
-            Contact
+            <HoverButton text="Contact"/>
           </Link>
         </p>
       </div>

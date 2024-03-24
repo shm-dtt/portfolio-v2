@@ -1,6 +1,6 @@
-import { playfairDisplay } from "@/app/fonts/Fonts";
+import { playfairDisplay } from "@/utils/fonts/Fonts";
 import React from "react";
-import { testimonials } from "@/app/data/Data";
+import { testimonials } from "@/utils/data/Data";
 import Card from "./Card";
 
 const Testimonials: React.FC = () => {
