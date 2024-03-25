@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   return (
     <>
       <div
-        className={`p-4 flex justify-between items-center text-gray-300 ${inter.className} lg:text-sm text-xs`}
+        className={`p-4 flex justify-between items-center text-white ${inter.className} lg:text-sm text-xs`}
       >
         <Image src="/favicon.ico" alt="logo" width={24} height={24} />
         <p className=" flex uppercase lg:gap-10 gap-5 font-medium">
