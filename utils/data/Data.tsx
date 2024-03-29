@@ -99,7 +99,7 @@ export const projects = [
     tech: "HTML, JavaScript",
     description:
       "A Chrome-based JavaScript application to display the total time of a YT playlist, average time, and playback speed variations for YouTube playlists. This extension is available on the Chrome Web Store. ",
-    techUsed: ["HTML", "JavaScript"],
+    techUsed: ["HTML", "CSS", "JavaScript"],
     link: "https://chromewebstore.google.com/detail/youtube-playlist-duration/bpojpijaddmjkblcbkhnhhgjecmfmgil",
   },
   {
@@ -108,7 +108,7 @@ export const projects = [
     tech: "React JS, Firebase",
     description:
       "A collection of brain games that test your memory, attention, and problem-solving skills. The application is built using React JS and Firebase for authentication and data storage.",
-    techUsed: ["React JS", "Firebase"],
+    techUsed: ["React JS", "Firebase", "CSS"],
     link: "https://shm-brain-games.netlify.app/",
   },
 ];

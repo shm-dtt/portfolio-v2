@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen mb-36">
+    <div className="flex flex-col mb-36">
       <div className="text-white text-center">
         <p className={`${playfairDisplay.className} lg:text-5xl text-4xl uppercase `}>
           Projects

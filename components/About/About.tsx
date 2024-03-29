@@ -30,9 +30,8 @@ const About = () => {
             href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
             className="underline"
           >
-            resume
+            resume.
           </Link>
-          .
         </p>
       </div>
     </div>
