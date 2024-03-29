@@ -5,11 +5,11 @@ import LandingPage from "@/components/LandingPage/LandingPage";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "@/components/Preloader/Preloader";
-import Contact from "@/components/Contact/Contact";
-import Experience from "@/components/Experience/Experience";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
 import Projects from "@/components/Projects/Projects";
+import Experience from "@/components/Experience/Experience";
+import About from "@/components/About/About";
 
 export default function Home() {
 
@@ -37,10 +37,10 @@ export default function Home() {
       </AnimatePresence>
     <Header/>
     <LandingPage />
+    <About/>
     <Projects/>
-    {/* <Experience/> */}
+    <Experience/>
     <Testimonials/>
-    {/* <Contact/> */}
     <SpotifyStatus/>
     <Footer/>
   </div>;

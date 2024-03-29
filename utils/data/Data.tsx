@@ -112,3 +112,28 @@ export const projects = [
     link: "https://shm-brain-games.netlify.app/",
   },
 ];
+
+export const experience = [
+  {
+    company: "Nokia Solutions and Networks",
+    position: "Software Development Engineer Intern",
+    duration: "Aug 2023 - Present",
+    location: "Bengaluru, India",
+    description: `
+      Part of multiple client projects like TSPortal, SingTel in Network Infrastructure team, contributing to design and develop effective Network Management Tools.
+      Collaborated with multiple developers across teams, performed code reviews among interns, participated in brainstorming sessions and learning opportunities.
+      `,
+    techUsed: ["Spring Boot", "Java", "MySQL", "Thymeleaf", "Polymer.js", "jQuery", "Bootstrap"],
+    link: "https://www.nokia.com/",
+  },
+  {
+    company: "Microsoft Learn Student Ambassador KIIT",
+    position: "Project Wing Member & Learner",
+    duration: "Oct 2021 - Dec 2022",
+    location: "Bhubaneshwar, India",
+    description:
+      "Designed the UI and built a complete web app with online compiler and user registration, Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
+    techUsed: ["JSON", "React JS", "Bootstrap", "JavaScript"],
+    link: "https://github.com/MLSAKIIT",
+  },
+];
