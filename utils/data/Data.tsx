@@ -120,7 +120,7 @@ export const experience = [
     duration: "Aug 2023 - Present",
     location: "Bengaluru, India",
     description: `
-      Part of multiple client projects like TSPortal, SingTel in Network Infrastructure team, contributing to design and develop effective Network Management Tools.
+      Part of multiple client projects like TSPortal, SingTel in Network Infrastructure team, contributing to design and develop effective Network Management Tools.\n
       Collaborated with multiple developers across teams, performed code reviews among interns, participated in brainstorming sessions and learning opportunities.
       `,
     techUsed: ["Spring Boot", "Java", "MySQL", "Thymeleaf", "Polymer.js", "jQuery", "Bootstrap"],
@@ -132,7 +132,7 @@ export const experience = [
     duration: "Oct 2021 - Dec 2022",
     location: "Bhubaneshwar, India",
     description:
-      "Designed the UI and built a complete web app with online compiler and user registration, Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
+      "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking.\n Designed the UI and built a complete web app with online compiler and user registration, Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
     techUsed: ["JSON", "React JS", "Bootstrap", "JavaScript"],
     link: "https://github.com/MLSAKIIT",
   },
