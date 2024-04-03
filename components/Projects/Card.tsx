@@ -82,7 +82,7 @@ const Card: React.FC<CardProps> = ({
         <p className="text-white md:text-3xl pt-8 pb-4 md:w-4/5 text-xl">
           {description}
         </p>
-        <Link href={link}>
+        <Link href={link} target="_blank">
           <button className="bg-white text-black text-sm px-4 py-2 my-4 rounded-full">
             <HoverButton text="View Project" />
           </button>
