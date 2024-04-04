@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: "Soham Dutta • Full Stack Developer",
     description: "Full Stack Developer, Currently working at Nokia as an Intern in Bengaluru, India",
     type: "website",
-    url: "https://portfolio-v2-xi-five.vercel.app/",
+    url: "https://sohamdutta.in/",
     images: [
       {
         url: "https://sohamdutta-portfolio.s3.ap-south-1.amazonaws.com/opengraph-image.jpg",
