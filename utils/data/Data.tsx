@@ -66,7 +66,7 @@ export const projects = [
     year: 2024,
     tech: "NEXT JS, GraphQL",
     description:
-      "A Twitter clone built using the Next Js and GraphQL. The application allows users to create, read, update, and delete tweets. The application also uses AWS S3 for storing images and Redis for caching.(Still in development)",
+      "A Twitter clone built using the Next Js and GraphQL. The application allows users to create, read, update, and delete tweets. The application also uses AWS S3 for storing images and Redis for caching.",
     techUsed: [
       "Next JS",
       "GraphQL",
