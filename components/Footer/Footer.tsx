@@ -54,8 +54,8 @@ const Footer: React.FC = () => {
             <Link href="https://www.linkedin.com/in/shm-dtt" target="_blank">
               <HoverButton text="LinkedIn" />
             </Link>
-            <Link href="https://dribbble.com/shm-dsgn" target="_blank">
-              <HoverButton text="Dribbble" />
+            <Link href="https://twitter.com/shmdsgn" target="_blank">
+              <HoverButton text="Twitter" />
             </Link>
           </div>
         </div>
