@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
           <span className=" text-gray-400 text-xs uppercase">Other Socials & Links</span>
           <div className="flex gap-8">
             <Link href="https://shm-dsgn-v1.netlify.app/" target="_blank">
-              <HoverButton text="Portfolio-2023(v1)" />
+              <HoverButton text="Folio-2023(v1)" />
             </Link>
             <Link href="https://github.com/shm-dsgn" target="_blank">
               <HoverButton text="GitHub" />

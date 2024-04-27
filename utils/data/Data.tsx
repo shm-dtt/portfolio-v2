@@ -53,13 +53,13 @@ export const testimonials = [
 
 export const projects = [
   {
-    name: "Ecommerce API",
+    name: "Envoy",
     year: 2024,
     tech: "Spring Boot, Java, MySQL",
     description:
-      "A RESTful API for an e-commerce website built using Spring Boot and MySQL. The API allows users to create, read, update, and delete products, categories, and orders.(Still in development)",
+      "Email management tool enabling sending, scheduling, and tracking emails across timezones, ensuring seamless email management and real-time email notifications upon reading.(Still in development)",
     techUsed: ["Spring Boot", "Java", "MySQL"],
-    link: "https://github.com/shm-dsgn/ecommerce",
+    link: "https://github.com/shm-dsgn/envoy",
   },
   {
     name: "Twiter Clone",
