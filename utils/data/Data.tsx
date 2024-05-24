@@ -11,6 +11,11 @@ export const Data = {
   currentCompany: "Nokia",
   position_firstLine: "Full Stack",
   position_secondLine: "☼ Developer ☀",
+  email: "sohamdutta2001@gmail.com",
+  twitter: "https://twitter.com/shmdsgn",
+  linkedin: "https://www.linkedin.com/in/shm-dtt",
+  github: "https://github.com/shm-dsgn",
+  portfolioV1: "https://shm-dsgn-v1.netlify.app/",
 };
 
 export const testimonials = [
@@ -57,8 +62,8 @@ export const projects = [
     year: 2024,
     tech: "Spring Boot, Java, MySQL",
     description:
-      "Email management tool enabling sending, scheduling, and tracking emails across timezones, ensuring seamless email management and real-time email notifications upon reading.(Still in development)",
-    techUsed: ["Spring Boot", "Java", "MySQL"],
+      "Email management tool enabling sending, scheduling, and tracking emails across timezones, ensuring seamless email management and real-time email notifications upon reading.",
+    techUsed: ["Spring Boot", "Java", "MySQL", "Quartz Scheduler"],
     link: "https://github.com/shm-dsgn/envoy",
   },
   {
@@ -117,7 +122,7 @@ export const experience = [
   {
     company: "Nokia Solutions and Networks",
     position: "Software Development Engineer Intern",
-    duration: "Aug 2023 - Present",
+    duration: "Aug 2023 - May 2024",
     location: "Bengaluru, India",
     description: `
       Part of multiple client projects like TSPortal, SingTel in Network Infrastructure team, contributing to design and develop effective Network Management Tools.\n

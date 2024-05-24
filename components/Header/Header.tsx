@@ -3,6 +3,7 @@ import { inter } from "@/utils/fonts/Fonts";
 import HoverButton from "@/components/HoverButton/HoverButton";
 import Image from "next/image";
 import Link from "next/link";
+import { Data } from "@/utils/data/Data";
 
 const Header: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const Header: React.FC = () => {
           >
             <HoverButton text="Resume"/>
           </Link>
-          <Link href="mailto:sohamdutta2001@gmail.com" target="_blank">
+          <Link href={`mailto:${Data.email}`} target="_blank">
             <HoverButton text="Contact"/>
           </Link>
         </p>

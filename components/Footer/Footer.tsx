@@ -45,16 +45,16 @@ const Footer: React.FC = () => {
         <div className="flex flex-col text-sm gap-3">
           <span className=" text-gray-400 text-xs uppercase">Other Socials & Links</span>
           <div className="flex gap-8">
-            <Link href="https://shm-dsgn-v1.netlify.app/" target="_blank">
+            <Link href={Data.portfolioV1} target="_blank">
               <HoverButton text="Folio-2023(v1)" />
             </Link>
-            <Link href="https://github.com/shm-dsgn" target="_blank">
+            <Link href={Data.github} target="_blank">
               <HoverButton text="GitHub" />
             </Link>
-            <Link href="https://www.linkedin.com/in/shm-dtt" target="_blank">
+            <Link href={Data.linkedin} target="_blank">
               <HoverButton text="LinkedIn" />
             </Link>
-            <Link href="https://twitter.com/shmdsgn" target="_blank">
+            <Link href={Data.twitter} target="_blank">
               <HoverButton text="Twitter" />
             </Link>
           </div>

@@ -15,13 +15,13 @@ const About = () => {
           Hi. I am Soham. I am a Full Stack Developer from India with a passion
           for creating beautiful and functional web applications.
           <br />
-          <br /> Currently pursuing a B.Tech. in Computer Science Engineering at
+          <br /> I have finished my degree of B.Tech. in Computer Science Engineering at
           Kalinga Institute of Industrial Technology, I have honed my skills in
           various programming languages and frameworks, including{" "}
           <span className=" font-bold">
             JavaScript, TypeScript, ReactJS, Java, Spring Boot, SQL
           </span>
-          . My academic achievements, including a GPA of 9.35, reflect my
+          . My academic achievements, including a GPA of 9.39, reflect my
           dedication to excellence in my field.
           <br />
           <br />
