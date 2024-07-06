@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({
           className={`${inter.className} flex flex-col lg:flex-row gap-6`}
         >
           <div className="flex flex-col justify-start lg:items-end flex-1">
-            <p>{company}</p>
+            <p className=" text-lg">{company}</p>
             <p className=" text-sm opacity-55">{location}</p>
           </div>
           <div className=" flex-[2_2_0%] flex flex-col">
@@ -39,7 +39,7 @@ const Card: React.FC<CardProps> = ({
               <div key={index} className="flex gap-2">
               <p>•</p>
               <div className=" flex flex-col gap-2">
-                <p className=" text-lg">{detail.position}</p>
+                <p>{detail.position}</p>
                 <p className=" text-sm opacity-55">{detail.duration}</p>
                 <p className=" text-sm">{detail.description}</p>
                 <div className="flex flex-wrap gap-2 mt-4 mb-8">
