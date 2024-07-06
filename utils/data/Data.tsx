@@ -9,8 +9,13 @@ export const Data = {
   gmtOffset: "+5:30",
   year: 2024,
   currentCompany: "Nokia",
-  position_firstLine: "Junior Network ",
-  position_secondLine: "☼ Engineer ☀",
+  position_firstLine: "Full Stack",
+  position_secondLine: "☼ Developer ☀",
+  email: "sohamdutta2001@gmail.com",
+  twitter: "https://twitter.com/shmdsgn",
+  linkedin: "https://www.linkedin.com/in/shm-dtt",
+  github: "https://github.com/shm-dsgn",
+  portfolioV1: "https://shm-dsgn-v1.netlify.app/",
 };
 
 export const testimonials = [
@@ -58,7 +63,7 @@ export const projects = [
     tech: "Spring Boot, Java, MySQL",
     description:
       "Email management tool enabling sending, scheduling, and tracking emails across timezones, ensuring seamless email management and real-time email notifications upon reading.",
-    techUsed: ["Spring Boot", "Java", "MySQL"],
+    techUsed: ["Spring Boot", "Java", "MySQL", "Quartz Scheduler"],
     link: "https://github.com/shm-dsgn/envoy",
   },
   {
@@ -116,6 +121,8 @@ export const projects = [
 export const experience = [
   {
     company: "Nokia Solutions and Networks",
+    position: "Software Development Engineer Intern",
+    duration: "Aug 2023 - May 2024",
     location: "Bengaluru, India",
     link: "https://www.nokia.com/",
     details: [
