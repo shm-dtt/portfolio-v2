@@ -36,9 +36,9 @@ const Card: React.FC<CardProps> = ({
           </div>
           <div className=" flex-[2_2_0%] flex flex-col">
             {details.map((detail, index) => (
-              <div className="flex gap-2">
+              <div key={index} className="flex gap-2">
               <p>•</p>
-              <div key={index} className=" flex flex-col gap-2">
+              <div className=" flex flex-col gap-2">
                 <p className=" text-lg">{detail.position}</p>
                 <p className=" text-sm opacity-55">{detail.duration}</p>
                 <p className=" text-sm">{detail.description}</p>
