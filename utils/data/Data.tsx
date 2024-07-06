@@ -9,28 +9,28 @@ export const Data = {
   gmtOffset: "+5:30",
   year: 2024,
   currentCompany: "Nokia",
-  position_firstLine: "Full Stack",
-  position_secondLine: "☼ Developer ☀",
+  position_firstLine: "Junior Network ",
+  position_secondLine: "☼ Engineer ☀",
 };
 
 export const testimonials = [
   {
     name: "Shawn D'souza",
-    role: "Software Engineer at ZapCom Group lnc",
+    role: "DevOps Engineer at Neighborly India, ex-SWE ZapCom Group lnc",
     statement:
       "A really good front end developer with great communication and team management skills. He is also a fast learner and adapts to various environments quickly.",
     color: "#191919",
   },
   {
     name: "Aniket Pathak",
-    role: "SDE Intern at Nokia",
+    role: "Ex-SDE Intern at Nokia",
     statement:
       "Soham and I worked together in the same team during our internship at Nokia. Being a great friend and a team player, he is one of the most knowledgeable people I have met in field of Full Stack Development with an eye for UI/UX and Frontend Design. A down to earth and humble guy, I have learned a lot working with him.",
     color: "#232323",
   },
   {
     name: "Sibananda Sahu",
-    role: "Intern at Synopsis Inc, Ex-Intern at Reliance Jio PLatforms Ltd",
+    role: "Software Engineer 1 at Synopsys Inc, Ex-Intern at Reliance Jio PLatforms Ltd",
     statement:
       "Working with Soham has been an absolute pleasure! I can attest to his versatility and proficiency in web technologies. From UI/UX design to Spring Boot and React JS expertise, he consistently delivers top-notch solutions with precision and creativity. His attention to detail and innovative approach always ensure outstanding results.",
     color: "#2E2E2E",
@@ -57,7 +57,7 @@ export const projects = [
     year: 2024,
     tech: "Spring Boot, Java, MySQL",
     description:
-      "Email management tool enabling sending, scheduling, and tracking emails across timezones, ensuring seamless email management and real-time email notifications upon reading.(Still in development)",
+      "Email management tool enabling sending, scheduling, and tracking emails across timezones, ensuring seamless email management and real-time email notifications upon reading.",
     techUsed: ["Spring Boot", "Java", "MySQL"],
     link: "https://github.com/shm-dsgn/envoy",
   },
@@ -116,24 +116,45 @@ export const projects = [
 export const experience = [
   {
     company: "Nokia Solutions and Networks",
-    position: "Software Development Engineer Intern",
-    duration: "Aug 2023 - Present",
     location: "Bengaluru, India",
-    description: `
-      Part of multiple client projects like TSPortal, SingTel in Network Infrastructure team, contributing to design and develop effective Network Management Tools.\n
-      Collaborated with multiple developers across teams, performed code reviews among interns, participated in brainstorming sessions and learning opportunities.
-      `,
-    techUsed: ["Spring Boot", "Java", "MySQL", "Thymeleaf", "Polymer.js", "jQuery", "Bootstrap"],
     link: "https://www.nokia.com/",
+    details: [
+      {
+        position: "Junior Network Engineer",
+        duration: "July 2024 - Present",
+        description:
+          "Working as a Junior Network Engineer in the IP and Optical Networks division. Responsible for the design, configuration, and deployment of IP/MPLS networks for clients across the globe. ",
+        techUsed: ["JavaScript", "TOSCA", "NSD", "Git"],
+      },
+      {
+        position: "SDE Intern",
+        duration: "Aug 2023 - May 2024",
+        description:
+          "Part of multiple client projects like TSPortal, SingTel in Network Infrastructure team, contributing to design and develop effective Network Management Tools. Collaborated with multiple developers across teams, performed code reviews among interns, participated in brainstorming sessions and learning opportunities.",
+        techUsed: [
+          "Spring Boot",
+          "Java",
+          "MySQL",
+          "Thymeleaf",
+          "Polymer.js",
+          "jQuery",
+          "Bootstrap",
+        ],
+      },
+    ],
   },
   {
     company: "Microsoft Learn Student Ambassador KIIT",
-    position: "Project Wing Member & Learner",
-    duration: "Oct 2021 - Dec 2022",
     location: "Bhubaneshwar, India",
-    description:
-      "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking.\n Designed the UI and built a complete web app with online compiler and user registration, Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
-    techUsed: ["JSON", "React JS", "Bootstrap", "JavaScript"],
     link: "https://github.com/MLSAKIIT",
+    details: [
+      {
+        position: "Project Wing Member & Learner",
+        duration: "Oct 2021 - Dec 2022",
+        description:
+          "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking. Designed the UI and built a complete web app with online compiler and user registration, Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
+        techUsed: ["JSON", "React JS", "Bootstrap", "JavaScript"],
+      },
+    ],
   },
 ];
