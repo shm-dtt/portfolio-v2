@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { greatVibes, playfairDisplay, ppMondwest } from "@/utils/fonts/Fonts";
+import { inter, playfairDisplay } from "@/utils/fonts/Fonts";
 import { Data } from "@/utils/data/Data";
 import {motion, useScroll} from "framer-motion";
 
@@ -42,23 +42,17 @@ const LandingPage: React.FC = () => {
   };
 
   return (
-    <motion.div ref={container} style={{opacity: scrollYProgress}} className=" flex flex-col h-screen items-center justify-center mb-32">
-      <div className=" flex flex-col items-center justify-center z-1 pointer-events-none text-white lg:text-7xl md:text-6xl text-4xl text-center uppercase">
-        <div>
-          <span className={greatVibes.className}>{Data.firstName.charAt(0)}</span>
-          <span className={playfairDisplay.className}>{Data.firstName.slice(1)}</span>
-          &nbsp;
-          <span className={greatVibes.className}>{Data.lastName.charAt(0)}</span>
-          <span className={playfairDisplay.className}>{Data.lastName.slice(1)}</span>
+    <motion.div ref={container} style={{opacity: scrollYProgress}} className=" flex flex-col h-screen mb-32 items-center justify-center">
+      <div className={`${inter.className} flex flex-col z-1 pointer-events-none text-white px-12 py-16 gap-12`}>
+        <div className="lg:text-2xl text-xl opacity-70">
+          Hello! I'm {Data.firstName} {Data.lastName}.
         </div>
-        <span className={playfairDisplay.className}>{Data.position_firstLine}</span>
-        <span className={`${ppMondwest.className} lg:mt-4 mt-2`}>{Data.position_secondLine}</span>
-        <span className={playfairDisplay.className}>
-          CURRENTLY @&nbsp;{Data.currentCompany}
-        </span>
-        <span className={`${ppMondwest.className} lg:mt-4 mt-2`}>
-          Based in {Data.location}
-        </span>
+        <div className="lg:text-7xl md:text-6xl text-4xl font-bold">
+          A software developer with passion to make products that create great user experiences.
+        </div>
+        <div className="text-right lg:text-lg text-md opacity-70">
+          Full Stack Developer, currently working as a {Data.position} at {Data.currentCompany},<br/> living in {Data.location}, {Data.country}.
+        </div>
       </div>
       <div className="flex h-full w-full overflow-hidden absolute">
         {windowsWidth > 0 &&
