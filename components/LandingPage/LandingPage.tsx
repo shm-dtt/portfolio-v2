@@ -48,7 +48,7 @@ const LandingPage: React.FC = () => {
           Hello! I&apos;m {Data.firstName} {Data.lastName}.
         </div>
         <div className="lg:text-7xl md:text-6xl text-4xl font-bold">
-          A software developer with passion to make products that create great user experiences.
+          {Data.intro}
         </div>
         <div className="text-right lg:text-lg text-md opacity-70">
           Full Stack Developer, currently working as a {Data.position} at {Data.currentCompany},<br/> living in {Data.location}, {Data.country}.

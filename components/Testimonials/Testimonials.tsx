@@ -1,4 +1,4 @@
-import { playfairDisplay } from "@/utils/fonts/Fonts";
+import { inter, playfairDisplay } from "@/utils/fonts/Fonts";
 import React from "react";
 import { testimonials } from "@/utils/data/Data";
 import Card from "./Card";
@@ -8,7 +8,7 @@ const Testimonials: React.FC = () => {
     <div className=" flex flex-col">
       <div className="text-white text-center">
       <p
-        className={`${playfairDisplay.className} lg:text-5xl text-4xl uppercase `}
+        className={`${playfairDisplay.className} lg:text-5xl text-4xl `}
       >
         Reviews
       </p>

@@ -10,6 +10,7 @@ export const Data = {
   year: 2024,
   currentCompany: "Nokia",
   position: "Junior Network Engineer",
+  intro: "A software developer with passion to make products that create great user experiences.",
   email: "sohamdutta2001@gmail.com",
   twitter: "https://twitter.com/shmdsgn",
   linkedin: "https://www.linkedin.com/in/shm-dtt",

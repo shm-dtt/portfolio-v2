@@ -16,7 +16,7 @@ const Card: React.FC<CardProps> = ({ name, role, statement, color, i }) => {
         style={{ backgroundColor: color, top: `calc(-5vh + ${i * 60}px)` }}
       >
         <p className={` ${inter.className} lg:text-lg text-md lg:w-1/2`}>&quot;{statement}&quot;</p>
-        <div className={`${playfairDisplay.className}`}>
+        <div className={`${inter.className}`}>
           <h2 className="lg:text-2xl text-xl font-extrabold">{name}</h2>
           <h3 className="text-md opacity-70">{role}</h3>
         </div>
