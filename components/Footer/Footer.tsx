@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
   });
 
   return (
-    <div className="flex flex-col justify-center mt-6">
+    <div className="flex flex-col justify-center mt-6 mb-4">
       <div
         className={`p-4 ${inter.className} flex md:justify-between md:flex-row md:items-center flex-col text-white gap-8`}
       >
@@ -60,12 +60,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div
+      {/* <div
         className={` mx-4 my-6 text-white text-xs ${inter.className} inline-flex gap-2 items-center flex-row justify-center`}
       >
         Built with NextJs <NextJsLogo />
         and deployed in <VercelLogo />
-      </div>
+      </div> */}
     </div>
   );
 };

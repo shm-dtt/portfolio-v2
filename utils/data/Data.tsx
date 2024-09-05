@@ -9,7 +9,7 @@ export const Data = {
   gmtOffset: "+5:30",
   year: 2024,
   currentCompany: "Nokia",
-  position: "Junior Network Engineer",
+  position: "Junior Network Orchestration Engineer",
   intro: "A software developer with passion to make products that create great user experiences.",
   email: "sohamdutta2001@gmail.com",
   twitter: "https://twitter.com/shmdsgn",

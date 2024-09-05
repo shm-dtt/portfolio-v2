@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { opacity, slideUp } from './animation';
 import { inter } from '@/utils/fonts/Fonts';
 
-const words = ["Hello","নমস্কার", "नमस्कार", "Bonjour", "Ciao", "Olà", "こんにちは", "Guten tag!" ]
+// const words = ["Hello","নমস্কার", "नमस्कार", "Bonjour", "Ciao", "Olà", "こんにちは", "Guten tag!" ]
 
 const Preloader: React.FC = () => {
 
@@ -15,12 +15,12 @@ const Preloader: React.FC = () => {
     //     setDimension({width: window.innerWidth, height: window.innerHeight})
     // }, [])
 
-    useEffect( () => {
-        if(index == words.length - 1) return;
-        setTimeout( () => {
-            setIndex(index + 1)
-        }, index == 0 ? 1000 : 150)
-    }, [index])
+    // useEffect( () => {
+    //     if(index == words.length - 1) return;
+    //     setTimeout( () => {
+    //         setIndex(index + 1)
+    //     }, index == 0 ? 400 : 400)
+    // }, [index])
 
     // const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`
     // const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width/2} ${dimension.height} 0 ${dimension.height}  L0 0`
@@ -47,8 +47,9 @@ const Preloader: React.FC = () => {
 
     return (
         <motion.div variants={slideUp} initial="initial" exit="exit" className=" h-screen w-screen flex items-center justify-center fixed z-1000 bg-white">
-            <motion.p variants={opacity} initial="initial" animate="enter" className={`flex text-black text-4xl items-center absolute z-10 ${inter.className}`}>
-                <span className=' block w-3 h-3 bg-black mr-3 rounded-full'></span>{words[index]}
+            <motion.p variants={opacity} initial="initial" animate="enter" className={`flex text-black text-4xl items-center absolute z-10 font-semibold ${inter.className}`}>
+                {/* {words[index]} */}
+                Soham's <br/> Portfolio <br/>2024
             </motion.p>
         </motion.div>
     );
