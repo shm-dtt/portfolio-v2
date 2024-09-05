@@ -26,7 +26,7 @@ export default function Home() {
             //document.body.style.cursor = 'default''
             document.body.style.overflow = 'visible';
             window.scrollTo(0,0);
-          }, 2000)
+          }, 1000)
       }
     )()
   }, [])

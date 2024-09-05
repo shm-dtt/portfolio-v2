@@ -127,7 +127,7 @@ export const experience = [
     link: "https://www.nokia.com/",
     details: [
       {
-        position: "Junior Network Engineer",
+        position: "Junior Network Orchestration Engineer",
         duration: "July 2024 - Present",
         description:
           "Working as a Junior Network Engineer in the IP and Optical Networks division. Responsible for the design, configuration, and deployment of IP/MPLS networks for clients across the globe. ",
