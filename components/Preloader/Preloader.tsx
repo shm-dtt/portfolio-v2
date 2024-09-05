@@ -49,7 +49,7 @@ const Preloader: React.FC = () => {
         <motion.div variants={slideUp} initial="initial" exit="exit" className=" h-screen w-screen flex items-center justify-center fixed z-1000 bg-white">
             <motion.p variants={opacity} initial="initial" animate="enter" className={`flex text-black text-4xl items-center absolute z-10 font-semibold ${inter.className}`}>
                 {/* {words[index]} */}
-                Soham's <br/> Portfolio <br/>2024
+                Soham&apos;s <br/> Portfolio <br/>2024
             </motion.p>
         </motion.div>
     );
