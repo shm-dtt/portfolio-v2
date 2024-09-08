@@ -58,6 +58,15 @@ export const testimonials = [
 
 export const projects = [
   {
+    name: "Video Duration",
+    year: 2024,
+    tech: "Python",
+    description:
+      "A simple python app to calculate total length of a bunch of local videos, at your specified playback speed.",
+    techUsed: ["Python", "moviepy", "PyQt6"],
+    link: "https://github.com/shm-dsgn/video_duration",
+  },
+  {
     name: "Envoy",
     year: 2024,
     tech: "Spring Boot, Java, MySQL",
