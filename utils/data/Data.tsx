@@ -9,7 +9,7 @@ export const Data = {
   gmtOffset: "+5:30",
   year: 2024,
   currentCompany: "Nokia",
-  position: "Junior Network Orchestration Engineer",
+  position: "Applied R&D Software Engineer",
   intro: "A software developer with passion to make products that create great user experiences.",
   email: "sohamdutta2001@gmail.com",
   twitter: "https://twitter.com/shmdsgn",
@@ -136,14 +136,14 @@ export const experience = [
     link: "https://www.nokia.com/",
     details: [
       {
-        position: "Junior Network Orchestration Engineer",
+        position: "Applied R&D Software Engineer",
         duration: "July 2024 - Present",
         description:
-          "Working as a Junior Network Engineer in the IP and Optical Networks division. Responsible for the design, configuration, and deployment of IP/MPLS networks for clients across the globe. ",
+          "Working as an Applied R&D Software Engineer in the IP and Optical Networks division. Responsible for the design, configuration, and deployment of IP/MPLS networks for clients across the globe. ",
         techUsed: ["JavaScript", "TOSCA", "NSD", "Git"],
       },
       {
-        position: "SDE Intern",
+        position: "Software Developer Intern",
         duration: "Aug 2023 - May 2024",
         description:
           "Part of multiple client projects like TSPortal, SingTel in Network Infrastructure team, contributing to design and develop effective Network Management Tools. Collaborated with multiple developers across teams, performed code reviews among interns, participated in brainstorming sessions and learning opportunities.",

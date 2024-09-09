@@ -51,7 +51,7 @@ const LandingPage: React.FC = () => {
           {Data.intro}
         </div>
         <div className="text-right lg:text-lg text-md opacity-70">
-          Currently working as a {Data.position} at {Data.currentCompany},<br/> living in {Data.location}, {Data.country}.
+          Currently working as an {Data.position} at {Data.currentCompany},<br/> living in {Data.location}, {Data.country}.
         </div>
       </div>
       <div className="flex h-full w-full overflow-hidden absolute">

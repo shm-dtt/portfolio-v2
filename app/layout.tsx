@@ -3,10 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Soham Dutta • Full Stack Developer",
-  description: "Full Stack Developer, Currently working at Nokia as a Junior Network Engineer in Bengaluru, India",
+  description: "Full Stack Developer, Currently working at Nokia as an Applied R&D Software Engineer in Bengaluru, India",
   openGraph:{
     title: "Soham Dutta • Full Stack Developer",
-    description: "Full Stack Developer, Currently working at Nokia as a Junior Network Engineer in Bengaluru, India",
+    description: "Full Stack Developer, Currently working at Nokia as an Applied R&D Software Engineer in Bengaluru, India",
     type: "website",
     url: "https://sohamdutta.in/",
     images: [
