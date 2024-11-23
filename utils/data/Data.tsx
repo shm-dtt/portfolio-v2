@@ -10,12 +10,13 @@ export const Data = {
   year: 2024,
   currentCompany: "Nokia",
   position: "Applied R&D Software Engineer",
-  intro: "A software developer with passion to make products that create great user experiences.",
+  intro: "A dedicated software developer with a passion for crafting innovative products that deliver seamless and engaging user experiences, driving both functionality and delight.",
   email: "sohamdutta2001@gmail.com",
   twitter: "https://twitter.com/shmdsgn",
   linkedin: "https://www.linkedin.com/in/shm-dtt",
   github: "https://github.com/shm-dsgn",
   portfolioV1: "https://shm-dsgn-v1.netlify.app/",
+  dribbble: "https://dribbble.com/shm-dsgn",
 };
 
 export const testimonials = [
@@ -146,7 +147,7 @@ export const experience = [
         position: "Software Developer Intern",
         duration: "Aug 2023 - May 2024",
         description:
-          "Part of multiple client projects like TSPortal, SingTel in Network Infrastructure team, contributing to design and develop effective Network Management Tools. Collaborated with multiple developers across teams, performed code reviews among interns, participated in brainstorming sessions and learning opportunities.",
+          "Build and maintain key components for network management tools in projects like TSPortal and SingTel. Collaborated with cross-functional teams to deliver efficient solutions, optimize performance, and promote best coding practices. Also performed code reviews among interns, participated in brainstorming sessions and learning opportunities.",
         techUsed: [
           "Spring Boot",
           "Java",

@@ -38,9 +38,9 @@ export default function Home() {
     <Header/>
     <LandingPage />
     {/* <About/> */}
-    <Projects/>
     <Experience/>
-    <Testimonials/>
+    <Projects/>
+    {/* <Testimonials/> */}
     <SpotifyStatus/>
     <Footer/>
   </div>;

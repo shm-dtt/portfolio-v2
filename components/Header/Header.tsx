@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Data } from "@/utils/data/Data";
 
+// className={`sticky top-0 z-50 pb-8 pt-4 px-4 flex justify-between items-center text-white ${inter.className} lg:text-md text-sm bg-gradient-to-b from-[#121212] to-transparent`
+
 const Header: React.FC = () => {
   return (
     <>
@@ -17,10 +19,10 @@ const Header: React.FC = () => {
             href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
             target="_blank"
           >
-            <HoverButton text="Resume"/>
+            <HoverButton text="Resume" />
           </Link>
           <Link href={`mailto:${Data.email}`} target="_blank">
-            <HoverButton text="Contact"/>
+            <HoverButton text="Contact" />
           </Link>
         </p>
       </div>

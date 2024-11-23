@@ -54,14 +54,14 @@ const SpotifyStatus: React.FC = () => {
               className="rounded-md"
             />
             <div className="flex flex-col">
-              <p className=" text-xs uppercase text-neutral-400 flex items-center gap-2 mb-2">
+              <div className=" text-xs uppercase text-neutral-400 flex items-center gap-2 mb-2">
                 <SpotifyLogo width={16} />
                 <p>
                   {result.isPlaying
                     ? "Currently Playing"
                     : "Currently Paused"}
                 </p>
-              </p>
+              </div>
               <p className="text-sm">
                 {result.title}{" "}
                 <span className=" text-xs text-neutral-400">by</span>{" "}

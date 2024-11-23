@@ -43,14 +43,14 @@ const LandingPage: React.FC = () => {
 
   return (
     <motion.div ref={container} style={{opacity: scrollYProgress}} className=" flex flex-col h-screen mb-32 items-center justify-center">
-      <div className={`${inter.className} flex flex-col z-1 pointer-events-none text-white px-12 py-16 gap-12`}>
-        <div className="lg:text-2xl text-xl opacity-70">
-          Hey there! I&apos;m {Data.firstName}.
+      <div className={`${inter.className} flex flex-col z-1 pointer-events-none text-white px-12 py-12 gap-12`}>
+        <div className="lg:text-7xl md:text-6xl text-5xl font-bold">
+          I&apos;m {Data.firstName} {Data.lastName}.
         </div>
-        <div className="lg:text-7xl md:text-6xl text-4xl font-bold">
+        <div className="lg:text-3xl md:text-3xl text-xl opacity-70 md:w-5/6">
           {Data.intro}
         </div>
-        <div className="text-right lg:text-lg text-md opacity-70">
+        <div className="text-right lg:text-xl md:text-lg text-md">
           Currently working as an {Data.position} at {Data.currentCompany},<br/> living in {Data.location}, {Data.country}.
         </div>
       </div>
