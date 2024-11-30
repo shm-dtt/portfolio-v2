@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
           Projects
         </p>
       </div>
-      <div className={`p-8 mx-4 mb-32 mt-16 ${inter.className}`}>
+      <div className={`mx-4 mb-32 mt-16 ${inter.className}`}>
         <div className="text-neutral-300 flex justify-between items-center uppercase text-xs mb-4">
           <p className="flex-1">Project</p>
           <p className="md:flex-1 flex-none md:block hidden">Technology</p>
