@@ -13,7 +13,7 @@ const Projects: React.FC = () => {
   return (
     <div className="flex flex-col mb-24">
       <div className="text-white text-center">
-        <p className={`${inter.className} lg:text-5xl text-4xl font-bold`}>
+        <p className={`${inter.className} lg:text-4xl text-3xl font-bold`}>
           Projects
         </p>
       </div>

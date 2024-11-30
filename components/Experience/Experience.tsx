@@ -7,7 +7,7 @@ const Experience: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center text-white mx-4 mb-32">
       <p
-        className={`${inter.className} lg:text-5xl text-4xl font-bold`}
+        className={`${inter.className} lg:text-4xl text-3xl font-bold`}
       >
         Experiences
       </p>
