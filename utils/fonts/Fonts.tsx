@@ -1,4 +1,9 @@
-import { Great_Vibes, Playfair_Display, Inter, Inter_Tight } from "next/font/google";
+import {
+  Great_Vibes,
+  Playfair_Display,
+  Inter,
+  Inter_Tight,
+} from "next/font/google";
 import localFont from "next/font/local";
 
 // export const ppMondwest = localFont({
@@ -9,5 +14,8 @@ import localFont from "next/font/local";
 //   subsets: ["latin"],
 //   weight: "400",
 // });
-export const playfairDisplay = Playfair_Display({ subsets: ["latin"], weight: "400" });
+export const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: "400",
+});
 export const inter = Inter({ subsets: ["latin"], weight: ["400", "500"] });

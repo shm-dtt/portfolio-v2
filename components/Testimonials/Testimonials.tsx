@@ -7,11 +7,9 @@ const Testimonials: React.FC = () => {
   return (
     <div className=" flex flex-col">
       <div className="text-white text-center">
-      <p
-        className={`${playfairDisplay.className} lg:text-5xl text-4xl `}
-      >
-        Reviews
-      </p>
+        <p className={`${playfairDisplay.className} lg:text-5xl text-4xl `}>
+          Reviews
+        </p>
       </div>
       <div className=" mx-4 mb-32">
         {testimonials.map((testimonial, i) => {
