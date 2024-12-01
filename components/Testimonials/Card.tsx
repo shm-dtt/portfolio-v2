@@ -1,4 +1,4 @@
-import { inter, playfairDisplay } from "@/utils/fonts/Fonts";
+import { inter } from "@/utils/fonts/Fonts";
 
 interface CardProps {
   name: string;
