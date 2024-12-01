@@ -6,19 +6,13 @@ import Card from "./Card";
 const Experience: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center text-white mx-4 mb-32">
-      <p
-        className={`${inter.className} lg:text-5xl text-4xl font-bold`}
-      >
+      <p className={`${inter.className} lg:text-4xl text-3xl font-bold`}>
         Experiences
       </p>
-      <br/>
+      <br />
       <div>
-      {experience.map((exp, i) => (
-          <Card
-            key={`p_${i}`}
-            i={i}
-            {...exp}
-          />
+        {experience.map((exp, i) => (
+          <Card key={`p_${i}`} i={i} {...exp} />
         ))}
       </div>
     </div>

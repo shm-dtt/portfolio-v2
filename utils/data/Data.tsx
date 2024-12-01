@@ -10,7 +10,7 @@ export const Data = {
   year: 2024,
   currentCompany: "Nokia",
   position: "Applied R&D Software Engineer",
-  intro: "A dedicated software developer with a passion for crafting innovative products that deliver seamless and engaging user experiences, driving both functionality and delight.",
+  intro: "I create pixel-perfect, seamless, user-focused solutions.",
   email: "sohamdutta2001@gmail.com",
   twitter: "https://twitter.com/shmdsgn",
   linkedin: "https://www.linkedin.com/in/shm-dtt",

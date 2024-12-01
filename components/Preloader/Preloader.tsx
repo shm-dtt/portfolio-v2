@@ -15,16 +15,19 @@ const Preloader: React.FC = () => {
     >
       <div className="flex flex-col">
         {phrases.map((phrase, i) => (
-          <div key={i} className="text-black text-4xl font-semibold overflow-hidden relative">
-            <motion.p 
-              custom={i} 
-              variants={textmask} 
-              initial="initial" 
-              animate="enter" 
+          <div
+            key={i}
+            className="text-black text-4xl font-semibold overflow-hidden relative"
+          >
+            <motion.p
+              custom={i}
+              variants={textmask}
+              initial="initial"
+              animate="enter"
               className={`${inter.className} whitespace-nowrap`}
-              style={{ 
-                position: 'relative',
-                display: 'block'
+              style={{
+                position: "relative",
+                display: "block",
               }}
             >
               {phrase}

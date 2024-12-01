@@ -9,39 +9,40 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
 import Projects from "@/components/Projects/Projects";
 import Experience from "@/components/Experience/Experience";
-import About from "@/components/About/About";
 
 export default function Home() {
-
   const [isLoading, setIsLoading] = useState(true);
-  useEffect( () => {
-    (
-      async () => {
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = await import("locomotive-scroll").then(
+        (module) => module.default,
+      );
+      const locomotiveScroll = new LocomotiveScroll();
 
-          const LocomotiveScroll = await import('locomotive-scroll').then( (module) => module.default);
-          const locomotiveScroll = new LocomotiveScroll();
+      setTimeout(() => {
+        setIsLoading(false);
+        //document.body.style.cursor = 'default''
+        document.body.style.overflow = "visible";
+        window.scrollTo(0, 0);
+      }, 1000);
+    })();
+  }, []);
 
-          setTimeout( () => {
-            setIsLoading(false);
-            //document.body.style.cursor = 'default''
-            document.body.style.overflow = 'visible';
-            window.scrollTo(0,0);
-          }, 1000)
-      }
-    )()
-  }, [])
-
-  return <div>
-    <AnimatePresence mode='wait'>
+  return (
+    <div>
+      <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
-    <Header/>
-    <LandingPage />
-    {/* <About/> */}
-    <Experience/>
-    <Projects/>
-    {/* <Testimonials/> */}
-    <SpotifyStatus/>
-    <Footer/>
-  </div>;
+      <div className=" p-2 mx-auto max-w-4xl">
+        <Header />
+        <LandingPage />
+        {/* <About/> */}
+        <Experience />
+        <Projects />
+        {/* <Testimonials/> */}
+        <SpotifyStatus />
+        <Footer />
+      </div>
+    </div>
+  );
 }

@@ -57,9 +57,7 @@ const SpotifyStatus: React.FC = () => {
               <div className=" text-xs uppercase text-neutral-400 flex items-center gap-2 mb-2">
                 <SpotifyLogo width={16} />
                 <p>
-                  {result.isPlaying
-                    ? "Currently Playing"
-                    : "Currently Paused"}
+                  {result.isPlaying ? "Currently Playing" : "Currently Paused"}
                 </p>
               </div>
               <p className="text-sm">

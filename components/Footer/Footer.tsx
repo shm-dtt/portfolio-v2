@@ -3,8 +3,6 @@ import { inter } from "@/utils/fonts/Fonts";
 import { useEffect, useState } from "react";
 import { Data } from "@/utils/data/Data";
 import Link from "next/link";
-import VercelLogo from "../../utils/logos/VercelLogo";
-import NextJsLogo from "../../utils/logos/NextJsLogo";
 import HoverButton from "../HoverButton/HoverButton";
 
 const Footer: React.FC = () => {
@@ -16,7 +14,7 @@ const Footer: React.FC = () => {
   };
 
   const [time, setTime] = useState(
-    new Date().toLocaleTimeString("en-US", timeOptions)
+    new Date().toLocaleTimeString("en-US", timeOptions),
   );
 
   useEffect(() => {
@@ -33,7 +31,7 @@ const Footer: React.FC = () => {
         <div className="flex text-sm gap-8">
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Version</span>
-            <span>© {Data.year} Edition(v2.2)</span>
+            <span>© {Data.year} (v2.3)</span>
           </p>
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Local Time</span>
@@ -43,7 +41,9 @@ const Footer: React.FC = () => {
           </p>
         </div>
         <div className="flex flex-col text-sm gap-3">
-          <span className=" text-gray-400 text-xs uppercase">Other Socials & Links</span>
+          <span className=" text-gray-400 text-xs uppercase">
+            Other Socials & Links
+          </span>
           <div className="flex gap-8 flex-wrap">
             <Link href={Data.portfolioV1} target="_blank">
               <HoverButton text="Folio '23" />
@@ -63,12 +63,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* <div
-        className={` mx-4 my-6 text-white text-xs ${inter.className} inline-flex gap-2 items-center flex-row justify-center`}
-      >
-        Built with NextJs <NextJsLogo />
-        and deployed in <VercelLogo />
-      </div> */}
     </div>
   );
 };
