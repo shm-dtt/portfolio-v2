@@ -9,7 +9,6 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
 import Projects from "@/components/Projects/Projects";
 import Experience from "@/components/Experience/Experience";
-import About from "@/components/About/About";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
