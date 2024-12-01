@@ -5,8 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Data } from "@/utils/data/Data";
 
-// className={`sticky top-0 z-50 pb-8 pt-4 px-4 flex justify-between items-center text-white ${inter.className} lg:text-md text-sm bg-gradient-to-b from-[#121212] to-transparent`
-
 const Header: React.FC = () => {
   return (
     <>
