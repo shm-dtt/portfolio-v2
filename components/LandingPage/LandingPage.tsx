@@ -1,10 +1,8 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { inter } from "@/utils/fonts/Fonts";
 import { Data } from "@/utils/data/Data";
+import { inter } from "@/utils/fonts/Fonts";
 import { motion, useScroll } from "framer-motion";
-import Link from "next/link";
-import HoverButton from "../HoverButton/HoverButton";
+import React, { useEffect, useRef, useState } from "react";
 
 const LandingPage: React.FC = () => {
   const [windowsWidth, setWindowsWidth] = useState(0);
