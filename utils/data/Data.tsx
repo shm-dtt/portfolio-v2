@@ -131,8 +131,6 @@ export const projects = [
 export const experience = [
   {
     company: "Nokia Solutions and Networks",
-    position: "Software Development Engineer Intern",
-    duration: "Aug 2023 - May 2024",
     location: "Bengaluru, India",
     link: "https://www.nokia.com/",
     details: [
@@ -143,6 +141,13 @@ export const experience = [
           "Working as an Applied R&D Software Engineer in the IP and Optical Networks division. Responsible for the design, configuration, and deployment of IP/MPLS networks for clients across the globe. ",
         techUsed: ["JavaScript", "TOSCA", "NSD", "Git"],
       },
+    ],
+  },
+  {
+    company: "Nokia Solutions and Networks",
+    location: "Bengaluru, India",
+    link: "https://www.nokia.com/",
+    details: [
       {
         position: "Software Developer Intern",
         duration: "Aug 2023 - May 2024",
