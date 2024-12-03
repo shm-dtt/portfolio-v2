@@ -39,9 +39,7 @@ const Footer: React.FC = () => {
           </p>
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Local Time</span>
-            <span>
-              {time ? `${time} GMT${Data.gmtOffset}` : "Loading..."}
-            </span>
+            <span>{time ? `${time} GMT${Data.gmtOffset}` : "Loading..."}</span>
           </p>
         </div>
 

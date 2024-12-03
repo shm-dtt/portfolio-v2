@@ -166,15 +166,15 @@ export const experience = [
     ],
   },
   {
-    company: "Microsoft Learn Student Ambassador KIIT",
+    company: "MLSA KIIT",
     location: "Bhubaneshwar, India",
-    link: "https://github.com/MLSAKIIT",
+    link: "https://mlsakiit.com/",
     details: [
       {
         position: "Project Wing Member & Learner",
         duration: "Oct 2021 - Dec 2022",
         description:
-          "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking. Designed the UI and built a complete web app with online compiler and user registration, Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
+          "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking. Designed the UI and built a complete web app with online compiler and user registration. Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
         techUsed: ["JSON", "React JS", "Bootstrap", "JavaScript"],
       },
     ],

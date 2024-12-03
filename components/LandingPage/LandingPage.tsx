@@ -47,19 +47,17 @@ const LandingPage: React.FC = () => {
       style={{ opacity: scrollYProgress }}
       className=" flex flex-col h-screen mb-32 items-center justify-center"
     >
-      <div
-        className={`${inter.className} flex flex-col z-1 text-white px-12 py-12`}
-      >
+      <div className={`${inter.className} flex flex-col z-1 text-white p-8`}>
         <div className="lg:text-5xl md:text-4xl text-3xl font-bold">
           I&apos;m {Data.firstName} {Data.lastName}.
         </div>
-        <div className="lg:text-2xl md:text-2xl text-xl mt-4 font-medium">
+        <div className="lg:text-2xl md:text-xl text-lg mt-2 font-medium">
           Full Stack Developer
         </div>
-        <div className="lg:text-xl md:text-lg text-md opacity-70 mt-8">
+        <div className="lg:text-lg md:text-md opacity-70 mt-6">
           {Data.intro}
         </div>
-        <div className="lg:text-lg md:text-md text-sm mt-12">
+        <div className="lg:text-lg md:text-md text-sm mt-8">
           Currently working as an {Data.position} at {Data.currentCompany},
           <br /> living in {Data.location}, {Data.country}.
         </div>
