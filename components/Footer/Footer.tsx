@@ -13,21 +13,25 @@ const Footer: React.FC = () => {
     minute: "numeric",
   };
 
-  const [time, setTime] = useState(
-    new Date().toLocaleTimeString("en-US", timeOptions),
-  );
+  const [time, setTime] = useState<string | null>(null); // Ensure null during initial render
 
   useEffect(() => {
-    setInterval(() => {
+    const updateTime = () => {
       setTime(new Date().toLocaleTimeString("en-US", timeOptions));
-    }, 10000);
-  });
+    };
+
+    updateTime(); // Set time initially
+    const interval = setInterval(updateTime, 10000);
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, []);
 
   return (
     <div className="flex flex-col justify-center mt-6 mb-4">
       <div
         className={`p-4 ${inter.className} flex md:justify-between md:flex-row md:items-center flex-col text-white gap-8`}
       >
+        {/* Version & Time */}
         <div className="flex text-sm gap-8">
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Version</span>
@@ -36,10 +40,12 @@ const Footer: React.FC = () => {
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Local Time</span>
             <span>
-              {time} GMT{Data.gmtOffset}
+              {time ? `${time} GMT${Data.gmtOffset}` : "Loading..."}
             </span>
           </p>
         </div>
+
+        {/* Social Links */}
         <div className="flex flex-col text-sm gap-3">
           <span className=" text-gray-400 text-xs uppercase">
             Other Socials & Links
