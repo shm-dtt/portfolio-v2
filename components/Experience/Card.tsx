@@ -1,4 +1,3 @@
-import { inter } from "@/utils/fonts/Fonts";
 import Link from "next/link";
 import React from "react";
 
@@ -20,7 +19,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ company, location, link, details, i }) => {
   return (
     <div className="my-8 p-2 group rounded-lg">
-      <div className={`${inter.className} flex flex-col lg:flex-row gap-6`}>
+      <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex flex-col justify-start lg:items-end flex-1">
           <p className="relative text-md lg:text-right group">
             <Link

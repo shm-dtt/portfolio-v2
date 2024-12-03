@@ -1,8 +1,7 @@
 "use client";
-import { inter } from "@/utils/fonts/Fonts";
-import { useEffect, useState } from "react";
 import { Data } from "@/utils/data/Data";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import HoverButton from "../HoverButton/HoverButton";
 
 const Footer: React.FC = () => {
@@ -29,7 +28,7 @@ const Footer: React.FC = () => {
   return (
     <div className="flex flex-col justify-center mt-6 mb-4">
       <div
-        className={`p-4 ${inter.className} flex md:justify-between md:flex-row md:items-center flex-col text-white gap-8`}
+        className="p-4 flex md:justify-between md:flex-row md:items-center flex-col text-white gap-8"
       >
         {/* Version & Time */}
         <div className="flex text-sm gap-8">

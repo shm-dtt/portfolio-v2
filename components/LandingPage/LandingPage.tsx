@@ -1,6 +1,5 @@
 "use client";
 import { Data } from "@/utils/data/Data";
-import { inter } from "@/utils/fonts/Fonts";
 import { motion, useScroll } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -45,7 +44,7 @@ const LandingPage: React.FC = () => {
       style={{ opacity: scrollYProgress }}
       className=" flex flex-col h-screen mb-32 items-center justify-center"
     >
-      <div className={`${inter.className} flex flex-col z-1 text-white p-8`}>
+      <div className="flex flex-col z-1 text-white p-8">
         <div className="lg:text-5xl md:text-4xl text-3xl font-bold">
           I&apos;m {Data.firstName} {Data.lastName}.
         </div>

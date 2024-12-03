@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import getNowPlayingItem from "./SpotifyAPI";
-import { inter } from "@/utils/fonts/Fonts";
-import SpotifyLogo from "../../utils/logos/SpotifyLogo";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import SpotifyLogo from "../../utils/logos/SpotifyLogo";
+import getNowPlayingItem from "./SpotifyAPI";
 
 interface SpotifyData {
   albumImageUrl: string;
@@ -42,7 +41,7 @@ const SpotifyStatus: React.FC = () => {
   }, []);
 
   return (
-    <div className={` flex ${inter.className} justify-center `}>
+    <div className="flex justify-center">
       <div className="flex items-center rounded-md mx-4 bg-neutral-800 p-4 gap-4 text-white w-screen">
         {!offline && (
           <>

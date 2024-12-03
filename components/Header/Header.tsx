@@ -1,15 +1,14 @@
 "use client";
-import { inter } from "@/utils/fonts/Fonts";
 import HoverButton from "@/components/HoverButton/HoverButton";
+import { Data } from "@/utils/data/Data";
 import Image from "next/image";
 import Link from "next/link";
-import { Data } from "@/utils/data/Data";
 
 const Header: React.FC = () => {
   return (
     <>
       <div
-        className={`p-4 flex justify-between items-center text-white ${inter.className} lg:text-sm text-xs`}
+        className="p-4 flex justify-between items-center text-white lg:text-sm text-xs"
       >
         <Image src="/favicon.ico" alt="logo" width={24} height={24} />
         <p className=" flex uppercase lg:gap-10 gap-5 font-medium">

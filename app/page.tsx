@@ -13,6 +13,8 @@ const Projects = dynamic(() => import("@/components/Projects/Projects"));
 const SpotifyStatus = dynamic(
   () => import("@/components/SpotifyStatus/SpotifyStatus")
 );
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   useEffect(() => {
@@ -27,7 +29,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className=" p-2 mx-auto max-w-4xl">
+    <div className={`${inter.className} p-2 mx-auto max-w-4xl`}>
       <Header />
       <LandingPage />
       <Experience />
