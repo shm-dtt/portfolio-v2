@@ -1,48 +1,37 @@
 "use client";
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
-import LandingPage from "@/components/LandingPage/LandingPage";
-import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import Preloader from "@/components/Preloader/Preloader";
-import Testimonials from "@/components/Testimonials/Testimonials";
-import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
-import Projects from "@/components/Projects/Projects";
-import Experience from "@/components/Experience/Experience";
+import { useEffect } from "react";
+import dynamic from "next/dynamic";
+
+// Dynamic imports to reduce initial bundle size
+const Footer = dynamic(() => import("@/components/Footer/Footer"));
+const Header = dynamic(() => import("@/components/Header/Header"));
+const LandingPage = dynamic(
+  () => import("@/components/LandingPage/LandingPage")
+);
+const Experience = dynamic(() => import("@/components/Experience/Experience"));
+const Projects = dynamic(() => import("@/components/Projects/Projects"));
+const SpotifyStatus = dynamic(
+  () => import("@/components/SpotifyStatus/SpotifyStatus")
+);
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = await import("locomotive-scroll").then(
-        (module) => module.default,
+        (module) => module.default
       );
       const locomotiveScroll = new LocomotiveScroll();
-
-      setTimeout(() => {
-        setIsLoading(false);
-        //document.body.style.cursor = 'default''
-        document.body.style.overflow = "visible";
-        window.scrollTo(0, 0);
-      }, 1000);
     })();
   }, []);
 
   return (
-    <div>
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
-      </AnimatePresence>
-      <div className=" p-2 mx-auto max-w-4xl">
-        <Header />
-        <LandingPage />
-        {/* <About/> */}
-        <Experience />
-        <Projects />
-        {/* <Testimonials/> */}
-        <SpotifyStatus />
-        <Footer />
-      </div>
+    <div className=" p-2 mx-auto max-w-4xl">
+      <Header />
+      <LandingPage />
+      <Experience />
+      <Projects />
+      <SpotifyStatus />
+      <Footer />
     </div>
   );
 }

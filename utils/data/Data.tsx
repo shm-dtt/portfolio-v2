@@ -131,8 +131,6 @@ export const projects = [
 export const experience = [
   {
     company: "Nokia Solutions and Networks",
-    position: "Software Development Engineer Intern",
-    duration: "Aug 2023 - May 2024",
     location: "Bengaluru, India",
     link: "https://www.nokia.com/",
     details: [
@@ -143,6 +141,13 @@ export const experience = [
           "Working as an Applied R&D Software Engineer in the IP and Optical Networks division. Responsible for the design, configuration, and deployment of IP/MPLS networks for clients across the globe. ",
         techUsed: ["JavaScript", "TOSCA", "NSD", "Git"],
       },
+    ],
+  },
+  {
+    company: "Nokia Solutions and Networks",
+    location: "Bengaluru, India",
+    link: "https://www.nokia.com/",
+    details: [
       {
         position: "Software Developer Intern",
         duration: "Aug 2023 - May 2024",
@@ -161,15 +166,15 @@ export const experience = [
     ],
   },
   {
-    company: "Microsoft Learn Student Ambassador KIIT",
+    company: "MLSA KIIT",
     location: "Bhubaneshwar, India",
-    link: "https://github.com/MLSAKIIT",
+    link: "https://mlsakiit.com/",
     details: [
       {
         position: "Project Wing Member & Learner",
         duration: "Oct 2021 - Dec 2022",
         description:
-          "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking. Designed the UI and built a complete web app with online compiler and user registration, Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
+          "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking. Designed the UI and built a complete web app with online compiler and user registration. Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
         techUsed: ["JSON", "React JS", "Bootstrap", "JavaScript"],
       },
     ],
