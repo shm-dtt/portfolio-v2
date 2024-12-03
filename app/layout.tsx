@@ -6,11 +6,11 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata: Metadata = {
   title: "Soham Dutta • Full Stack Developer",
   description:
-    "Full Stack Developer, Currently working at Nokia as an Applied R&D Software Engineer in Bengaluru, India",
+    "I am a Full Stack Developer, Currently working at Nokia as an Applied R&D Software Engineer in Bengaluru, India",
   openGraph: {
     title: "Soham Dutta • Full Stack Developer",
     description:
-      "Full Stack Developer, Currently working at Nokia as an Applied R&D Software Engineer in Bengaluru, India",
+      "I am a Full Stack Developer, Currently working at Nokia as an Applied R&D Software Engineer in Bengaluru, India",
     type: "website",
     url: "https://sohamdutta.in/",
     images: [
