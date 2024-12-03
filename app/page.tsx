@@ -1,6 +1,6 @@
 "use client";
-import { useEffect } from "react";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
 
 // Dynamic imports to reduce initial bundle size
 const Footer = dynamic(() => import("@/components/Footer/Footer"));
@@ -18,9 +18,11 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = await import("locomotive-scroll").then(
-        (module) => module.default
+        (module) => module.default,
       );
       const locomotiveScroll = new LocomotiveScroll();
+      document.body.style.overflow = "visible";
+      window.scrollTo(0, 0);
     })();
   }, []);
 
