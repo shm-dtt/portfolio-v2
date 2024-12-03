@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = ({ company, location, link, details, i }) => {
             <Link
               href={link}
               target="_blank"
-              className="relative after:content-[''] after:absolute after:h-[2px] after:left-0 after:bottom-0 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              className="relative after:content-[''] after:absolute after:h-[1.5px] after:left-0 after:bottom-0 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
               {company}
             </Link>
