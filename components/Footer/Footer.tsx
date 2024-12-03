@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
         <div className="flex text-sm gap-8">
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Version</span>
-            <span>© {Data.year} (v2.3)</span>
+            <span>© {Data.year} (v2.4)</span>
           </p>
           <p className="flex flex-col gap-3">
             <span className=" text-gray-400 text-xs uppercase">Local Time</span>
