@@ -32,9 +32,7 @@ export default function Home() {
     <div className={`${inter.className} p-2 mx-auto max-w-4xl`}>
       <Header />
       <LandingPage />
-      <Experience />
-      <Projects />
-      <SpotifyStatus />
+      {/* <SpotifyStatus /> */}
       <Footer />
     </div>
   );

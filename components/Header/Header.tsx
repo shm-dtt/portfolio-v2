@@ -8,9 +8,8 @@ const Header: React.FC = () => {
   return (
     <>
       <div
-        className="p-4 flex justify-between items-center text-white lg:text-sm text-xs"
+        className="p-4 flex justify-end items-end text-white lg:text-sm text-xs"
       >
-        <Image src="/favicon.ico" alt="logo" width={24} height={24} />
         <p className=" flex uppercase lg:gap-10 gap-5 font-medium">
           <Link
             href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"

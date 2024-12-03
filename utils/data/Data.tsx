@@ -1,6 +1,7 @@
 //basic info to change
 
 export const Data = {
+  version: "v2.5",
   firstName: "Soham",
   lastName: "Dutta",
   location: "Bangalore",
