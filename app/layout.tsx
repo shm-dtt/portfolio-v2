@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} p-2 mx-auto max-w-4xl`}>
+      <body className={`${inter.className} p-2 mx-auto my-16 max-w-3xl`}>
         <Header />
         {children}
         <Footer />
