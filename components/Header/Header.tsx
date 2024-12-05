@@ -1,7 +1,5 @@
-"use client";
 import HoverButton from "@/components/HoverButton/HoverButton";
 import { Data } from "@/utils/data/Data";
-import Image from "next/image";
 import Link from "next/link";
 
 const Header: React.FC = () => {

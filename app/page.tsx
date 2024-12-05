@@ -1,6 +1,5 @@
-"use client";
+"use client"
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
 
 // Dynamic imports to reduce initial bundle size
 const Footer = dynamic(() => import("@/components/Footer/Footer"));
@@ -17,22 +16,10 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = await import("locomotive-scroll").then(
-        (module) => module.default,
-      );
-      const locomotiveScroll = new LocomotiveScroll();
-      document.body.style.overflow = "visible";
-      window.scrollTo(0, 0);
-    })();
-  }, []);
-
   return (
     <div className={`${inter.className} p-2 mx-auto max-w-4xl`}>
       <Header />
       <LandingPage />
-      {/* <SpotifyStatus /> */}
       <Footer />
     </div>
   );
