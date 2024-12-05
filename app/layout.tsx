@@ -3,6 +3,11 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { Inter } from "next/font/google";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
   title: "Soham Dutta - Full Stack Developer",
   description:
@@ -34,8 +39,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.className} p-2 mx-auto max-w-4xl`}>
+        <Header />
         {children}
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

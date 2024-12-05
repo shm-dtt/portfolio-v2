@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     hour12: true,
     hour: "numeric",
     minute: "numeric",
-    second: "numeric",
+    // second: "numeric",
   };
 
   // Calculate initial time immediately
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
       setTime(new Date().toLocaleTimeString("en-US", timeOptions));
     };
 
-    const intervalId = setInterval(updateTime, 1000); // Update every 10 seconds
+    const intervalId = setInterval(updateTime, 15000); // Update every 10 seconds
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
 
@@ -31,7 +31,9 @@ const Footer: React.FC = () => {
         <div className="flex text-sm gap-8">
           <p className="flex flex-col gap-3">
             <span className="text-gray-400 text-xs uppercase">Version</span>
-            <span>© {Data.year} ({Data.version})</span>
+            <span>
+              © {Data.year} ({Data.version})
+            </span>
           </p>
           <p className="flex flex-col gap-3">
             <span className="text-gray-400 text-xs uppercase">Local Time</span>

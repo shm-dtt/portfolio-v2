@@ -1,26 +1,35 @@
-"use client"
-import dynamic from "next/dynamic";
-
-// Dynamic imports to reduce initial bundle size
-const Footer = dynamic(() => import("@/components/Footer/Footer"));
-const Header = dynamic(() => import("@/components/Header/Header"));
-const LandingPage = dynamic(
-  () => import("@/components/LandingPage/LandingPage")
-);
-const Experience = dynamic(() => import("@/components/Experience/Experience"));
-const Projects = dynamic(() => import("@/components/Projects/Projects"));
-const SpotifyStatus = dynamic(
-  () => import("@/components/SpotifyStatus/SpotifyStatus")
-);
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+"use client";
+import { Data } from "@/utils/data/Data";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={`${inter.className} p-2 mx-auto max-w-4xl`}>
-      <Header />
-      <LandingPage />
-      <Footer />
+    <div>
+      <div className=" flex flex-col mb-32">
+        <div className="flex flex-col z-1 text-white p-8">
+          <div className="text-xl font-bold">
+            I&apos;m {Data.firstName} {Data.lastName}.
+          </div>
+          <div className="mt-1">Full Stack Developer</div>
+          <div className="opacity-70 mt-2">{Data.intro}</div>
+          <div className="text-sm mt-8">
+            Currently working as an {Data.position} at {Data.currentCompany},
+            living in {Data.location}, {Data.country}.
+          </div>
+          <div className="flex text-sm">
+            <Link href={Data.github} target="_blank">
+              GitHub
+            </Link>
+            -
+            <Link href={Data.linkedin} target="_blank">
+              LinkedIn
+            </Link>
+            <Link href={Data.twitter} target="_blank">
+              Twitter
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

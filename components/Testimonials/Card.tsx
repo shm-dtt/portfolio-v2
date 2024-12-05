@@ -1,4 +1,3 @@
-
 interface CardProps {
   name: string;
   role: string;
@@ -14,9 +13,7 @@ const Card: React.FC<CardProps> = ({ name, role, statement, color, i }) => {
         className=" flex flex-col items-left justify-center relative w-screen h-3/5 rounded-lg p-12 pb-4 origin-top gap-8 "
         style={{ backgroundColor: color, top: `calc(-5vh + ${i * 60}px)` }}
       >
-        <p className="lg:text-lg text-md lg:w-1/2">
-          &quot;{statement}&quot;
-        </p>
+        <p className="lg:text-lg text-md lg:w-1/2">&quot;{statement}&quot;</p>
         <div>
           <h2 className="lg:text-2xl text-xl font-extrabold">{name}</h2>
           <h3 className="text-md opacity-70">{role}</h3>

@@ -12,9 +12,7 @@ const Projects: React.FC = () => {
   return (
     <div className="flex flex-col mb-24">
       <div className="text-white text-center">
-        <p className="lg:text-4xl text-3xl font-bold">
-          Projects
-        </p>
+        <p className="lg:text-4xl text-3xl font-bold">Projects</p>
       </div>
       <div className="mx-4 mb-32 mt-16">
         <div className="text-neutral-300 flex justify-between items-center uppercase text-xs mb-4">

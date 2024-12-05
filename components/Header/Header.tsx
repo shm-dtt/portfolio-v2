@@ -1,22 +1,20 @@
+"use client";
 import HoverButton from "@/components/HoverButton/HoverButton";
-import { Data } from "@/utils/data/Data";
 import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
     <>
-      <div
-        className="p-4 flex justify-end items-end text-white lg:text-sm text-xs"
-      >
-        <p className=" flex uppercase lg:gap-10 gap-5 font-medium">
-          <Link
-            href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
-            target="_blank"
-          >
-            <HoverButton text="Resume" />
+      <div className="p-4 flex justify-end items-end text-white text-sm">
+        <p className=" flex gap-5">
+          <Link href="/">
+            <HoverButton text="About" />
           </Link>
-          <Link href={`mailto:${Data.email}`} target="_blank">
-            <HoverButton text="Contact" />
+          <Link href="/experience">
+            <HoverButton text="Experience" />
+          </Link>
+          <Link href="/projects">
+            <HoverButton text="Projects" />
           </Link>
         </p>
       </div>
