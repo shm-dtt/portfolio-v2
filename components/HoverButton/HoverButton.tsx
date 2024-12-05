@@ -19,7 +19,7 @@ const HoverButton: React.FC<HoverButtonProps> = ({ text, href }) => {
 
   return (
     <span
-      className={`group w-fit h-fit flex flex-col relative overflow-hidden cursor-pointer select-none${
+      className={`group w-fit h-fit flex flex-col relative overflow-hidden cursor-pointer select-none ${
         isActive ? "opacity-70" : ""
       }`}
       onClick={handleClick}
