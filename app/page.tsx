@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <div className=" flex flex-col mb-32">
-        <div className="flex flex-col z-1 text-white p-8">
+      <div className=" flex flex-col mt-8 mb-32">
+        <div className="flex flex-col z-1 text-white p-4">
           <div className="text-xl font-bold">
             I&apos;m {Data.firstName} {Data.lastName}.
           </div>

@@ -1,19 +1,27 @@
+"use client";
 import React from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 interface HoverButtonProps {
   text: string;
-  onClick?: () => void;
+  href?: string;
 }
 
-const HoverButton: React.FC<HoverButtonProps> = ({ text, onClick }) => {
-  const handleClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    onClick && onClick();
+const HoverButton: React.FC<HoverButtonProps> = ({ text, href }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleClick = () => {
+    if (href) router.push(href, { scroll: false });
   };
+
+  const isActive = href === pathname;
 
   return (
     <span
-      className="group w-fit h-fit flex flex-col relative overflow-hidden cursor-pointer"
+      className={`group w-fit h-fit flex flex-col relative overflow-hidden cursor-pointer select-none${
+        isActive ? "opacity-70" : ""
+      }`}
       onClick={handleClick}
     >
       {/* Sliding Text Effect */}
@@ -25,7 +33,11 @@ const HoverButton: React.FC<HoverButtonProps> = ({ text, onClick }) => {
       </span>
 
       {/* Hover Underline Effect */}
-      <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+      <span
+        className={`absolute bottom-0 left-0 h-[1.5px] w-0 bg-white transition-all duration-300 group-hover:w-full ${
+          isActive ? "opacity-70" : ""
+        }`}
+      ></span>
     </span>
   );
 };
