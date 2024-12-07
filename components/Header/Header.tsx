@@ -6,9 +6,7 @@ const Header: React.FC = () => {
   const pathname = usePathname();
 
   const isActive = (route: string) =>
-    pathname === route
-      ? "opacity-70 font-extralight"
-      : "underline decoration-gray-200 decoration-[0.5px] underline-offset-2";
+    pathname === route ? "text-gray-400" : "decoration-gray-200 my-underline";
 
   return (
     <div className="p-4 flex justify-between items-end text-white text-sm">

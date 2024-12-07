@@ -9,10 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "light-black": "#121212",
+        "my-grey": "#121212",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: { addUtilities: Function }) {
+      addUtilities({
+        ".my-underline": {
+          "text-decoration": "underline",
+          "text-decoration-thickness": "0.5px",
+          "text-underline-offset": "2px",
+        },
+      });
+    },
+  ],
 };
+
 export default config;
