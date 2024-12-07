@@ -8,27 +8,40 @@ const Header: React.FC = () => {
   const isActive = (route: string) =>
     pathname === route ? "text-gray-400" : "decoration-gray-200 my-underline";
 
+  const beautifyPathname = (path: string) => {
+    if (path === "/") return "About";
+    return path
+      .replace(/\//g, "") // Remove leading slash
+      .split("-") // Split by dashes
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+      .join(" "); // Join words with spaces
+  };
+
   return (
-    <div className="p-4 flex justify-between items-end text-white text-sm">
-      <p>{pathname}</p>
-      <nav className="flex gap-5">
-        <Link
-          href="/projects"
-          className={`hover:text-gray-200 ${isActive("/projects")}`}
-        >
-          Projects
-        </Link>
-        <Link
-          href="/experience"
-          className={`hover:text-gray-200 ${isActive("/experience")}`}
-        >
-          Experience
-        </Link>
-        <Link href="/" className={`hover:text-gray-200 ${isActive("/")}`}>
-          About
-        </Link>
-      </nav>
-    </div>
+    <>
+      <p className="p-4 text-white text-lg font-medium">
+        {beautifyPathname(pathname)}
+      </p>
+      <div className="p-4 flex justify-end text-white text-sm">
+        <nav className="flex gap-4">
+          <Link
+            href="/projects"
+            className={`hover:text-gray-200 ${isActive("/projects")}`}
+          >
+            Projects
+          </Link>
+          <Link
+            href="/experience"
+            className={`hover:text-gray-200 ${isActive("/experience")}`}
+          >
+            Experience
+          </Link>
+          <Link href="/" className={`hover:text-gray-200 ${isActive("/")}`}>
+            About
+          </Link>
+        </nav>
+      </div>
+    </>
   );
 };
 

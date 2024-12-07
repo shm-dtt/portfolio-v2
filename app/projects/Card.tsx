@@ -2,8 +2,7 @@ import React from "react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import HoverButton from "../HoverButton/HoverButton";
-import Image from "next/image";
+import { HoverButton } from "@/components/HoverButton/HoverButton";
 
 interface CardProps {
   name: string;
@@ -44,7 +43,7 @@ const Card: React.FC<CardProps> = ({
 
   const manageMouseLeave = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     gsap.to(e.currentTarget, {
-      backgroundColor: "#121212",
+      backgroundColor: "#18181a",
       duration: 0.1,
       delay: 0.1,
       color: "white",
@@ -61,7 +60,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       <div
-        className=" border-t-2 border-neutral-500 text-white py-2 flex justify-between text-sm select-none cursor-pointer"
+        className=" border-t-[1px] border-neutral-500 text-white py-2 flex justify-between text-sm select-none cursor-pointer"
         onMouseEnter={manageMouseEnter}
         onMouseLeave={manageMouseLeave}
         onClick={toggleCard}

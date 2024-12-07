@@ -39,7 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} font-light mx-auto my-16 max-w-2xl`}>
+      <body
+        className={`${inter.className} font-normal mx-auto my-16 max-w-2xl`}
+      >
         <Header />
         {children}
         <Footer />

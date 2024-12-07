@@ -5,25 +5,28 @@ export default function Home() {
   return (
     <div className=" flex flex-col my-8">
       <div className="flex flex-col z-1 text-white p-4">
-        <div className="text-xl font-bold">
+        <div>
           I&apos;m {Data.firstName} {Data.lastName}.
         </div>
-        <div className="mt-1">Full Stack Developer</div>
-        <div className="text-sm my-4">
-          <div className="my-2">{Data.intro}</div>
-          <div className="my-8">
+        <div className="flex flex-col text-sm my-4 gap-8">
+          <div>{Data.intro}</div>
+          <div>
             I earned my BTech degree in Computer Science from KIIT University in
             2024, and at present working as a {Data.position} at{" "}
             {
               <Link
                 href={Data.currentCompanyLink}
                 target="_blank"
-                className="text-[#005aff] font-normal my-underline"
+                className="font-normal my-underline"
               >
                 {Data.currentCompany}
               </Link>
             }
             .
+          </div>
+          <div>
+            For more information about me, feel free to explore my experiences,
+            projects, and various social media profiles.
           </div>
         </div>
 

@@ -1,5 +1,17 @@
-const Exp: React.FC = () => {
-  return <div>HIIIIIIIIIIIIIIIIIIIIIIIIiii</div>;
+import Card from "@/app/experience/ExpCard";
+import { experience } from "@/utils/data/Data";
+
+const Experience: React.FC = () => {
+  return (
+    <div className="flex flex-col items-center justify-center text-white mx-4 mb-32">
+      <br />
+      <div>
+        {experience.map((exp, i) => (
+          <Card key={`p_${i}`} i={i} {...exp} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
-export default Exp;
+export default Experience;
