@@ -26,17 +26,14 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center mt-6 mb-4">
+    <div className="flex flex-col justify-center mt-6 mb-4 text-xs">
       <div className="p-4 flex md:justify-between md:flex-row md:items-center flex-col text-white gap-8">
-        <div className="flex text-sm gap-8">
-          <p className="flex flex-col gap-3">
-            <span className="text-gray-400 text-xs uppercase">Version</span>
-            <span>
-              © {Data.year} ({Data.version})
-            </span>
+        <div className="flex gap-8">
+          <p className="text-gray-400 flex flex-col">
+            ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.
           </p>
           <p className="flex flex-col gap-3">
-            <span className="text-gray-400 text-xs uppercase">Local Time</span>
+            <span className="text-gray-400 uppercase">Local Time</span>
             <span>
               {time} GMT{Data.gmtOffset}
             </span>
