@@ -54,7 +54,7 @@ const Card: React.FC<CardProps> = ({ company, location, link, details, i }) => {
                   {detail.techUsed.map((tech, index) => (
                     <p
                       key={index}
-                      className="bg-neutral-700 text-white opacity-80 text-xs px-3 py-1 rounded-full"
+                      className="bg-neutral-700 opacity-80 text-xs px-3 py-1 rounded-full"
                     >
                       {tech}
                     </p>

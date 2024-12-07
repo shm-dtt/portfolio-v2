@@ -35,15 +35,17 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center m-4 gap-4">
+    <footer className="flex flex-col justify-center m-4 gap-4">
       <div className="border-t-[0.25px] border-gray-700"></div>
-      <div className="flex gap-1 text-white mb-20 text-sm">
+
+      <nav className="flex gap-1 mb-20 text-sm">
         {socialLinks.map((platform, idx) => (
           <div key={platform.name} className="flex items-center">
             <Link
               href={platform.url}
               target="_blank"
               className="hover:text-gray-400"
+              aria-label={platform.name}
             >
               <HoverButton text={platform.name} />
             </Link>
@@ -52,7 +54,8 @@ const Footer: React.FC = () => {
             )}
           </div>
         ))}
-      </div>
+      </nav>
+
       <div className="flex justify-between text-gray-400 text-xs">
         <p>
           ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.
@@ -61,7 +64,7 @@ const Footer: React.FC = () => {
           {time} UTC{Data.gmtOffset}
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -42,7 +42,7 @@ const SpotifyStatus: React.FC = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="flex items-center rounded-md mx-4 bg-neutral-800 p-4 gap-4 text-white w-screen">
+      <div className="flex items-center rounded-md mx-4 bg-neutral-800 p-4 gap-4  w-screen">
         {!offline && (
           <>
             <Image

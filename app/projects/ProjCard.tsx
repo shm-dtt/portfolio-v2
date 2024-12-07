@@ -60,7 +60,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       <div
-        className=" border-t-[1px] border-neutral-500 text-white py-2 flex justify-between text-sm select-none cursor-pointer"
+        className=" border-t-[1px] border-neutral-500 py-2 flex justify-between text-sm select-none cursor-pointer"
         onMouseEnter={manageMouseEnter}
         onMouseLeave={manageMouseLeave}
         onClick={toggleCard}
@@ -78,7 +78,7 @@ const Card: React.FC<CardProps> = ({
         exit={{ opacity: 0, height: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <p className="text-white pt-8 pb-4 md:w-4/5">{description}</p>
+        <p className=" pt-8 pb-4 md:w-4/5">{description}</p>
         <Link href={link} target="_blank">
           <button className="bg-white text-black text-sm px-4 py-2 my-4 rounded-full">
             <HoverButton text="View Project" />
@@ -88,7 +88,7 @@ const Card: React.FC<CardProps> = ({
           {techUsed.map((tech, index) => (
             <div
               key={index}
-              className="bg-neutral-700 text-white text-sm px-2 py-1"
+              className="bg-neutral-700  text-sm px-2 py-1"
             >
               • {tech}
             </div>
