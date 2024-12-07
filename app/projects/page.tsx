@@ -1,7 +1,7 @@
 "use client";
-import { projects } from "@/utils/data/Data";
 import { useState } from "react";
-import Card from "@/app/projects/Card";
+import Card from "@/app/projects/ProjCard";
+import { projects } from "@/app/projects/info";
 
 const Projects: React.FC = () => {
   const [openedIndex, setOpenedIndex] = useState<number | null>(null);

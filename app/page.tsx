@@ -6,10 +6,10 @@ export default function Home() {
     <div className=" flex flex-col my-8">
       <div className="flex flex-col z-1 text-white p-4">
         <div>
-          I&apos;m {Data.firstName} {Data.lastName}.
+          Hi, I&apos;m {Data.firstName}.
         </div>
         <div className="flex flex-col text-sm my-4 gap-8">
-          <div>{Data.intro}</div>
+          <div>A developer and designer based in Bengaluru, India, dedicated to crafting pixel-perfect, seamless, and user-centric solutions. Passionate about building polished software and exceptional web experiences.</div>
           <div>
             I earned my BTech degree in Computer Science from KIIT University in
             2024, and at present working as a {Data.position} at{" "}

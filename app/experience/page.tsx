@@ -1,5 +1,5 @@
 import Card from "@/app/experience/ExpCard";
-import { experience } from "@/utils/data/Data";
+import { experience } from "@/app/experience/info";
 
 const Experience: React.FC = () => {
   return (
