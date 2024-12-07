@@ -8,9 +8,8 @@ export default function Home() {
         <div>Hi, I&apos;m {Data.firstName}.</div>
         <div className="flex flex-col text-sm my-4 gap-8">
           <div>
-            A developer and designer based in Bengaluru, India, dedicated to
-            crafting pixel-perfect, seamless, and user-centric solutions.
-            Passionate about building polished software and exceptional web
+            A developer and designer from Bengaluru, India, passionate about
+            crafting seamless, user-centric solutions and exceptional web
             experiences.
           </div>
           <div>
@@ -28,22 +27,11 @@ export default function Home() {
             .
           </div>
           <div>
-            For more information about me, feel free to explore my experiences,
-            projects, and various social media profiles.
+            For more information about me, feel free to explore my{" "}
+            <Link href="/experience" className="my-underline">professional background</Link>,{" "}
+            <Link href="/projects" className="my-underline">projects</Link>, and various social media
+            profiles.
           </div>
-        </div>
-
-        <div className="flex mt-4">
-          <Link href={Data.github} target="_blank">
-            GitHub
-          </Link>
-          -
-          <Link href={Data.linkedin} target="_blank">
-            LinkedIn
-          </Link>
-          <Link href={Data.twitter} target="_blank">
-            Twitter
-          </Link>
         </div>
       </div>
     </div>

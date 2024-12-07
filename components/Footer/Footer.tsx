@@ -21,13 +21,14 @@ const Footer: React.FC = () => {
       setTime(new Date().toLocaleTimeString("en-US", timeOptions));
     };
 
-    const intervalId = setInterval(updateTime, 15000); // Update every 10 seconds
+    const intervalId = setInterval(updateTime, 10000); // Update every 10 seconds
     return () => clearInterval(intervalId); // Cleanup on unmount
   }, []);
 
   return (
     <div className="flex flex-col justify-center my-4 text-xs">
-      <div className="border-t-[0.25px] border-gray-500 mx-4"></div>
+      <div className="border-t-[0.25px] border-gray-500 mx-4 my-8"></div>
+      
       <div className="p-4 flex justify-between text-gray-400">
         <p>
           ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.
