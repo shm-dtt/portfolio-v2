@@ -10,7 +10,7 @@ export const Data = {
   currentCompany: "Nokia",
   currentCompanyLink: "https://www.nokia.com/",
   position: "Applied R&D Software Engineer",
-  email: "sohamdutta2001@gmail.com",
+  email: "shmdsgn@gmail.com",
   twitter: "https://twitter.com/shmdsgn",
   linkedin: "https://www.linkedin.com/in/shm-dtt",
   github: "https://github.com/shm-dsgn",

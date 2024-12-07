@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className=" flex flex-col my-8">
+    <div className=" flex flex-col mt-8 mb-4">
       <div className="flex flex-col z-1 text-white p-4">
         <div>Hi, I&apos;m {Data.firstName}.</div>
         <div className="flex flex-col text-sm my-4 gap-8">
@@ -27,7 +27,15 @@ export default function Home() {
             .
           </div>
           <div>
-            For more information about me, feel free to explore my{" "}
+            For more information about me, feel free to check my{" "}
+            <Link
+              href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
+              target="_blank"
+              className="my-underline"
+            >
+              resume
+            </Link>{" "}
+            or explore my{" "}
             <Link href="/experience" className="my-underline">
               professional background
             </Link>
@@ -36,6 +44,12 @@ export default function Home() {
               projects
             </Link>
             , and various social media profiles.
+          </div>
+          <div>
+            Reach me at {" "}
+            <Link href={`mailto:${Data.email}`} className="my-underline">
+              {Data.email}
+            </Link>
           </div>
         </div>
       </div>

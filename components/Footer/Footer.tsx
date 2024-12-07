@@ -36,8 +36,8 @@ const Footer: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-center m-4 gap-4">
-      <div className="border-t-[0.25px] border-gray-500 my-8"></div>
-      <div className="flex gap-1 text-white mb-12 text-sm">
+      <div className="border-t-[0.25px] border-gray-700"></div>
+      <div className="flex gap-1 text-white mb-20 text-sm">
         {socialLinks.map((platform, idx) => (
           <div key={platform.name} className="flex items-center">
             <Link
