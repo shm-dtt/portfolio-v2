@@ -28,9 +28,14 @@ export default function Home() {
           </div>
           <div>
             For more information about me, feel free to explore my{" "}
-            <Link href="/experience" className="my-underline">professional background</Link>,{" "}
-            <Link href="/projects" className="my-underline">projects</Link>, and various social media
-            profiles.
+            <Link href="/experience" className="my-underline">
+              professional background
+            </Link>
+            ,{" "}
+            <Link href="/projects" className="my-underline">
+              projects
+            </Link>
+            , and various social media profiles.
           </div>
         </div>
       </div>

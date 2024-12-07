@@ -3,10 +3,9 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { Inter } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-const inter = Inter({ subsets: ["latin"] });
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Soham Dutta - Full Stack Developer",
@@ -39,9 +38,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} font-normal mx-auto my-16 max-w-2xl`}
-      >
+      <Head>
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+      </Head>
+      <body className="mx-auto my-12 max-w-2xl">
         <Navbar />
         {children}
         <Footer />

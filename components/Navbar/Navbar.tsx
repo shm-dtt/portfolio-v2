@@ -19,24 +19,24 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <p className="p-4 text-white text-lg font-medium">
+      <p className="p-4 text-white text-2xl font-bold">
         {beautifyPathname(pathname)}
       </p>
       <div className="p-4 flex justify-end text-white text-sm">
         <nav className="flex gap-4">
           <Link
             href="/projects"
-            className={`hover:text-gray-200 ${isActive("/projects")}`}
+            className={`hover:text-gray-400 ${isActive("/projects")}`}
           >
             Projects
           </Link>
           <Link
             href="/experience"
-            className={`hover:text-gray-200 ${isActive("/experience")}`}
+            className={`hover:text-gray-400 ${isActive("/experience")}`}
           >
             Experience
           </Link>
-          <Link href="/" className={`hover:text-gray-200 ${isActive("/")}`}>
+          <Link href="/" className={`hover:text-gray-400 ${isActive("/")}`}>
             About
           </Link>
         </nav>
