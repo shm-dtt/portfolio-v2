@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className=" flex flex-col my-8">
-      <div className="flex flex-col z-1 text-stone-300 p-4">
+      <div className="flex flex-col z-1 text-white p-4">
         <div className="text-xl font-bold">
           I&apos;m {Data.firstName} {Data.lastName}.
         </div>
@@ -17,6 +17,7 @@ export default function Home() {
             {
               <Link
                 href={Data.currentCompanyLink}
+                target="_blank"
                 className="text-[#005aff] font-normal my-underline"
               >
                 {Data.currentCompany}
