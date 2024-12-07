@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const Header: React.FC = () => {
+const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   const isActive = (route: string) =>
@@ -45,4 +45,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Navbar;

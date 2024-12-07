@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Inter } from "next/font/google";
-import Header from "@/components/Header/Header";
+import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,7 +42,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} font-normal mx-auto my-16 max-w-2xl`}
       >
-        <Header />
+        <Navbar />
         {children}
         <Footer />
         <Analytics />
