@@ -2,17 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* CSS */
 :root {
     font-family: Inter, sans-serif;
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
   }
-@supports (font-variation-settings: normal) {
+  @supports (font-variation-settings: normal) {
     :root { font-family: InterVariable, sans-serif; }
-}
+  }
 
 body {
     background-color: #18181a;
-    color: #FAF9F6;
+    color: #d1d5db;
 }
 
 /* Hide scrollbar */

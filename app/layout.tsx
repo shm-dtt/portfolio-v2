@@ -5,7 +5,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Soham Dutta - Full Stack Developer",
@@ -38,10 +37,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="preconnect" href="https://rsms.me/" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-      </Head>
+      <head>
+        <link rel="preconnect" href="https://rsms.me/"/>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
+      </head>
       <body className="mx-auto my-12 max-w-2xl">
         <Navbar />
         {children}

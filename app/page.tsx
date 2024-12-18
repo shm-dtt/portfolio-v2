@@ -5,30 +5,25 @@ export default function Home() {
   return (
     <main className="flex flex-col mt-8 mb-4">
       <section className="flex flex-col z-1 p-4">
-        <h1>Hi, I&apos;m {Data.firstName}.</h1>
-
-        <div className="flex flex-col text-sm my-4 gap-8">
+        <div className="flex flex-col my-4 gap-8">
           <p>
-            A developer and designer from Bengaluru, India, passionate about
-            crafting seamless, user-centric solutions and exceptional web
-            experiences.
+            Hi, I&apos;m {Data.firstName}, a developer and designer from
+            Bengaluru, passionate about crafting seamless, user-centric
+            solutions and exceptional web experiences.
           </p>
-
           <p>
             I earned my BTech degree in Computer Science from KIIT University in
-            2024, and am currently working as a{" "}
-            <span className="font-normal">
-              {Data.position} at{" "}
-              <Link
-                href={Data.currentCompanyLink}
-                target="_blank"
-                className="font-normal my-underline"
-                aria-label={`Visit ${Data.currentCompany}`}
-              >
-                {Data.currentCompany}
-              </Link>
-            </span>
-            .
+            2024, joined{" "}
+            <Link
+              href={Data.currentCompanyLink}
+              target="_blank"
+              className="font-normal my-underline"
+              aria-label={`Visit ${Data.currentCompany}`}
+            >
+              {Data.currentCompany}
+            </Link>{" "}
+            as a SDE Intern in 2023 and currently working as a{" "}
+            <span className="font-normal">{Data.position}</span>.
           </p>
 
           <p>

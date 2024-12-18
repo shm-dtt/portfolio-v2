@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
   const isActive = (route: string) =>
     pathname === route
       ? "text-neutral-500"
-      : "decoration-neutral-500 underline";
+      : "decoration-neutral-500 my-underline";
 
   const beautifyPathname = (path: string) => {
     if (path === "/") return "About";
@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <p className="p-4 text-2xl font-bold">{beautifyPathname(pathname)}</p>
-      <div className="p-4 flex justify-end text-sm">
+      <div className="p-4 flex justify-end">
         <nav className="flex gap-4">
           <Link
             href="/projects"
