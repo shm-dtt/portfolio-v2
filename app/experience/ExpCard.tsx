@@ -18,15 +18,11 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ company, location, link, details, i }) => {
   return (
-    <div className="my-8 p-2 group rounded-lg">
+    <div className="my-8 p-2 rounded-lg">
       <div className="flex flex-col lg:flex-row gap-6">
         <div className="flex flex-col justify-start lg:items-end flex-1">
-          <p className="relative text-md lg:text-right group">
-            <Link
-              href={link}
-              target="_blank"
-              className="relative after:content-[''] after:absolute after:h-[1.5px] after:left-0 after:bottom-0 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-            >
+          <p className="relative text-md lg:text-right underline">
+            <Link href={link} target="_blank">
               {company}
             </Link>
           </p>

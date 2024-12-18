@@ -54,7 +54,11 @@ export default function Home() {
 
           <address>
             Reach me at{" "}
-            <Link href={`mailto:${Data.email}`} className="my-underline" aria-label={`Send an email to ${Data.email}`}>
+            <Link
+              href={`mailto:${Data.email}`}
+              className="my-underline"
+              aria-label={`Send an email to ${Data.email}`}
+            >
               {Data.email}
             </Link>
           </address>

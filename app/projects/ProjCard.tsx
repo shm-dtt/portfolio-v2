@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { HoverButton } from "@/components/HoverButton/HoverButton";
 
@@ -27,6 +26,21 @@ const Card: React.FC<CardProps> = ({
   isOpened,
   toggleCard,
 }) => {
+  const detailsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!detailsRef.current) return;
+
+    // Animate details section when isOpened changes
+    gsap.to(detailsRef.current, {
+      height: isOpened ? "auto" : 0,
+      opacity: isOpened ? 1 : 0,
+      duration: 0.3,
+      overflow: "hidden",
+      ease: "power2.inOut",
+    });
+  }, [isOpened]);
+
   const manageMouseEnter = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     gsap.to(e.currentTarget, {
       backgroundColor: "#FFFFFF",
@@ -60,7 +74,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       <div
-        className=" border-t-[1px] border-neutral-500 py-2 flex justify-between text-sm select-none cursor-pointer"
+        className="border-t-[1px] border-neutral-500 py-2 flex justify-between text-sm select-none cursor-pointer"
         onMouseEnter={manageMouseEnter}
         onMouseLeave={manageMouseLeave}
         onClick={toggleCard}
@@ -69,16 +83,8 @@ const Card: React.FC<CardProps> = ({
         <p className="md:flex-1 flex-none md:block hidden">{tech}</p>
         <p className="">{year}</p>
       </div>
-      <motion.div
-        className="overflow-hidden"
-        initial={{ opacity: 0, height: 0 }}
-        animate={
-          isOpened ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }
-        }
-        exit={{ opacity: 0, height: 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <p className=" pt-8 pb-4 md:w-4/5">{description}</p>
+      <div ref={detailsRef} className="overflow-hidden h-0 opacity-0">
+        <p className="pt-8 pb-4 md:w-5/6">{description}</p>
         <Link href={link} target="_blank">
           <button className="bg-white text-black text-sm px-4 py-2 my-4 rounded-full">
             <HoverButton text="View Project" />
@@ -86,15 +92,12 @@ const Card: React.FC<CardProps> = ({
         </Link>
         <div className="flex flex-wrap gap-2 mt-4 mb-8">
           {techUsed.map((tech, index) => (
-            <div
-              key={index}
-              className="bg-neutral-700  text-sm px-2 py-1"
-            >
+            <div key={index} className="bg-neutral-700 text-xs px-2 py-1">
               • {tech}
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };
