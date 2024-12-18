@@ -5,10 +5,10 @@
 /* CSS */
 :root {
     font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+    font-feature-settings: 'liga' 1, 'calt' 1, 'cv11' 1; /* fix for Chrome */
   }
   @supports (font-variation-settings: normal) {
-    :root { font-family: InterVariable, sans-serif; }
+    :root { font-family: InterDisplay, sans-serif; }
   }
 
 body {
