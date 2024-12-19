@@ -1,41 +1,64 @@
-"use client";
-import dynamic from "next/dynamic";
-import { useEffect } from "react";
-
-// Dynamic imports to reduce initial bundle size
-const Footer = dynamic(() => import("@/components/Footer/Footer"));
-const Header = dynamic(() => import("@/components/Header/Header"));
-const LandingPage = dynamic(
-  () => import("@/components/LandingPage/LandingPage")
-);
-const Experience = dynamic(() => import("@/components/Experience/Experience"));
-const Projects = dynamic(() => import("@/components/Projects/Projects"));
-const SpotifyStatus = dynamic(
-  () => import("@/components/SpotifyStatus/SpotifyStatus")
-);
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+import { Data } from "@/utils/data/Data";
+import Link from "next/link";
 
 export default function Home() {
-  useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = await import("locomotive-scroll").then(
-        (module) => module.default,
-      );
-      const locomotiveScroll = new LocomotiveScroll();
-      document.body.style.overflow = "visible";
-      window.scrollTo(0, 0);
-    })();
-  }, []);
-
   return (
-    <div className={`${inter.className} p-2 mx-auto max-w-4xl`}>
-      <Header />
-      <LandingPage />
-      <Experience />
-      <Projects />
-      <SpotifyStatus />
-      <Footer />
-    </div>
+    <main className="flex flex-col mt-8 mb-4">
+      <section className="flex flex-col z-1 p-4">
+        <div className="flex flex-col my-4 gap-8">
+          <p>
+            Hi, I&apos;m {Data.firstName}, a developer and designer residing in
+            Bengaluru, passionate about crafting seamless, user-centric
+            solutions and exceptional web experiences.
+          </p>
+          <p>
+            I earned my BTech degree in Computer Science from KIIT University in
+            2024, joined{" "}
+            <Link
+              href={Data.currentCompanyLink}
+              target="_blank"
+              className="font-normal my-underline"
+              aria-label={`Visit ${Data.currentCompany}`}
+            >
+              {Data.currentCompany}
+            </Link>{" "}
+            as a SDE Intern in 2023 and currently working as a{" "}
+            <span className="font-normal">{Data.position}</span>.
+          </p>
+
+          <p>
+            For more information about me, feel free to check my{" "}
+            <Link
+              href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
+              target="_blank"
+              className="my-underline"
+              aria-label="View my resume"
+            >
+              resume
+            </Link>{" "}
+            or explore my{" "}
+            <Link href="/experience" className="my-underline">
+              professional background
+            </Link>
+            ,{" "}
+            <Link href="/projects" className="my-underline">
+              projects
+            </Link>
+            , and various social media profiles.
+          </p>
+
+          <address>
+            Reach me at{" "}
+            <Link
+              href={`mailto:${Data.email}`}
+              className="my-underline"
+              aria-label={`Send an email to ${Data.email}`}
+            >
+              {Data.email}
+            </Link>
+          </address>
+        </div>
+      </section>
+    </main>
   );
 }

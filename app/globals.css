@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  background-color: #121212;
-  overflow: hidden;
+    background-color: #121212;
+    color: #d1d5db;
 }
 
 /* Hide scrollbar */
