@@ -20,6 +20,7 @@ const config: Config = {
           "text-decoration": "underline",
           "text-decoration-thickness": "0.5px",
           "text-underline-offset": "2px",
+          "text-decoration-color": "#737373",
         },
       });
     },

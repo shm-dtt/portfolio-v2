@@ -74,7 +74,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       <div
-        className="border-t-[1px] border-neutral-500 py-2 flex justify-between text-sm select-none cursor-pointer"
+        className="border-t-[1px] border-neutral-400  py-2 flex justify-between text-sm select-none cursor-pointer"
         onMouseEnter={manageMouseEnter}
         onMouseLeave={manageMouseLeave}
         onClick={toggleCard}

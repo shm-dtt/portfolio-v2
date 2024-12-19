@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="flex flex-col justify-center m-4 gap-4">
-      <div className="border-t-[0.25px] border-neutral-500"></div>
+      <div className="border-t-[0.25px] border-neutral-400 "></div>
 
       <nav className="flex gap-1 mb-20 text-sm">
         {socialLinks.map((platform, idx) => (
@@ -44,19 +44,19 @@ const Footer: React.FC = () => {
             <Link
               href={platform.url}
               target="_blank"
-              className="hover:text-neutral-500"
+              className="hover:text-neutral-400 "
               aria-label={platform.name}
             >
               <HoverButton text={platform.name} />
             </Link>
             {idx < socialLinks.length - 1 && (
-              <span className="text-neutral-500 text-xs mx-1">•</span>
+              <span className="text-neutral-400  text-xs mx-1">•</span>
             )}
           </div>
         ))}
       </nav>
 
-      <div className="flex justify-between text-neutral-500 text-xs">
+      <div className="flex justify-between text-neutral-400  text-xs">
         <p>
           ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.
         </p>

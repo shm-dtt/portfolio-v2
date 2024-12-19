@@ -7,7 +7,7 @@ export default function Home() {
       <section className="flex flex-col z-1 p-4">
         <div className="flex flex-col my-4 gap-8">
           <p>
-            Hi, I&apos;m {Data.firstName}, a developer and designer from
+            Hi, I&apos;m {Data.firstName}, a developer and designer residing in
             Bengaluru, passionate about crafting seamless, user-centric
             solutions and exceptional web experiences.
           </p>
