@@ -55,7 +55,7 @@ export const projects = [
     tech: "HTML, JavaScript",
     description:
       "A Chrome-based JavaScript application to display the total time of a YT playlist, average time, and playback speed variations for YouTube playlists. This extension is available on the Chrome Web Store. ",
-    techUsed: ["HTML", "CSS", "JavaScript"],
+    techUsed: ["HTML", "CSS", "JavaScript", "Manifest V3"],
     link: "https://chromewebstore.google.com/detail/youtube-playlist-duration/bpojpijaddmjkblcbkhnhhgjecmfmgil",
   },
   {

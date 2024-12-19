@@ -7,11 +7,7 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        "my-grey": "#18181a",
-      },
-    },
+    extend: {},
   },
   plugins: [
     function ({ addUtilities }: { addUtilities: Function }) {

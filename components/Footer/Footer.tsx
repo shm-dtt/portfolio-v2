@@ -12,19 +12,20 @@ const Footer: React.FC = () => {
     minute: "numeric",
   };
 
-  const [time, setTime] = useState<string | null>(null); // Ensure null during initial render
+  const [time, setTime] = useState("");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const updateTime = () => {
       setTime(new Date().toLocaleTimeString("en-US", timeOptions));
     };
 
-    updateTime(); // Set time initially
+    updateTime();
     const interval = setInterval(updateTime, 5000);
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
-  // Define social media platforms and their corresponding links
   const socialLinks = [
     { name: "GitHub", url: Data.github },
     { name: "LinkedIn", url: Data.linkedin },
@@ -34,7 +35,13 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="flex flex-col justify-center m-4 gap-4">
-      <div className="border-t-[0.25px] border-neutral-400 "></div>
+      <div className="flex justify-center">
+        <div
+          className={`border-t-[0.25px] transition-all duration-700 ease-in-out ${
+            mounted ? "w-full border-neutral-400" : "w-1/4 border-[#121212]"
+          }`}
+        ></div>
+      </div>
 
       <nav className="flex gap-1 mb-20 text-sm">
         {socialLinks.map((platform, idx) => (
@@ -54,7 +61,11 @@ const Footer: React.FC = () => {
         ))}
       </nav>
 
-      <div className="flex justify-between text-neutral-400  text-xs">
+      <div
+        className={`flex justify-between text-neutral-400 text-xs transition-opacity duration-700 ${
+          mounted ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <p>
           ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.
         </p>

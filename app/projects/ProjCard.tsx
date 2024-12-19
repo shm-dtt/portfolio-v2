@@ -57,7 +57,7 @@ const Card: React.FC<CardProps> = ({
 
   const manageMouseLeave = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     gsap.to(e.currentTarget, {
-      backgroundColor: "#18181a",
+      backgroundColor: "#121212",
       duration: 0.1,
       delay: 0.1,
       color: "white",
@@ -92,8 +92,11 @@ const Card: React.FC<CardProps> = ({
         </Link>
         <div className="flex flex-wrap gap-2 mt-4 mb-8">
           {techUsed.map((tech, index) => (
-            <div key={index} className="bg-neutral-700 text-xs px-2 py-1">
-              • {tech}
+            <div
+              key={index}
+              className="bg-neutral-700 opacity-80 text-xs px-3 py-1 rounded-full"
+            >
+              {tech}
             </div>
           ))}
         </div>

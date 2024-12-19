@@ -54,7 +54,7 @@ export default function Home() {
               className="my-underline"
               aria-label={`Send an email to ${Data.email}`}
             >
-              {Data.email}
+              my mail.
             </Link>
           </address>
         </div>
