@@ -12,18 +12,16 @@ const Footer: React.FC = () => {
     minute: "numeric",
   };
 
-  // Calculate initial time immediately
-  const initialTime = new Date().toLocaleTimeString("en-US", timeOptions);
-
-  const [time, setTime] = useState<string>(initialTime);
+  const [time, setTime] = useState<string | null>(null); // Ensure null during initial render
 
   useEffect(() => {
     const updateTime = () => {
       setTime(new Date().toLocaleTimeString("en-US", timeOptions));
     };
 
-    const intervalId = setInterval(updateTime, 10000); // Update every 10 seconds
-    return () => clearInterval(intervalId); // Cleanup on unmount
+    updateTime(); // Set time initially
+    const interval = setInterval(updateTime, 5000);
+    return () => clearInterval(interval); // Cleanup interval on component unmount
   }, []);
 
   // Define social media platforms and their corresponding links
