@@ -5,6 +5,14 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  preload: true,
+  display: "swap",
+  weight: ["400", "700"],
+  fallback: ["Arial", "sans-serif"],
+});
 
 export const metadata: Metadata = {
   title: "Soham Dutta - Full Stack Developer",
@@ -37,11 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://rsms.me/"/>
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
-      </head>
-      <body className="mx-auto my-12 max-w-2xl">
+      <body className={`${inter.className} mx-auto my-12 max-w-2xl`}>
         <Navbar />
         {children}
         <Footer />
