@@ -52,7 +52,7 @@ export default function Home() {
             <Link
               href={`mailto:${Data.email}`}
               className="my-underline"
-              aria-label={`Send an email to ${Data.email}`}
+              aria-label={`my mail ${Data.email}`}
             >
               my mail.
             </Link>
