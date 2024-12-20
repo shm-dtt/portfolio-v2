@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <p className="p-4 text-2xl font-bold">{beautifyPathname(pathname)}</p>
-      <div className="p-4 flex justify-end">
+      <div className="p-4 flex justify-end" role="navigation">
         <nav className="flex gap-4">
           <Link
             href="/projects"

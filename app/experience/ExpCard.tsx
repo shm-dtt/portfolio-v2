@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <div className="my-8 p-2 rounded-lg">
       <div className="flex flex-col gap-3">
-        <p className=" text-sm opacity-40">{duration}</p>
+        <p className=" text-sm text-neutral-400">{duration}</p>
         <div className=" flex-[2_2_0%] flex flex-col">
           <div className="flex gap-2">
             <div className=" flex flex-col gap-2">
