@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import SpotifyLogo from "../../utils/logos/SpotifyLogo";
 import getNowPlayingItem from "./SpotifyAPI";
@@ -41,39 +40,14 @@ const SpotifyStatus: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex justify-center">
-      <div className="flex items-center rounded-md mx-4 bg-neutral-800 p-4 gap-4  w-screen">
-        {!offline && (
-          <>
-            <Image
-              src={result.albumImageUrl}
-              width={48}
-              height={48}
-              alt="albumArt"
-              className="rounded-md"
-            />
-            <div className="flex flex-col">
-              <div className=" text-xs uppercase text-neutral-400 flex items-center gap-2 mb-2">
-                <SpotifyLogo width={16} />
-                <p>
-                  {result.isPlaying ? "Currently Playing" : "Currently Paused"}
-                </p>
-              </div>
-              <p className="text-sm">
-                {result.title}{" "}
-                <span className=" text-xs text-neutral-400">by</span>{" "}
-                {result.artist}
-              </p>
-            </div>
-          </>
-        )}
-        {offline && (
-          <>
-            <SpotifyLogo width={20} />
-            <p>Currently Offline</p>
-          </>
-        )}
-      </div>
+    <div className="flex items-center gap-2 w-full text-xs text-neutral-400">
+      <SpotifyLogo width={14} />
+      {!offline && (
+        <p className="flex items-center">
+          listening to.. {result.title} by {result.artist}
+        </p>
+      )}
+      {offline && <p>..not listening</p>}
     </div>
   );
 };

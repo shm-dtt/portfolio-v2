@@ -40,9 +40,7 @@ export default async function getNowPlayingItem() {
 
   const song = await response.json();
   const albumImageUrl = song.item.album.images[0].url;
-  const artist = song.item.artists
-    .map((_artist: { name: any }) => _artist.name)
-    .join(", ");
+  const artist = song.item.artists[0].name;
   const isPlaying = song.is_playing;
   const songUrl = song.item.external_urls.spotify;
   const title = song.item.name;

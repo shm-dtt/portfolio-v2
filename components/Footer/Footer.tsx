@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Data } from "@/utils/data/Data";
 import Link from "next/link";
 import { HoverButton } from "../HoverButton/HoverButton";
+import SpotifyStatus from "../SpotifyStatus/SpotifyStatus";
 
 const Footer: React.FC = () => {
   const timeOptions: Intl.DateTimeFormatOptions = {
@@ -72,6 +73,13 @@ const Footer: React.FC = () => {
         <p>
           {time} UTC{Data.gmtOffset}
         </p>
+      </div>
+      <div
+        className={`w-full transition-opacity duration-700 ${
+          mounted ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <SpotifyStatus />
       </div>
     </footer>
   );
