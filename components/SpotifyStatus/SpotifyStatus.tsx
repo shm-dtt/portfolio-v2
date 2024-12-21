@@ -32,7 +32,7 @@ const SpotifyStatus: React.FC = () => {
           setOffline(false);
         }
       });
-    }, 5000);
+    }, 35000);
 
     return () => {
       clearInterval(interval);
@@ -40,14 +40,23 @@ const SpotifyStatus: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center gap-2 w-full text-xs text-neutral-400">
-      <SpotifyLogo width={14} />
-      {!offline && result.isPlaying && (
-        <p className="flex items-center">
-          ..listening to {result.title} by {result.artist}
-        </p>
-      )}
-      {(offline || !result.isPlaying) && <p>..not listening</p>}
+    <div className="flex items-center gap-2 p-2 bg-neutral-800 border border-neutral-600 rounded-md">
+      <div className="flex items-center">
+        <SpotifyLogo
+          width={14}
+          height={14}
+          color={!offline && result.isPlaying ? "#25d865" : "#a3a3a3"}
+        />
+      </div>
+      <div className=" text-wrap text-xs text-neutral-400">
+        {!offline && result.isPlaying ? (
+          <p>
+            ...listening to {result.title} by {result.artist}
+          </p>
+        ) : (
+          <p>...not listening to anything</p>
+        )}
+      </div>
     </div>
   );
 };

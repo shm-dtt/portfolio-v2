@@ -1,12 +1,18 @@
-import React from "react";
-
-const SpotifyLogo = ({ width }: any) => (
-  <svg width={width} x="0px" y="0px" viewBox="0 0 20 20">
+const SpotifyLogo = ({
+  width = 14,
+  height = 14,
+  color = "#a3a3a3",
+}: {
+  width?: number;
+  height?: number;
+  color?: string;
+}) => (
+  <svg width={width} height={height} x="0px" y="0px" viewBox="0 0 20 20">
     <g>
       <g>
         <g>
           <path
-            fill="#a3a3a3"
+            fill={color}
             className="st0"
             d="M10,0C4.5,0,0,4.5,0,10c0,5.5,4.5,10,10,10c5.5,0,10-4.5,10-10C20,4.5,15.5,0,10,0z M14.6,14.4
                         c-0.2,0.3-0.6,0.4-0.9,0.2c-2.3-1.4-5.3-1.8-8.8-1c-0.3,0.1-0.7-0.1-0.7-0.5c-0.1-0.3,0.1-0.7,0.5-0.7c3.8-0.9,7.1-0.5,9.7,1.1

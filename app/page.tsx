@@ -1,9 +1,10 @@
+import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
 import { Data } from "@/utils/data/Data";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col mt-8 mb-4">
+    <main className="flex flex-col mb-4">
       <section className="flex flex-col z-1 p-4">
         <div className="flex flex-col my-4 gap-8">
           <p>
@@ -58,6 +59,9 @@ export default function Home() {
             </Link>
           </address>
         </div>
+      </section>
+      <section className="z-1 pt-4 px-4">
+        <SpotifyStatus />
       </section>
     </main>
   );
