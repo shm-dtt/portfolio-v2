@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import SpotifyLogo from "../../utils/logos/SpotifyLogo";
+import SpotifyLogo from "./SpotifyLogo";
 import getNowPlayingItem from "./SpotifyAPI";
 
 interface SpotifyData {
@@ -32,7 +32,7 @@ const SpotifyStatus: React.FC = () => {
           setOffline(false);
         }
       });
-    }, 3000);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -42,12 +42,12 @@ const SpotifyStatus: React.FC = () => {
   return (
     <div className="flex items-center gap-2 w-full text-xs text-neutral-400">
       <SpotifyLogo width={14} />
-      {!offline && (
+      {!offline && result.isPlaying && (
         <p className="flex items-center">
-          listening to.. {result.title} by {result.artist}
+          ..listening to {result.title} by {result.artist}
         </p>
       )}
-      {offline && <p>..not listening</p>}
+      {(offline || !result.isPlaying) && <p>..not listening</p>}
     </div>
   );
 };
