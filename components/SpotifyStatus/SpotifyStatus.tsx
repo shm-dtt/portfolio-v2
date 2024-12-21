@@ -32,7 +32,7 @@ const SpotifyStatus: React.FC = () => {
           setOffline(false);
         }
       });
-    }, 35000);
+    }, 10000);
 
     return () => {
       clearInterval(interval);
