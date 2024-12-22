@@ -37,9 +37,7 @@ const Footer: React.FC = () => {
     <footer className="flex flex-col justify-center m-4 gap-4">
       <div className="flex justify-center">
         <div
-          className={`border-t-[0.25px] transition-all duration-700 ease-in-out ${
-            mounted ? "w-full border-neutral-400" : "w-1/4 border-[#121212]"
-          }`}
+          className="border-t-[0.25px] transition-all duration-700 ease-in-out w-full border-neutral-400"
         ></div>
       </div>
 
