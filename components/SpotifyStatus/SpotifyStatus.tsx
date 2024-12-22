@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import SpotifyLogo from "./SpotifyLogo";
-import getNowPlayingItem from "./SpotifyAPI";
 
 interface SpotifyData {
   artist: string;
@@ -23,16 +22,21 @@ const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
   );
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      getNowPlayingItem().then((result) => {
-        if (result === false) {
+    const interval = setInterval(async () => {
+      try {
+        const response = await fetch('/api/spotify/now-playing');
+        const data = await response.json();
+        
+        if (!data || data.error) {
           setOffline(true);
         } else {
-          setResult(result);
+          setResult(data);
           setOffline(false);
         }
-      });
-    }, 5000);
+      } catch (error) {
+        setOffline(true);
+      }
+    }, 3000);
 
     return () => {
       clearInterval(interval);

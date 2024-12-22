@@ -58,6 +58,9 @@ export const getNowPlaying = async () => {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
+      // Add cache control headers to prevent caching
+      cache: 'no-store',
+      next: { revalidate: 0 }
     },
   );
 
