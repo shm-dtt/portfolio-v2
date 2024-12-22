@@ -4,7 +4,23 @@ const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
 const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
 const refresh_token = process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN;
 
+// Cache structure to store the token and its expiration
+let tokenCache = {
+  access_token: null,
+  expires_at: 0,
+};
+
 const getAccessToken = async () => {
+  // Check if we have a cached token that's still valid
+  if (
+    tokenCache.access_token &&
+    tokenCache.expires_at &&
+    Date.now() < tokenCache.expires_at
+  ) {
+    return { access_token: tokenCache.access_token };
+  }
+
+  // If no valid token in cache, request a new one
   const concatenatedString = `${client_id}:${client_secret}`;
   const basic = Buffer.from(concatenatedString).toString("base64");
 
@@ -19,7 +35,18 @@ const getAccessToken = async () => {
       refresh_token,
     }),
   });
-  return response.json();
+
+  const data = await response.json();
+  
+  // Cache the new token with expiration
+  // Spotify tokens typically expire in 1 hour (3600 seconds)
+  // We subtract 60 seconds as a buffer
+  tokenCache = {
+    access_token: data.access_token,
+    expires_at: Date.now() + (data.expires_in - 60) * 1000,
+  };
+
+  return { access_token: data.access_token };
 };
 
 export const getNowPlaying = async () => {
@@ -41,17 +68,13 @@ export default async function getNowPlayingItem() {
   }
 
   const song = await response.json();
-  const albumImageUrl = song.item.album.images[0].url;
   const artist = song.item.artists[0].name;
   const isPlaying = song.is_playing;
-  const songUrl = song.item.external_urls.spotify;
   const title = song.item.name;
 
   return {
-    albumImageUrl,
     artist,
     isPlaying,
-    songUrl,
     title,
   };
 }

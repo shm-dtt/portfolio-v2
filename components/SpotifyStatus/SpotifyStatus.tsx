@@ -5,20 +5,16 @@ import SpotifyLogo from "./SpotifyLogo";
 import getNowPlayingItem from "./SpotifyAPI";
 
 interface SpotifyData {
-  albumImageUrl: string;
   artist: string;
   isPlaying: boolean;
-  songUrl: string;
   title: string;
 }
 
 const SpotifyStatus: React.FC = () => {
   const [offline, setOffline] = useState<boolean>(true);
   const [result, setResult] = useState<SpotifyData>({
-    albumImageUrl: "",
     artist: "",
     isPlaying: false,
-    songUrl: "",
     title: "",
   });
 
@@ -32,7 +28,7 @@ const SpotifyStatus: React.FC = () => {
           setOffline(false);
         }
       });
-    }, 1000);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
