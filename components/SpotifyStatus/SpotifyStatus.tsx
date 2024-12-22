@@ -14,24 +14,15 @@ const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
   initialData,
 }) => {
   const [offline, setOffline] = useState<boolean>(!initialData);
-  const [result, setResult] = useState<SpotifyData | null>(
-    initialData || null
+  const [result, setResult] = useState<SpotifyData>(
+    initialData || {
+      artist: "",
+      isPlaying: false,
+      title: "",
+    },
   );
 
   useEffect(() => {
-    // If initialData is null, don't wait 5 seconds for the first update
-    if (!initialData) {
-      getNowPlayingItem().then((result) => {
-        if (result === false) {
-          setOffline(true);
-        } else {
-          setResult(result);
-          setOffline(false);
-        }
-      });
-    }
-
-    // Refresh data every 5 seconds
     const interval = setInterval(() => {
       getNowPlayingItem().then((result) => {
         if (result === false) {
@@ -46,7 +37,7 @@ const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
     return () => {
       clearInterval(interval);
     };
-  }, [initialData]);
+  }, []);
 
   return (
     <div className="flex items-center gap-2">
@@ -54,20 +45,16 @@ const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
         <SpotifyLogo
           width={14}
           height={14}
-          color={!offline && result?.isPlaying ? "#25d865" : "#a3a3a3"}
+          color={!offline && result.isPlaying ? "#25d865" : "#a3a3a3"}
         />
       </div>
       <div className="text-wrap text-xs text-neutral-400">
-        {result ? (
-          !offline && result.isPlaying ? (
-            <p>
-              ...listening to {result.title} by {result.artist}
-            </p>
-          ) : (
-            <p>...not listening to anything</p>
-          )
+        {!offline && result.isPlaying ? (
+          <p>
+            ...listening to {result.title} by {result.artist}
+          </p>
         ) : (
-          <p>Loading...</p>
+          <p>...not listening to anything</p>
         )}
       </div>
     </div>
