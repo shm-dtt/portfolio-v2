@@ -10,13 +10,17 @@ interface SpotifyData {
   title: string;
 }
 
-const SpotifyStatus: React.FC = () => {
-  const [offline, setOffline] = useState<boolean>(true);
-  const [result, setResult] = useState<SpotifyData>({
-    artist: "",
-    isPlaying: false,
-    title: "",
-  });
+const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
+  initialData,
+}) => {
+  const [offline, setOffline] = useState<boolean>(!initialData);
+  const [result, setResult] = useState<SpotifyData>(
+    initialData || {
+      artist: "",
+      isPlaying: false,
+      title: "",
+    },
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,7 +48,7 @@ const SpotifyStatus: React.FC = () => {
           color={!offline && result.isPlaying ? "#25d865" : "#a3a3a3"}
         />
       </div>
-      <div className=" text-wrap text-xs text-neutral-400">
+      <div className="text-wrap text-xs text-neutral-400">
         {!offline && result.isPlaying ? (
           <p>
             ...listening to {result.title} by {result.artist}

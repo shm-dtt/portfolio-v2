@@ -37,7 +37,7 @@ const getAccessToken = async () => {
   });
 
   const data = await response.json();
-  
+
   // Cache the new token with expiration
   // Spotify tokens typically expire in 1 hour (3600 seconds)
   // We subtract 60 seconds as a buffer
@@ -52,11 +52,14 @@ const getAccessToken = async () => {
 export const getNowPlaying = async () => {
   const { access_token } = await getAccessToken();
 
-  const response = await fetch("https://api.spotify.com/v1/me/player/currently-playing", {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
+  const response = await fetch(
+    "https://api.spotify.com/v1/me/player/currently-playing",
+    {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
     },
-  });
+  );
 
   return response;
 };
