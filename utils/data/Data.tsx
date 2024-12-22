@@ -1,7 +1,7 @@
 //basic info to change
 
 export const Data = {
-  version: "v2.5",
+  version: "v2.6",
   firstName: "Soham",
   lastName: "Dutta",
   timeZone: "Asia/Kolkata",
