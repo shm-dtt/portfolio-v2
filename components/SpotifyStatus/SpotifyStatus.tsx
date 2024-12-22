@@ -32,7 +32,7 @@ const SpotifyStatus: React.FC = () => {
           setOffline(false);
         }
       });
-    }, 10000);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -40,7 +40,7 @@ const SpotifyStatus: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center gap-2 p-2 bg-neutral-800 border border-neutral-600 rounded-md">
+    <div className="flex items-center gap-2">
       <div className="flex items-center">
         <SpotifyLogo
           width={14}
