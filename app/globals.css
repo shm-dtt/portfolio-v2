@@ -3,23 +3,42 @@
 @tailwind utilities;
 
 body {
-    background-color: #121212;
-    color: #d1d5db;
+  background-color: #121212;
+  color: #d1d5db;
 }
 
 /* Hide scrollbar */
 /* For Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Keep scrollbar functionality */
 /* Define styles for scrollbar track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* or any other color you prefer */
+  background: #f1f1f1; /* or any other color you prefer */
 }
 
 /* Define styles for scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-    background: #888; /* or any other color you prefer */
+  background: #888; /* or any other color you prefer */
+}
+
+.marquee {
+  animation: scroll-left 10s linear infinite alternate;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(
+      calc(-100% + 100% / (scrollWidth / 100%))
+    ); /* calculate the translation value based on the scrollWidth */
+  }
 }
