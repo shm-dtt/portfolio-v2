@@ -4,7 +4,7 @@ import Link from "next/link";
 import getNowPlayingItem from "@/components/SpotifyStatus/SpotifyAPI";
 
 export default async function Home() {
-  const initialData = await getNowPlayingItem();
+  // const initialData = await getNowPlayingItem();
   return (
     <main className="flex flex-col mb-4">
       <section className="flex flex-col z-1 p-4">
@@ -62,9 +62,9 @@ export default async function Home() {
           </address>
         </div>
       </section>
-      <section className="z-1 pt-4 px-4">
+      /* <section className="z-1 pt-4 px-4">
         <SpotifyStatus initialData={initialData} />
-      </section>
+      </section> */
     </main>
   );
 }
