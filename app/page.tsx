@@ -62,9 +62,9 @@ export default async function Home() {
           </address>
         </div>
       </section>
-      /* <section className="z-1 pt-4 px-4">
+      {/* <section className="z-1 pt-4 px-4">
         <SpotifyStatus initialData={initialData} />
-      </section> */
+      </section> */}
     </main>
   );
 }
