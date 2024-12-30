@@ -48,7 +48,6 @@ export default function RootLayout({
       <body
         className={`${inter.className} mx-auto my-12 max-w-2xl md:text-base text-sm`}
       >
-        <Navbar />
         {children}
         <Footer />
         <Analytics />

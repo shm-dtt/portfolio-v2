@@ -23,6 +23,12 @@ const Navbar: React.FC = () => {
       <div className="p-4 flex justify-end" role="navigation">
         <nav className="flex gap-4">
           <Link
+            href="/blog"
+            className={`hover:text-neutral-400  ${isActive("/blog")}`}
+          >
+            Blog
+          </Link>
+          <Link
             href="/projects"
             className={`hover:text-neutral-400  ${isActive("/projects")}`}
           >
