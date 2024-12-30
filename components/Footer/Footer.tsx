@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Data } from "@/utils/data/Data";
+import { Data } from "@/utils/my-data";
 import Link from "next/link";
 import { HoverButton } from "../HoverButton/HoverButton";
 

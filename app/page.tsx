@@ -1,11 +1,11 @@
 import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
-import { Data } from "@/utils/data/Data";
+import { Data } from "@/utils/my-data";
 import Link from "next/link";
 import getNowPlayingItem from "@/components/SpotifyStatus/SpotifyAPI";
 import Navbar from "@/components/Navbar/Navbar";
 
 export default async function Home() {
-  // const initialData = await getNowPlayingItem();
+  const initialData = await getNowPlayingItem();
   return (
     <>
       <Navbar />
@@ -65,9 +65,9 @@ export default async function Home() {
             </address>
           </div>
         </section>
-        {/* <section className="z-1 pt-4 px-4">
+        <section className="z-1 pt-4 px-4">
         <SpotifyStatus initialData={initialData} />
-      </section> */}
+      </section>
       </main>
     </>
   );
