@@ -5,7 +5,7 @@ import getNowPlayingItem from "@/components/SpotifyStatus/SpotifyAPI";
 import Navbar from "@/components/Navbar/Navbar";
 
 export default async function Home() {
-  const initialData = await getNowPlayingItem();
+  // const initialData = await getNowPlayingItem();
   return (
     <>
       <Navbar />
@@ -65,9 +65,9 @@ export default async function Home() {
             </address>
           </div>
         </section>
-        <section className="z-1 pt-4 px-4">
+        {/* <section className="z-1 pt-4 px-4">
         <SpotifyStatus initialData={initialData} />
-      </section>
+      </section> */}
       </main>
     </>
   );
