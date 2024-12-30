@@ -80,7 +80,7 @@ export default async function Blog() {
                     className="flex items-center justify-between group"
                   >
                     <Link
-                      href={`/blog/${post.slug}`}
+                      href={`/blogs/${post.slug}`}
                       className="text-gray-200 hover:text-white transition-colors duration-200"
                     >
                       {post.metadata.title}

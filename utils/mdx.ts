@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 export async function getAllPosts() {
-  const postsDirectory = path.join(process.cwd(), "app/blog");
+  const postsDirectory = path.join(process.cwd(), "app/blogs");
   const entries = fs.readdirSync(postsDirectory, { withFileTypes: true });
 
   const posts = entries
