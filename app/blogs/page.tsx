@@ -4,7 +4,6 @@ import Link from "next/link";
 import { getAllPosts } from "@/utils/mdx";
 import Navbar from "@/components/Navbar/Navbar";
 
-// Type definitions
 interface BlogMetadata {
   title: string;
   date: string;
@@ -19,7 +18,6 @@ interface BlogPost {
 }
 
 export default async function Blog() {
-  // This would typically come from your MDX loader or file system
   const posts: BlogPost[] = await getAllPosts();
 
   // Sort posts by date and group by year
@@ -55,14 +53,12 @@ export default async function Blog() {
   return (
     <>
       <Navbar />
-      <div className="mx-4 mb-32 max-w-2xl">
+      <div className="mx-4 mb-32 mt-16">
         {sortedYears.map((year) => (
-          <div key={year} className="mb-12">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold text-gray-300">{year}</h2>
-            </div>
+          <div key={year} className="flex my-2">
+            <div className="w-1/6 text-neutral-400">{year}</div>
 
-            <div className="space-y-6">
+            <div className="space-y-2 w-full" key={year}>
               {groupedPosts[year].map((post) => {
                 const date = parse(
                   post.metadata.date,
@@ -75,20 +71,17 @@ export default async function Blog() {
                 });
 
                 return (
-                  <div
-                    key={post.slug}
-                    className="flex items-center justify-between group"
-                  >
+                  <>
                     <Link
+                      key={post.slug}
                       href={`/blogs/${post.slug}`}
-                      className="text-gray-200 hover:text-white transition-colors duration-200"
+                      className="flex items-center justify-between group text-neutral-400 hover:text-white transition-colors duration-200"
                     >
-                      {post.metadata.title}
+                      <p>{post.metadata.title}</p>
+                      <span className="text-sm">{formattedDate}</span>
                     </Link>
-                    <span className="text-gray-500 text-sm">
-                      {formattedDate}
-                    </span>
-                  </div>
+                    <div className="border-t-[0.25px] w-full border-neutral-700"></div>
+                  </>
                 );
               })}
             </div>
