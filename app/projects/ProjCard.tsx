@@ -15,6 +15,22 @@ interface CardProps {
   toggleCard: () => void;
 }
 
+/**
+ * Card component that displays project information and toggles details on click.
+ *
+ * @param {CardProps} props - The properties for the Card component.
+ * @param {string} props.name - The name of the project.
+ * @param {string} props.year - The year the project was created.
+ * @param {string} props.tech - The main technology used in the project.
+ * @param {string[]} props.techUsed - The list of technologies used in the project.
+ * @param {string} props.description - The description of the project.
+ * @param {string} props.link - The link to the project.
+ * @param {number} props.i - The index of the project.
+ * @param {boolean} props.isOpened - The state indicating if the details section is opened.
+ * @param {() => void} props.toggleCard - The function to toggle the details section.
+ *
+ * @returns {JSX.Element} The rendered Card component.
+ */
 const Card: React.FC<CardProps> = ({
   name,
   year,
@@ -74,7 +90,7 @@ const Card: React.FC<CardProps> = ({
   return (
     <>
       <div
-        className="border-t-[1px] border-neutral-400  py-2 flex justify-between text-sm select-none cursor-pointer"
+        className="border-t-[1px] border-neutral-400 py-2 flex justify-between text-sm select-none cursor-pointer"
         onMouseEnter={manageMouseEnter}
         onMouseLeave={manageMouseLeave}
         onClick={toggleCard}

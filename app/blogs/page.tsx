@@ -17,6 +17,20 @@ interface BlogPost {
   slug: string;
 }
 
+/**
+ * Blog component that fetches and displays blog posts grouped by year and sorted by date.
+ * 
+ * This component performs the following operations:
+ * 1. Fetches all blog posts using `getAllPosts` function.
+ * 2. Sorts the posts by date and groups them by year.
+ * 3. Sorts the years in descending order.
+ * 4. For each year, sorts the posts in descending order.
+ * 5. Renders a `Navbar` component and a list of posts grouped by year.
+ * 
+ * Each post is displayed with a link to its detailed page, the post title, and the formatted date.
+ * 
+ * @returns {JSX.Element} The rendered Blog component.
+ */
 export default async function Blog() {
   const posts: BlogPost[] = await getAllPosts();
 
@@ -51,11 +65,11 @@ export default async function Blog() {
   });
 
   return (
-    <>
+    <div>
       <Navbar />
-      <div className="mx-4 mb-32 mt-16">
+      <div className="mb-32 mt-16">
         {sortedYears.map((year) => (
-          <div key={year} className="flex my-2">
+          <div key={year} className="flex items-start my-2">
             <div className="w-1/6 text-neutral-400">{year}</div>
 
             <div className="space-y-2 w-full" key={year}>
@@ -71,23 +85,22 @@ export default async function Blog() {
                 });
 
                 return (
-                  <>
+                  <div key={post.slug} className="w-full">
                     <Link
-                      key={post.slug}
                       href={`/blogs/${post.slug}`}
-                      className="flex items-center justify-between group text-neutral-400 hover:text-white transition-colors duration-200"
+                      className="flex items-end justify-between group text-neutral-400 hover:text-white transition-colors duration-200"
                     >
                       <p>{post.metadata.title}</p>
                       <span className="text-sm">{formattedDate}</span>
                     </Link>
-                    <div className="border-t-[0.25px] w-full border-neutral-700"></div>
-                  </>
+                    <div className="border-t-[0.25px] w-full border-neutral-700 mt-2"></div>
+                  </div>
                 );
               })}
             </div>
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }

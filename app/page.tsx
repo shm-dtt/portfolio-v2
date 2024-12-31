@@ -7,10 +7,10 @@ import Navbar from "@/components/Navbar/Navbar";
 export default async function Home() {
   // const initialData = await getNowPlayingItem();
   return (
-    <>
+    <div className="mx-4 mb-32">
       <Navbar />
       <main className="flex flex-col mb-4">
-        <section className="flex flex-col z-1 p-4">
+        <section className="flex flex-col z-1 pt-8 pb-4">
           <div className="flex flex-col my-4 gap-8">
             <p>
               Hi, I&apos;m {Data.firstName}, a developer and designer residing
@@ -69,6 +69,6 @@ export default async function Home() {
         <SpotifyStatus initialData={initialData} />
       </section> */}
       </main>
-    </>
+    </div>
   );
 }

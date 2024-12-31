@@ -1,3 +1,13 @@
+/**
+ * A React functional component that renders the Spotify logo as an SVG.
+ *
+ * @param {Object} props - The properties object.
+ * @param {number} [props.width=14] - The width of the SVG element.
+ * @param {number} [props.height=14] - The height of the SVG element.
+ * @param {string} [props.color="#a3a3a3"] - The color of the SVG path.
+ *
+ * @returns {JSX.Element} The SVG element representing the Spotify logo.
+ */
 const SpotifyLogo = ({
   width = 14,
   height = 14,

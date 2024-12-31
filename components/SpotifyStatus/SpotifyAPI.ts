@@ -10,6 +10,16 @@ let tokenCache = {
   expires_at: 0,
 };
 
+/**
+ * Retrieves an access token for the Spotify API.
+ * 
+ * This function first checks if there is a cached token that is still valid.
+ * If a valid cached token is found, it returns the token.
+ * Otherwise, it requests a new token from the Spotify API using the refresh token.
+ * The new token is then cached with an expiration time.
+ * 
+ * @returns {Promise<{ access_token: string }>} An object containing the access token.
+ */
 const getAccessToken = async () => {
   // Check if we have a cached token that's still valid
   if (

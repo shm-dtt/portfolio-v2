@@ -1,3 +1,14 @@
+/**
+ * A React functional component that renders a hoverable button with animated text.
+ *
+ * @param {Object} props - The props object.
+ * @param {string} props.text - The text to be displayed inside the button.
+ *
+ * @returns {JSX.Element} A paragraph element containing two spans with hover animations.
+ *
+ * @example
+ * <HoverButton text="Click Me" />
+ */
 export const HoverButton = ({ text }: { text: string }) => {
   return (
     <p

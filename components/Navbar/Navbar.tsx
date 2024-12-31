@@ -2,6 +2,23 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+/**
+ * Navbar component that displays navigation links and the current path name.
+ *
+ * @returns {JSX.Element} The rendered Navbar component.
+ *
+ * @remarks
+ * This component uses the `usePathname` hook to get the current path name and
+ * highlights the active route. It also beautifies the path name for display.
+ *
+ * @function isActive
+ * @param {string} route - The route to check against the current path name.
+ * @returns {string} - Returns a CSS class name based on whether the route is active.
+ *
+ * @function beautifyPathname
+ * @param {string} path - The path name to beautify.
+ * @returns {string} - Returns a human-readable version of the path name.
+ */
 const Navbar: React.FC = () => {
   const pathname = usePathname();
 
@@ -19,8 +36,8 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <p className="p-4 text-2xl font-bold">{beautifyPathname(pathname)}</p>
-      <div className="p-4 flex justify-end" role="navigation">
+      <p className="text-2xl font-bold">{beautifyPathname(pathname)}</p>
+      <div className="flex justify-end" role="navigation">
         <nav className="flex gap-4">
           <Link
             href="/blogs"
