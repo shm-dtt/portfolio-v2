@@ -10,26 +10,22 @@ type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 const components = {
-  h1: (props: HeadingProps) => (
-    <h1 className="font-medium text-3xl" {...props} />
-  ),
+  h1: (props: HeadingProps) => <h1 className="font-bold text-2xl" {...props} />,
   h2: (props: HeadingProps) => (
-    <h2 className="text-gray-800 font-medium mt-8 mb-3" {...props} />
+    <h2 className="font-medium text-lg mt-10 mb-4" {...props} />
   ),
   h3: (props: HeadingProps) => (
-    <h3 className="text-gray-800 font-medium mt-8 mb-3" {...props} />
+    <h3 className="font-medium mt-10 mb-4" {...props} />
   ),
-  h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
-  p: (props: ParagraphProps) => (
-    <p className="text-gray-800 leading-snug" {...props} />
-  ),
+  h4: (props: HeadingProps) => <h4 className="" {...props} />,
+  p: (props: ParagraphProps) => <p className="" {...props} />,
   ol: (props: ListProps) => (
-    <ol className="text-gray-800 list-decimal pl-5 space-y-2" {...props} />
+    <ol className="list-decimal pl-5 space-y-2 " {...props} />
   ),
   ul: (props: ListProps) => (
-    <ul className="text-gray-800 list-disc pl-5 space-y-1" {...props} />
+    <ul className="list-disc pl-5 space-y-1" {...props} />
   ),
-  li: (props: ListItemProps) => <li className="pl-1" {...props} />,
+  li: (props: ListItemProps) => <li className="pl-1 pt-1" {...props} />,
   em: (props: ComponentPropsWithoutRef<"em">) => (
     <em className="font-medium" {...props} />
   ),
@@ -37,7 +33,7 @@ const components = {
     <strong className="font-medium" {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
-    const className = "text-red-500 hover:text-green-700";
+    const className = " hover:text-neutral-500 my-underline";
     if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>

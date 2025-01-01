@@ -59,14 +59,14 @@ const Card: React.FC<CardProps> = ({
 
   const manageMouseEnter = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     gsap.to(e.currentTarget, {
-      backgroundColor: "#FFFFFF",
+      backgroundColor: "#d1d5db",
       duration: 0.2,
-      color: "black",
+      color: "#121212",
       paddingLeft: "1rem",
       paddingRight: "1rem",
     });
     gsap.to(e.currentTarget.querySelectorAll("p"), {
-      color: "black",
+      color: "#121212",
       duration: 0.2,
     });
   };
@@ -76,12 +76,12 @@ const Card: React.FC<CardProps> = ({
       backgroundColor: "#121212",
       duration: 0.1,
       delay: 0.1,
-      color: "white",
+      color: "#d1d5db",
       paddingLeft: "0px",
       paddingRight: "0px",
     });
     gsap.to(e.currentTarget.querySelectorAll("p"), {
-      color: "white",
+      color: "#d1d5db",
       duration: 0.1,
       delay: 0.1,
     });
@@ -102,7 +102,7 @@ const Card: React.FC<CardProps> = ({
       <div ref={detailsRef} className="overflow-hidden h-0 opacity-0">
         <p className="pt-8 pb-4 md:w-5/6">{description}</p>
         <Link href={link} target="_blank">
-          <button className="bg-white text-black text-sm px-4 py-2 my-4 rounded-full">
+          <button className="bg-[#d1d5db] text-black text-sm px-4 py-2 my-4 rounded-full">
             <HoverButton text="View Project" />
           </button>
         </Link>

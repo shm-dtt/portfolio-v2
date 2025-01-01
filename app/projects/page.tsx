@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <div className="mx-4 mb-32">
+    <div className="mx-4">
       <Navbar />
       <div className="flex flex-col mb-24">
         <div className="mb-32 mt-16">

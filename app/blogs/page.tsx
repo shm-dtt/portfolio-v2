@@ -19,16 +19,16 @@ interface BlogPost {
 
 /**
  * Blog component that fetches and displays blog posts grouped by year and sorted by date.
- * 
+ *
  * This component performs the following operations:
  * 1. Fetches all blog posts using `getAllPosts` function.
  * 2. Sorts the posts by date and groups them by year.
  * 3. Sorts the years in descending order.
  * 4. For each year, sorts the posts in descending order.
  * 5. Renders a `Navbar` component and a list of posts grouped by year.
- * 
+ *
  * Each post is displayed with a link to its detailed page, the post title, and the formatted date.
- * 
+ *
  * @returns {JSX.Element} The rendered Blog component.
  */
 export default async function Blog() {

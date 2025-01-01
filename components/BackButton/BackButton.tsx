@@ -6,9 +6,10 @@ import Link from "next/link";
  *
  * @returns {JSX.Element} The BackButton component.
  */
+
 const BackButton: React.FC = () => {
   return (
-    <button className="my-8 text-neutral-400 hover:text-white italic">
+    <button className="my-8 text-neutral-400 hover:text-white">
       <Link href="/blogs">◄ Back</Link>
     </button>
   );

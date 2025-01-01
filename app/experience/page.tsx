@@ -16,7 +16,7 @@ import Navbar from "@/components/Navbar/Navbar";
  */
 const Experience: React.FC = () => {
   return (
-    <div className="mx-4 mb-32">
+    <div className="mx-4">
       <Navbar />
       <div className="flex flex-col items-center justify-center">
         <br />

@@ -1,6 +1,6 @@
 /**
  * An object containing personal and professional information.
- * 
+ *
  * @property {string} version - The version of the data.
  * @property {string} firstName - The first name of the individual.
  * @property {string} lastName - The last name of the individual.
@@ -18,7 +18,7 @@
  * @property {string} dribbble - The URL to the individual's Dribbble profile.
  */
 export const Data = {
-  version: "v2.6",
+  version: "v2.7",
   firstName: "Soham",
   lastName: "Dutta",
   timeZone: "Asia/Kolkata",

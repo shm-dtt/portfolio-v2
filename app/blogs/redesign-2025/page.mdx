@@ -9,12 +9,59 @@ date: '01/01/2025',
 };
 
 <BackButton />
+
 {/* Blog starts from here ->-> */}
 
 # Redesign 2025
 
-Published on {metadata.date}
+<p className="text-neutral-400 mb-8 mt-2">
+  {new Date(metadata.date).toLocaleDateString("en-US", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  })}
+</p>
+## Why I Redesigned My Portfolio
 
-a developer and designer residing in Bengaluru, passionate about crafting seamless, user-centric solutions and exceptional web experiences.
+Over the years, my portfolio has gone through several versions, but they no longer reflected who I am as a developer. So, I decided to redesign it with a focus on **minimalism, performance, and storytelling**.
 
-[Read more](/blogs/redesign-2025)
+## Minimalism First
+
+Earlier designs had flashy animations and complex layouts, but they often felt cluttered. This time, I kept things simple:
+
+- **Easy Navigation:** Visitors can find what they need quickly.
+- **Clean Design:** White space and clear typography create focus.
+- **Purposeful Content:** Every section has a reason to exist.
+
+## Performance Focused
+
+Speed and responsiveness matter. I optimized this version by:
+
+- **Faster Load Times:** Using server-side rendering (SSR) and optimized assets.
+- **Fewer Dependencies:** Replacing libraries with lightweight scripts.
+- **Responsive Design:** Seamless performance across all devices.
+  <br />
+  The result? **A faster, smoother experience.**
+
+## Blogging Space
+
+I added a **blog** section to share insights, tutorials, and project stories. It’s a way to document my journey and help others learn.
+
+## What’s Next?
+
+This redesign is just the start. I’ll keep improving it, adding new blogs, and showcasing more projects.
+
+For now, though, I’m happy with how far it’s come. And I’m even more excited about where it’s headed.
+
+## Colophon
+
+Set in **[Inter](https://rsms.me/inter/)**. Built with **[Next.js](https://nextjs.org/)**, deployed on **[Vercel](https://vercel.com/)**. Styled using **[Tailwind CSS](https://tailwindcss.com/blog/tailwindcss-v4-beta)**. Version controlled with **[GitHub](https://github.com/)**.
+
+<br />
+Inspired by **[Shu Ding](https://shud.in/)**, **[Paco
+Coursey](https://paco.me/)**, **[Lee Robinson](https://leerob.com/)**, and
+**[Olivier Larose](https://www.olivierlarose.com/)**.
+
+<br />
+
+Thanks for stopping by and exploring my portfolio! If you’d like to collaborate or just say hi, feel free to reach out.

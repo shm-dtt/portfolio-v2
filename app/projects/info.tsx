@@ -1,6 +1,6 @@
 /**
  * An array of project objects, each representing a project with various details.
- * 
+ *
  * @property {string} name - The name of the project.
  * @property {number} year - The year the project was created.
  * @property {string} tech - The main technologies used in the project.

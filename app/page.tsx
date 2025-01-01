@@ -10,8 +10,8 @@ export default async function Home() {
     <div className="mx-4 mb-32">
       <Navbar />
       <main className="flex flex-col mb-4">
-        <section className="flex flex-col z-1 pt-8 pb-4">
-          <div className="flex flex-col my-4 gap-8">
+        <section className="flex flex-col z-1 py-8">
+          <div className="flex flex-col gap-8">
             <p>
               Hi, I&apos;m {Data.firstName}, a developer and designer residing
               in Bengaluru, passionate about crafting seamless, user-centric
