@@ -16,7 +16,7 @@ export const experience = [
     position: "Applied R&D Software Engineer",
     duration: "July 2024 - Present",
     description:
-      "Working as an Applied R&D Software Engineer in the IP and Optical Networks division. Responsible for the design, configuration, and deployment of IP/MPLS networks for clients across the globe. ",
+      "Working as an Applied R&D Software Engineer in the IP and Optical Networks division. Developed automation frameworks for DCGW and FSS, built utility tools to simplify releases and configuration management, and streamlined deployments and upgrades in collaboration with the PS team. ",
     techUsed: ["Python", "Gherkin", "TOSCA", "YANG"],
   },
   {
