@@ -1,3 +1,14 @@
+/**
+ * An array of experience objects representing professional and project experiences.
+ * Each object contains details about the company, position, duration, description, and technologies used.
+ *
+ * @property {string} company - The name of the company.
+ * @property {string} link - The URL link to the company's website.
+ * @property {string} position - The job title or position held.
+ * @property {string} duration - The time period during which the position was held.
+ * @property {string} description - A brief description of the responsibilities and achievements in the position.
+ * @property {string[]} techUsed - An array of technologies and tools used in the position.
+ */
 export const experience = [
   {
     company: "Nokia",

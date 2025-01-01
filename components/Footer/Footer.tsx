@@ -1,9 +1,38 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Data } from "@/utils/data/Data";
+import { Data } from "@/utils/my-data";
 import Link from "next/link";
 import { HoverButton } from "../HoverButton/HoverButton";
 
+/**
+ * Footer component that displays social media links, current time, and other information.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Footer />
+ * )
+ *
+ * @returns {JSX.Element} The rendered footer component.
+ *
+ * @remarks
+ * The component fetches the current time based on the specified time zone and updates it every 5 seconds.
+ * It also displays social media links and some static information such as version, year, and author name.
+ *
+ * @dependencies
+ * - `useState` and `useEffect` from React for state management and side effects.
+ * - `Link` component for navigation.
+ * - `HoverButton` component for displaying social media platform names.
+ *
+ * @remarks
+ * The `Data` object is expected to contain the following properties:
+ * - `timeZone`: The time zone string for formatting the time.
+ * - `github`, `linkedin`, `twitter`, `dribbble`: URLs for social media profiles.
+ * - `version`: The version of the portfolio.
+ * - `year`: The current year.
+ * - `firstName`, `lastName`: The author's first and last name.
+ * - `gmtOffset`: The GMT offset string.
+ */
 const Footer: React.FC = () => {
   const timeOptions: Intl.DateTimeFormatOptions = {
     timeZone: Data.timeZone,
@@ -34,13 +63,9 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="flex flex-col justify-center m-4 gap-4">
+    <footer className="flex flex-col justify-center m-4 gap-4 mt-32">
       <div className="flex justify-center">
-        <div
-          className={`border-t-[0.25px] transition-all duration-700 ease-in-out ${
-            mounted ? "w-full border-neutral-400" : "w-1/4 border-[#121212]"
-          }`}
-        ></div>
+        <div className="border-t-[0.25px] transition-all duration-700 ease-in-out w-full border-neutral-700"></div>
       </div>
 
       <nav className="flex gap-1 mb-20 text-sm">
@@ -49,13 +74,13 @@ const Footer: React.FC = () => {
             <Link
               href={platform.url}
               target="_blank"
-              className="hover:text-neutral-400 "
+              className="text-neutral-400 hover:text-white"
               aria-label={platform.name}
             >
               <HoverButton text={platform.name} />
             </Link>
             {idx < socialLinks.length - 1 && (
-              <span className="text-neutral-400  text-xs mx-1">•</span>
+              <span className="text-neutral-400 text-xs mx-1">•</span>
             )}
           </div>
         ))}

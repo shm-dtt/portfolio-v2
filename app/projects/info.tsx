@@ -1,3 +1,13 @@
+/**
+ * An array of project objects, each representing a project with various details.
+ *
+ * @property {string} name - The name of the project.
+ * @property {number} year - The year the project was created.
+ * @property {string} tech - The main technologies used in the project.
+ * @property {string} description - A brief description of the project.
+ * @property {string[]} techUsed - An array of technologies used in the project.
+ * @property {string} link - A URL link to the project's repository or live demo.
+ */
 export const projects = [
   {
     name: "Video Duration",
@@ -17,22 +27,22 @@ export const projects = [
     techUsed: ["Spring Boot", "Java", "MySQL", "Quartz Scheduler"],
     link: "https://github.com/shm-dsgn/envoy",
   },
-  {
-    name: "Twiter Clone",
-    year: 2024,
-    tech: "NEXT JS, GraphQL",
-    description:
-      "A Twitter clone built using the Next Js and GraphQL. The application allows users to create, read, update, and delete tweets. The application also uses AWS S3 for storing images and Redis for caching.",
-    techUsed: [
-      "Next JS",
-      "GraphQL",
-      "PostgreSQL",
-      "AWS S3",
-      "Redis",
-      "Tailwind CSS",
-    ],
-    link: "https://github.com/shm-dsgn/twitter-clone",
-  },
+  // {
+  //   name: "Twiter Clone",
+  //   year: 2024,
+  //   tech: "NEXT JS, GraphQL",
+  //   description:
+  //     "A Twitter clone built using the Next Js and GraphQL. The application allows users to create, read, update, and delete tweets. The application also uses AWS S3 for storing images and Redis for caching.",
+  //   techUsed: [
+  //     "Next JS",
+  //     "GraphQL",
+  //     "PostgreSQL",
+  //     "AWS S3",
+  //     "Redis",
+  //     "Tailwind CSS",
+  //   ],
+  //   link: "https://github.com/shm-dsgn/twitter-clone",
+  // },
   {
     name: "Blog On",
     year: 2023,

@@ -3,14 +3,13 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   preload: true,
   display: "swap",
-  weight: ["400", "700"],
+  weight: ["400", "500", "700"],
   fallback: ["Arial", "sans-serif"],
 });
 
@@ -48,7 +47,6 @@ export default function RootLayout({
       <body
         className={`${inter.className} mx-auto my-12 max-w-2xl md:text-base text-sm`}
       >
-        <Navbar />
         {children}
         <Footer />
         <Analytics />
