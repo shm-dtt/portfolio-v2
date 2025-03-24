@@ -23,7 +23,7 @@ export const Data = {
   lastName: "Dutta",
   timeZone: "Asia/Kolkata",
   gmtOffset: "+05:30",
-  year: 2025,
+  year: new Date().getFullYear(),
   currentCompany: "Nokia",
   currentCompanyLink: "https://www.nokia.com/",
   position: "Applied R&D Software Engineer",

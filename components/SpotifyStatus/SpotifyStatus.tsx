@@ -74,7 +74,7 @@ const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
       } catch (error) {
         setOffline(true);
       }
-    }, 3000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
