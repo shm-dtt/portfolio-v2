@@ -9,16 +9,6 @@ interface SpotifyData {
   title: string;
 }
 
-/**
- * SpotifyStatus component displays the current Spotify playing status.
- * It fetches the now-playing data from the Spotify API and updates the UI accordingly.
- * If the text overflows the container, it will scroll horizontally.
- *
- * @param {Object} props - The component props.
- * @param {SpotifyData | false} props.initialData - The initial data for the Spotify status.
- *
- * @returns {JSX.Element} The rendered component.
- */
 const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
   initialData,
 }) => {
@@ -74,15 +64,17 @@ const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
       } catch (error) {
         setOffline(true);
       }
-    }, 10000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const scrollingText =
-    !offline && result.isPlaying
-      ? `...listening to ${result.title} by ${result.artist}`
-      : "...not listening to anything";
+  // Hide component if offline or not playing
+  if (offline || !result.isPlaying) {
+    return null;
+  }
+
+  const scrollingText = `...listening to ${result.title} by ${result.artist}`;
 
   return (
     <div className="flex items-center">

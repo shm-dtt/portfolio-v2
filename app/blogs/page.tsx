@@ -70,7 +70,7 @@ export default async function Blog() {
       <div className="mb-32 mt-16">
         {sortedYears.map((year) => (
           <div key={year} className="flex items-start my-2">
-            <div className="w-1/6 text-neutral-400">{year}</div>
+            <div className="w-1/6">{year}</div>
 
             <div className="space-y-2 w-full" key={year}>
               {groupedPosts[year].map((post) => {
@@ -88,7 +88,7 @@ export default async function Blog() {
                   <div key={post.slug} className="w-full">
                     <Link
                       href={`/blogs/${post.slug}`}
-                      className="flex items-end justify-between group text-neutral-400 hover:text-white transition-colors duration-200"
+                      className="flex items-end justify-between group hover:text-neutral-400 transition-colors duration-200"
                     >
                       <p>{post.metadata.title}</p>
                       <span className="text-sm">{formattedDate}</span>

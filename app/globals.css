@@ -63,6 +63,7 @@ code {
   padding: 0.2em 0.4em;
   border-radius: 0.3em;
   background-color: var(--color-gray-100);
+  white-space : pre-wrap !important;
 }
 
 pre code {
@@ -96,10 +97,36 @@ code:not(pre code) span {
     font-size: 14px;
     padding: 0.2em 0.4em;
     border-radius: 0.3em;
-    background-color: var(--color-zinc-800);
+    background-color: var(--color-gray-800);
   }
 
   code:not(pre code) span {
-    color: var(--color-zinc-100) !important;
+    color: var(--color-gray-100) !important;
+  }
+}
+
+.my-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 2px;
+  text-decoration-color: #737373;
+}
+
+.marquee {
+  animation: scroll-left 10s linear infinite alternate;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(
+      calc(-100% + 100% / (scrollWidth / 100%))
+    ); /* calculate the translation value based on the scrollWidth */
   }
 }

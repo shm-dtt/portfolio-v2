@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar/Navbar";
 export default async function Home() {
   const initialData = await getNowPlayingItem();
   return (
-    <div className="mx-4 mb-32">
+    <div className="mx-4">
       <Navbar />
       <main className="flex flex-col mb-4">
         <section className="flex flex-col z-1 py-8">
@@ -33,41 +33,29 @@ export default async function Home() {
             </p>
 
             <p>
-              For more information about me, feel free to check my{" "}
+              Here's my{" "}
               <Link
                 href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
                 target="_blank"
                 className="my-underline"
                 aria-label="View my resume"
               >
-                resume
+                'resume.pdf'
               </Link>{" "}
-              or explore my{" "}
-              <Link href="/experience" className="my-underline">
-                professional background
-              </Link>
-              ,{" "}
-              <Link href="/projects" className="my-underline">
-                projects
-              </Link>
-              , and various social media profiles.
-            </p>
-
-            <address>
-              Reach me at{" "}
+              and{" "}
               <Link
                 href={`mailto:${Data.email}`}
-                className="my-underline"
+                className="my-underline italic"
                 aria-label={`my mail ${Data.email}`}
               >
-                my mail.
+                my e-mail.
               </Link>
-            </address>
+            </p>
           </div>
         </section>
-        <section className="z-1 pt-4 px-4">
-        <SpotifyStatus initialData={initialData} />
-      </section>
+        <section className="z-1 pt-4">
+          <SpotifyStatus initialData={initialData} />
+        </section>
       </main>
     </div>
   );
