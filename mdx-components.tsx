@@ -8,6 +8,7 @@ type ListProps = ComponentPropsWithoutRef<"ul">;
 type ListItemProps = ComponentPropsWithoutRef<"li">;
 type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
+type Code = ComponentPropsWithoutRef<"code">;
 
 const components = {
   h1: (props: HeadingProps) => <h1 className="font-bold text-3xl" {...props} />,
@@ -60,7 +61,7 @@ const components = {
       </a>
     );
   },
-  code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
+  code: ({ children, ...props }: Code) => {
     const codeHTML = highlight(children as string);
     return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
   },

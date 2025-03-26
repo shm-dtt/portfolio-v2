@@ -93,7 +93,7 @@ code:not(pre code) span {
 
 @media (prefers-color-scheme: dark) {
   code {
-    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-family: monospace;
     font-size: 14px;
     padding: 0.2em 0.4em;
     border-radius: 0.3em;
@@ -103,6 +103,17 @@ code:not(pre code) span {
   code:not(pre code) span {
     color: var(--color-gray-100) !important;
   }
+}
+
+@media screen and (max-width: 768px) {
+  code {
+    font-size: 12px; /* Even smaller for very small screens */
+  }
+
+  pre code {
+    font-size: 12px;
+  }
+
 }
 
 .my-underline {
