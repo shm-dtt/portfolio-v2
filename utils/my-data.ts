@@ -1,24 +1,5 @@
-/**
- * An object containing personal and professional information.
- *
- * @property {string} version - The version of the data.
- * @property {string} firstName - The first name of the individual.
- * @property {string} lastName - The last name of the individual.
- * @property {string} timeZone - The time zone of the individual.
- * @property {string} gmtOffset - The GMT offset of the individual's time zone.
- * @property {number} year - The current year.
- * @property {string} currentCompany - The name of the current company the individual is working at.
- * @property {string} currentCompanyLink - The URL to the current company's website.
- * @property {string} position - The current job position of the individual.
- * @property {string} email - The email address of the individual.
- * @property {string} twitter - The URL to the individual's Twitter profile.
- * @property {string} linkedin - The URL to the individual's LinkedIn profile.
- * @property {string} github - The URL to the individual's GitHub profile.
- * @property {string} portfolioV1 - The URL to the individual's version 1 portfolio.
- * @property {string} dribbble - The URL to the individual's Dribbble profile.
- */
 export const Data = {
-  version: "v2.7",
+  version: "v2.8",
   firstName: "Soham",
   lastName: "Dutta",
   timeZone: "Asia/Kolkata",

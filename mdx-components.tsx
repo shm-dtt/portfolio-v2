@@ -20,7 +20,7 @@ const components = {
   h4: (props: HeadingProps) => <h4 className="" {...props} />,
   p: (props: ParagraphProps) => <p className="text-neutral-400" {...props} />,
   ol: (props: ListProps) => (
-    <ol className="list-decimal pl-5 space-y-2 text-neutral-400" {...props} />
+    <ol className="list-decimal pl-5 space-y-1 text-neutral-400" {...props} />
   ),
   ul: (props: ListProps) => (
     <ul className="list-disc pl-5 space-y-1 text-neutral-400" {...props} />
