@@ -77,7 +77,7 @@ pre code {
 }
 
 pre code span {
-  line-height: 1 !important;
+  line-height: 1.5 !important;
   display: inline-block;
   font-weight: 500;
 }
@@ -114,10 +114,6 @@ code:not(pre code) span {
 
 .marquee {
   animation: scroll-left 10s linear infinite alternate;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
 }
 
 @keyframes scroll-left {

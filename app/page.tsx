@@ -1,11 +1,8 @@
-import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
 import { Data } from "@/utils/my-data";
 import Link from "next/link";
-import getNowPlayingItem from "@/components/SpotifyStatus/SpotifyAPI";
 import Navbar from "@/components/Navbar/Navbar";
 
 export default async function Home() {
-  const initialData = await getNowPlayingItem();
   return (
     <div className="mx-4">
       <Navbar />
@@ -33,28 +30,28 @@ export default async function Home() {
             </p>
 
             <p>
-              Here's my{" "}
+              Feel free to check out my{" "}
               <Link
                 href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
                 target="_blank"
                 className="my-underline"
                 aria-label="View my resume"
               >
-                'resume.pdf'
-              </Link>{" "}
-              and{" "}
-              <Link
-                href={`mailto:${Data.email}`}
-                className="my-underline italic"
-                aria-label={`my mail ${Data.email}`}
-              >
-                my e-mail.
+                Resume
               </Link>
             </p>
+            <p>
+              And reach out to me via{" "}
+              <Link
+                href={`mailto:${Data.email}`}
+                className="my-underline"
+                aria-label={`my mail ${Data.email}`}
+              >
+                email
+              </Link>{" "}
+              for any opportunities or collaborations.
+            </p>
           </div>
-        </section>
-        <section className="z-1 pt-4">
-          <SpotifyStatus initialData={initialData} />
         </section>
       </main>
     </div>

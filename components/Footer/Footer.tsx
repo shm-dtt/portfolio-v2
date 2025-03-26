@@ -1,30 +1,11 @@
-"use client";
-import { useEffect, useState } from "react";
 import { Data } from "@/utils/my-data";
 import Link from "next/link";
 import { HoverButton } from "../HoverButton/HoverButton";
+import getNowPlayingItem from "@/components/SpotifyStatus/SpotifyAPI";
+import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
 
-const Footer: React.FC = () => {
-  const timeOptions: Intl.DateTimeFormatOptions = {
-    timeZone: Data.timeZone,
-    hour12: true,
-    hour: "numeric",
-    minute: "numeric",
-  };
-
-  const [time, setTime] = useState("");
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    const updateTime = () => {
-      setTime(new Date().toLocaleTimeString("en-US", timeOptions));
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 5000);
-    return () => clearInterval(interval);
-  }, []);
+export default async function Footer() {
+  const initialData = await getNowPlayingItem();
 
   const socialLinks = [
     { name: "GitHub", url: Data.github },
@@ -57,20 +38,11 @@ const Footer: React.FC = () => {
         <div className="border-t-[0.25px] transition-all duration-700 ease-in-out w-full border-neutral-700"></div>
       </div>
 
-      <div
-        className={`flex justify-between text-neutral-400 text-xs transition-opacity duration-700 ${
-          mounted ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        <p>
-          ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.
-        </p>
-        <p>
-          {time} UTC{Data.gmtOffset}
-        </p>
-      </div>
+      <section className="text-neutral-400 text-xs">
+        <SpotifyStatus initialData={initialData} fallback={
+          <div>({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.</div>
+        } />
+      </section>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -2,11 +2,11 @@
 import BackButton from '@/components/BackButton/BackButton';
 
 export const metadata = {
-title: 'Building a real time Spotify "Now Playing" Component',
-alternates: {
-canonical: '/blogs/spotify-playing-component',
-},
-date: '22/03/2025',
+  title: 'Building a real time Spotify "Now Playing" Component',
+  alternates: {
+    canonical: "/blogs/spotify-playing-component",
+  },
+  date: "27/03/2025",
 };
 
 <BackButton />
@@ -15,15 +15,14 @@ date: '22/03/2025',
 
 # Building a real time Spotify "Now Playing" Component
 
-<p className="text-neutral-400 mb-8 mt-2">
-  {metadata.date}
-</p>
+<p className="text-neutral-400 mb-8 mt-2">{metadata.date}</p>
 
 As a music enthusiast and developer, I wanted to share my current music taste with visitors to my personal website. In this blog post, I'll walk through how I built a real-time "Now Playing" Spotify integration for my Next.js website.
 
 ## The Vision
 
 I wanted a subtle but engaging component that would:
+
 - Display my currently playing Spotify track in real-time
 - Automatically update when songs change
 - Look elegant on my personal website
@@ -32,18 +31,19 @@ I wanted a subtle but engaging component that would:
 ## Technical Approach
 
 The implementation required three main parts:
-  1. **Authentication with Spotify's API**
-  2. **Fetching the currently playing track**
-  3. **Creating a responsive React component**
-<br/>
-Let's break down each part of the solution.
+
+1. **Authentication with Spotify's API**
+2. **Fetching the currently playing track**
+3. **Creating a responsive React component**
+   <br />
+   Let's break down each part of the solution.
 
 ## Setting Up Spotify API Authentication
 
 The first challenge was authentication. Spotify's API uses OAuth 2.0, which typically requires user interaction. Since I wanted this to work server-side without user input, I implemented the "Client Credentials Flow" with a refresh token.
-<br/>
-This is being done in "SpotifyAPI.ts" file.
-  
+
+<br />
+This is being done in `SpotifyAPI.ts` file.
 
 ```typescript
 import queryString from "query-string";
@@ -103,7 +103,7 @@ const getAccessToken = async () => {
   };
 
   return { access_token: data.access_token };
-}
+};
 ```
 
 ## Fetching the Currently Playing Track
@@ -123,7 +123,7 @@ export const getNowPlaying = async () => {
       // Add cache control headers to prevent caching
       cache: "no-store",
       next: { revalidate: 0 },
-    },
+    }
   );
 
   return response;
@@ -131,10 +131,10 @@ export const getNowPlaying = async () => {
 ```
 
 The important details here:
+
 - Using `cache: "no-store"` and `revalidate: 0` to ensure we always get fresh data
 - Keeping the function simple and focused on one responsibility
-<br/>
-I then created a helper function to parse the response:
+  <br />I then created a helper function to parse the response:
 
 ```typescript
 export default async function getNowPlayingItem() {
@@ -159,16 +159,67 @@ export default async function getNowPlayingItem() {
 ## Building the React Component
 
 The React component needed to:
+
 1. Display initial data from the server
 2. Periodically poll for updates
 3. Handle overflow with a scrolling animation
 4. Show different states based on playback status
 
-Here's how I structured the component:
+<br />
+First, I used a Spotify Logo SVG component:
 
 ```tsx
-const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
+const SpotifyLogo = ({
+  width = 14,
+  height = 14,
+  color = "#a3a3a3",
+}: {
+  width?: number;
+  height?: number;
+  color?: string;
+}) => (
+  <svg width={width} height={height} x="0px" y="0px" viewBox="0 0 20 20">
+    <g>
+      <g>
+        <g>
+          <path
+            fill={color}
+            className="st0"
+            d="M10,0C4.5,0,0,4.5,0,10c0,5.5,4.5,10,10,10c5.5,0,10-4.5,10-10C20,4.5,15.5,0,10,0z M14.6,14.4
+                        c-0.2,0.3-0.6,0.4-0.9,0.2c-2.3-1.4-5.3-1.8-8.8-1c-0.3,0.1-0.7-0.1-0.7-0.5c-0.1-0.3,0.1-0.7,0.5-0.7c3.8-0.9,7.1-0.5,9.7,1.1
+                        C14.7,13.7,14.8,14.1,14.6,14.4z M15.8,11.7c-0.2,0.4-0.7,0.5-1.1,0.3C12,10.3,8,9.8,4.8,10.8c-0.4,0.1-0.8-0.1-1-0.5
+                        c-0.1-0.4,0.1-0.8,0.5-1c3.6-1.1,8.1-0.6,11.2,1.3C15.9,10.9,16,11.3,15.8,11.7z M15.9,8.9C12.7,7,7.4,6.8,4.3,7.7
+                        c-0.5,0.1-1-0.1-1.2-0.6C3,6.6,3.3,6.1,3.8,5.9c3.5-1.1,9.4-0.9,13.1,1.3c0.4,0.3,0.6,0.8,0.3,1.3C16.9,9,16.4,9.1,15.9,8.9z"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+);
+
+export default SpotifyLogo;
+```
+
+<br />
+Here's how I structured the actual component:
+
+```tsx
+"use client";
+import React, { useEffect, useState, useRef, ReactNode } from "react";
+import SpotifyLogo from "./SpotifyLogo";
+
+interface SpotifyData {
+  artist: string;
+  isPlaying: boolean;
+  title: string;
+}
+
+const SpotifyStatus: React.FC<{
+  initialData: SpotifyData | false,
+  fallback?: ReactNode
+}> = ({
   initialData,
+  fallback
 }) => {
   const [offline, setOffline] = useState<boolean>(!initialData);
   const [result, setResult] = useState<SpotifyData>(
@@ -178,7 +229,6 @@ const SpotifyStatus: React.FC<{ initialData: SpotifyData | false }> = ({
       title: "",
     },
   );
-  // ...more state and refs
 ```
 
 ### Handling Text Overflow
@@ -190,6 +240,11 @@ One of the more interesting challenges was handling text overflow. I wanted long
 3. CSS animations to handle the scrolling
 
 ```tsx
+const textRef = useRef<HTMLDivElement>(null);
+const containerRef = useRef<HTMLDivElement>(null);
+const [shouldScroll, setShouldScroll] = useState(false);
+
+// Unified Effect for Resize and Overflow Handling
 useEffect(() => {
   const updateScrollBehavior = () => {
     if (textRef.current && containerRef.current) {
@@ -234,10 +289,21 @@ useEffect(() => {
     } catch (error) {
       setOffline(true);
     }
-  }, 5000);
+  }, 15000);
 
   return () => clearInterval(interval);
 }, []);
+```
+
+The text is handled separately:
+
+```tsx
+// Hide component if offline or not playing, show fallback
+if (offline || !result.isPlaying) {
+  return fallback || null;
+}
+
+const scrollingText = `${result.title} by ${result.artist}`;
 ```
 
 ### The Final JSX
@@ -246,42 +312,51 @@ The component's render output is deliberately minimal but expressive:
 
 ```tsx
 return (
-  <div className="flex items-center">
-    <div className="flex items-center mr-2">
-      <SpotifyLogo
-        width={14}
-        height={14}
-        color={!offline && result.isPlaying ? "#25d865" : "#a3a3a3"}
-      />
-    </div>
-    <div ref={containerRef} className="w-full inline-block overflow-hidden">
-      <div
-        ref={textRef}
-        className={`text-xs text-neutral-400 whitespace-nowrap ${
-          shouldScroll ? "marquee" : ""
-        }`}
-      >
-        <span>{scrollingText}</span>
+    <div className="flex items-center gap-2">
+      <div>
+        <SpotifyLogo
+          width={16}
+          height={16}
+          color={"#25d865"}
+        />
+      </div>
+      <div ref={containerRef} className="w-full inline-block overflow-hidden">
+        <div
+          ref={textRef}
+          className={`text-xs text-neutral-400 whitespace-nowrap ${
+            shouldScroll ? "marquee" : ""
+          }`}
+        >
+          <span>{scrollingText}</span>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 ```
 
 ## Integration with Next.js App
 
-Integrating the component into my Next.js home page was straightforward:
+Integrating the component into my Next.js footer was straightforward:
 
 ```tsx
-export default async function Home() {
+export default async function Footer() {
   const initialData = await getNowPlayingItem();
+  //Other footer related things
   return (
-    <div className="mx-4 mb-32">
+    <footer className="flex flex-col justify-center m-4 gap-4 mt-32">
       {/* Other components */}
-      <section className="z-1 pt-4 px-4">
-        <SpotifyStatus initialData={initialData} />
+      <section className="text-neutral-400 text-xs">
+        <SpotifyStatus
+          initialData={initialData}
+          fallback={
+            <div>
+              ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.
+            </div>
+          }
+        />
       </section>
-    </div>
+    </footer>
   );
 }
 ```
@@ -293,13 +368,19 @@ The key here is using `initialData` to provide server-rendered content before cl
 In my global CSS file, I added this animation:
 
 ```css
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(var(--scroll-width)); }
+.marquee {
+  animation: scroll-left 10s linear infinite alternate;
 }
 
-.marquee {
-  animation: marquee 10s linear infinite alternate;
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(
+      calc(-100% + 100% / (scrollWidth / 100%))
+    ); /* calculate the translation value based on the scrollWidth */
+  }
 }
 ```
 
@@ -308,29 +389,35 @@ In my global CSS file, I added this animation:
 ### Challenge 1: API Rate Limits
 
 Spotify's API has rate limits, so I needed to ensure I wasn't making too many requests. I addressed this by:
+
 - Caching the access token
-- Using a reasonable polling interval
-- Handling errors gracefully
+- Using a reasonable polling interval(15 secs)
 
 ### Challenge 2: Cross-browser Animation Compatibility
 
 Getting smooth scrolling animations working consistently across browsers was tricky. I found that using CSS variables for the animation distance worked best:
 
-```javascript
-// Set the CSS variable dynamically
-textRef.current.style.setProperty('--scroll-width', `${translateX}px`);
+```tsx
+if (isOverflowing) {
+  const translateX = -(textWidth - containerWidth) - 15;
+  textRef.current.style.transform = `translateX(${translateX}px)`;
+} else {
+  textRef.current.style.transform = "translateX(0)";
+}
 ```
 
 ### Challenge 3: Server/Client Hydration
 
 With Next.js, there's always the challenge of ensuring smooth hydration between server and client rendering. I solved this by:
+
 - Making the component a client component with "use client"
 - Providing initial data from the server
 - Having sensible defaults for when data is loading
 
 ## Future Improvements
 
-There are several ways I plan to enhance this component:
+There are several ways this component can be enhanced according to personal preferences:
+
 - Add album artwork thumbnails
 - Display playback progress
 - Add animation when songs change
@@ -341,9 +428,9 @@ There are several ways I plan to enhance this component:
 
 Building this Spotify integration was a fun project that adds a personal touch to my website. The combination of Next.js server components for initial data fetching and client components for real-time updates works beautifully.
 
-Feel free to adapt this approach for your own projects! The full code is available in my GitHub repository.
+Feel free to adapt this approach for your own projects!
 
----
+<br />
 
 ## Getting Started with Your Own Implementation
 
@@ -355,4 +442,5 @@ To implement this on your own site:
 4. Set up your environment variables
 5. Clone or adapt the code shown in this post
 
+<br />
 Happy coding and happy listening!
