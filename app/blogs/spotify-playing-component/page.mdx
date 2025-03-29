@@ -9,7 +9,7 @@ export const metadata = {
   alternates: {
     canonical: "/blogs/spotify-playing-component",
   },
-  date: "26/03/2025",
+  date: "28/03/2025",
 };
 
 <BackButton />
@@ -41,7 +41,7 @@ The implementation required three main parts:
    <br />
    Let's break down each part of the solution.
 
-## Setting Up Spotify API Authentication
+## 1. Setting Up Spotify API Authentication
 
 The first challenge was authentication. Spotify's API uses OAuth 2.0, which typically requires user interaction. Since I wanted this to work server-side without user input, I implemented the "Client Credentials Flow" with a refresh token.
 
@@ -206,6 +206,9 @@ export default SpotifyLogo;
 <br />
 Here's how I structured the actual component:
 
+<br />
+This is being done in `SpotifyStatus.tsx` file.
+
 ```tsx
 "use client";
 import React, { useEffect, useState, useRef, ReactNode } from "react";
@@ -368,7 +371,7 @@ The key here is using `initialData` to provide server-rendered content before cl
 
 ## CSS Animation
 
-In my global CSS file, I added this animation:
+In my `globals.css` file, I added this animation:
 
 ```css
 .marquee {
