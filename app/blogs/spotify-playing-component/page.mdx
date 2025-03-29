@@ -1,5 +1,8 @@
 {/* Metadata and imports */}
 import BackButton from '@/components/BackButton/BackButton';
+import playing from './playing.png';
+import info from './info.png';
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Building a real time Spotify "Now Playing" Component',
@@ -383,6 +386,22 @@ In my global CSS file, I added this animation:
   }
 }
 ```
+
+## Final Result
+
+Here are the two states of the component:
+<br/>
+<div className="rounded-md p-2 bg-neutral-800 text-xs flex flex-col gap-3 items-center text-neutral-400">
+  <Image src={playing} alt="Playing State" className="rounded-md"/>
+  <p>Fig 1: Component when songs are playing</p>
+</div>
+<br/>
+<div className="rounded-md p-2 bg-neutral-800 text-xs flex flex-col gap-3 items-center text-neutral-400">
+  <Image src={info} alt="Not Playing State" className="rounded-md"/>
+  <p>Fig 2: Component when no songs are playing</p>
+</div>
+<br/>
+You can see it in action down below in the footer as well.
 
 ## Challenges and Solutions
 

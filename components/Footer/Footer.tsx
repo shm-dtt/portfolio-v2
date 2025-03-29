@@ -15,7 +15,7 @@ export default async function Footer() {
   ];
 
   return (
-    <footer className="flex flex-col justify-center m-4 gap-4 mt-32">
+    <footer className="flex flex-col justify-center m-4 gap-4 mt-24">
       <nav className="flex gap-1 text-sm">
         {socialLinks.map((platform, idx) => (
           <div key={platform.name} className="flex items-center">

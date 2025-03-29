@@ -13,19 +13,31 @@
 body {
   background-color: #121212;
   color: #d1d5db;
+  --sb-track-color: #121212;
+  --sb-thumb-color: #909090;
+  --sb-size: 8px;
 }
 
-/* Hide scrollbar */
-::-webkit-scrollbar {
-  display: none;
+body::-webkit-scrollbar {
+  width: var(--sb-size)
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #888;
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 8px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
 }
 
 :root {

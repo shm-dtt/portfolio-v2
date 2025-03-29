@@ -6,7 +6,7 @@ export default async function Home() {
   return (
     <div className="mx-4">
       <Navbar />
-      <main className="flex flex-col mb-4">
+      <main className="flex flex-col my-4">
         <section className="flex flex-col z-1 py-8">
           <div className="flex flex-col gap-8">
             <p>

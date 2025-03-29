@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div className=" my-8">
+    <div>
       <p className="text-2xl font-bold my-8">{beautifyPathname(pathname)}</p>
       <div className="flex justify-end" role="navigation">
         <nav className="flex gap-4">
