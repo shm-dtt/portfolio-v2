@@ -38,8 +38,9 @@ The implementation required three main parts:
 1. **Authentication with Spotify's API**
 2. **Fetching the currently playing track**
 3. **Creating a responsive React component**
-   <br />
-   Let's break down each part of the solution.
+  
+<br />
+Let's break down each part of the solution.
 
 ## 1. Setting Up Spotify API Authentication
 
@@ -109,7 +110,7 @@ const getAccessToken = async () => {
 };
 ```
 
-## Fetching the Currently Playing Track
+## 2. Fetching the Currently Playing Track
 
 Once authentication was sorted, I created a function to fetch the currently playing track:
 
@@ -159,7 +160,7 @@ export default async function getNowPlayingItem() {
 }
 ```
 
-## Building the React Component
+## 3. Building the React Component
 
 The React component needed to:
 
