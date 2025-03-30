@@ -38,15 +38,13 @@ The implementation required three main parts:
 1. **Authentication with Spotify's API**
 2. **Fetching the currently playing track**
 3. **Creating a responsive React component**
-  
-<br />
+
 Let's break down each part of the solution.
 
 ## 1. Setting Up Spotify API Authentication
 
 The first challenge was authentication. Spotify's API uses OAuth 2.0, which typically requires user interaction. Since I wanted this to work server-side without user input, I implemented the "Client Credentials Flow" with a refresh token.
 
-<br />
 This is being done in `SpotifyAPI.ts` file.
 
 ```typescript
@@ -138,7 +136,8 @@ The important details here:
 
 - Using `cache: "no-store"` and `revalidate: 0` to ensure we always get fresh data
 - Keeping the function simple and focused on one responsibility
-  <br />I then created a helper function to parse the response:
+
+I then created a helper function to parse the response:
 
 ```typescript
 export default async function getNowPlayingItem() {
@@ -169,7 +168,6 @@ The React component needed to:
 3. Handle overflow with a scrolling animation
 4. Show different states based on playback status
 
-<br />
 First, I used a Spotify Logo SVG component:
 
 ```tsx
@@ -204,10 +202,8 @@ const SpotifyLogo = ({
 export default SpotifyLogo;
 ```
 
-<br />
 Here's how I structured the actual component:
 
-<br />
 This is being done in `SpotifyStatus.tsx` file.
 
 ```tsx
@@ -453,7 +449,6 @@ Building this Spotify integration was a fun project that adds a personal touch t
 
 Feel free to adapt this approach for your own projects!
 
-<br />
 
 ## Getting Started with Your Own Implementation
 
@@ -465,5 +460,4 @@ To implement this on your own site:
 4. Set up your environment variables
 5. Clone or adapt the code shown in this post
 
-<br />
 Happy coding and happy listening!

@@ -13,13 +13,13 @@ type Code = ComponentPropsWithoutRef<"code">;
 const components = {
   h1: (props: HeadingProps) => <h1 className="font-bold text-3xl" {...props} />,
   h2: (props: HeadingProps) => (
-    <h2 className="font-medium text-xl mt-10 mb-4" {...props} />
+    <h2 className="font-medium text-2xl mt-10 mb-4" {...props} />
   ),
   h3: (props: HeadingProps) => (
-    <h3 className="font-medium mt-10 mb-4" {...props} />
+    <h3 className="font-medium text-xl mt-10 mb-4" {...props} />
   ),
-  h4: (props: HeadingProps) => <h4 className="" {...props} />,
-  p: (props: ParagraphProps) => <p className="text-neutral-400" {...props} />,
+  h4: (props: HeadingProps) => <h4 className="text-lg" {...props} />,
+  p: (props: ParagraphProps) => <p className="text-neutral-400 my-4" {...props} />,
   ol: (props: ListProps) => (
     <ol className="list-decimal pl-5 space-y-1 text-neutral-400" {...props} />
   ),

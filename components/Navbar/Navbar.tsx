@@ -27,6 +27,7 @@ const Navbar: React.FC = () => {
 
   const beautifyPathname = (path: string) => {
     if (path === "/") return "About";
+    if (path.startsWith("/blogs/")) return "Blogs";
     return path
       .replace(/\//g, "") // Remove leading slash
       .split("-") // Split by dashes
