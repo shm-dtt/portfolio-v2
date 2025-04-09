@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef, ReactNode } from "react";
+import React, { useEffect, useState, useRef} from "react";
 import SpotifyLogo from "./SpotifyLogo";
 
 interface SpotifyData {
@@ -10,11 +10,9 @@ interface SpotifyData {
 }
 
 const SpotifyStatus: React.FC<{ 
-  initialData: SpotifyData | false, 
-  fallback?: ReactNode 
+  initialData: SpotifyData | false
 }> = ({
   initialData,
-  fallback
 }) => {
   const [offline, setOffline] = useState<boolean>(!initialData);
   const [result, setResult] = useState<SpotifyData>(
@@ -74,11 +72,14 @@ const SpotifyStatus: React.FC<{
   }, []);
 
   // Hide component if offline or not playing, show fallback
-  if (offline || !result.isPlaying) {
-    return fallback || null;
-  }
+  // if (offline || !result.isPlaying) {
+  //   return fallback || null;
+  // }
 
-  const scrollingText = `${result.title} by ${result.artist}`;
+  const scrollingText =
+    !offline && result.isPlaying
+      ? `${result.title} by ${result.artist}`
+      : "Sorry, not listening to Spotify right now. Check again later.";
 
   return (
     <div className="flex items-center gap-2">
@@ -86,7 +87,7 @@ const SpotifyStatus: React.FC<{
         <SpotifyLogo
           width={16}
           height={16}
-          color={"#25d865"}
+          color={!offline && result.isPlaying ? "#25d865" : "#a3a3a3"}
         />
       </div>
       <div ref={containerRef} className="w-full inline-block overflow-hidden">

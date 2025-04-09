@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { HoverButton } from "@/components/HoverButton/HoverButton";
+import { HoverButton } from "@/components/ui/HoverButton";
 
 interface CardProps {
   name: string;

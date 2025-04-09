@@ -1,9 +1,7 @@
 export const Data = {
-  version: "v2.8",
+  version: "v2.9",
   firstName: "Soham",
   lastName: "Dutta",
-  timeZone: "Asia/Kolkata",
-  gmtOffset: "+05:30",
   year: new Date().getFullYear(),
   currentCompany: "Nokia",
   currentCompanyLink: "https://www.nokia.com/",

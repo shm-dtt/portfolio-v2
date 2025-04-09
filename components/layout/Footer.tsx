@@ -1,11 +1,8 @@
 import { Data } from "@/utils/my-data";
 import Link from "next/link";
-import { HoverButton } from "../HoverButton/HoverButton";
-import getNowPlayingItem from "@/components/SpotifyStatus/SpotifyAPI";
-import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
+import { HoverButton } from "@/components/ui/HoverButton";
 
 export default async function Footer() {
-  const initialData = await getNowPlayingItem();
 
   const socialLinks = [
     { name: "GitHub", url: Data.github },
@@ -39,9 +36,9 @@ export default async function Footer() {
       </div>
 
       <section className="text-neutral-400 text-xs">
-        <SpotifyStatus initialData={initialData} fallback={
-          <div>({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.</div>
-        } />
+        <div>
+          ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}
+        </div>
       </section>
     </footer>
   );

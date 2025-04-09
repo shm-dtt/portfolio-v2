@@ -1,6 +1,6 @@
 import { Data } from "@/utils/my-data";
 import Link from "next/link";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/layout/Navbar";
 
 export default async function Home() {
   return (
@@ -38,7 +38,7 @@ export default async function Home() {
                 aria-label="View my resume"
               >
                 Resume
-              </Link>
+              </Link>.
             </p>
             <p>
               And reach out to me via{" "}

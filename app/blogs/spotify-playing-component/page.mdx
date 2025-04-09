@@ -1,8 +1,9 @@
 {/* Metadata and imports */}
-import BackButton from '@/components/BackButton/BackButton';
+import BackButton from '@/components/ui/BackButton';
 import playing from './playing.png';
 import info from './info.png';
 import Image from 'next/image';
+import SpotifyMDX from './SpotifyMDX.tsx';
 
 export const metadata = {
   title: 'Building a real time Spotify "Now Playing" Component',
@@ -208,7 +209,7 @@ This is being done in `SpotifyStatus.tsx` file.
 
 ```tsx
 "use client";
-import React, { useEffect, useState, useRef, ReactNode } from "react";
+import React, { useEffect, useState, useRef} from "react";
 import SpotifyLogo from "./SpotifyLogo";
 
 interface SpotifyData {
@@ -218,11 +219,9 @@ interface SpotifyData {
 }
 
 const SpotifyStatus: React.FC<{
-  initialData: SpotifyData | false,
-  fallback?: ReactNode
+  initialData: SpotifyData | false
 }> = ({
   initialData,
-  fallback
 }) => {
   const [offline, setOffline] = useState<boolean>(!initialData);
   const [result, setResult] = useState<SpotifyData>(
@@ -301,12 +300,10 @@ useEffect(() => {
 The text is handled separately:
 
 ```tsx
-// Hide component if offline or not playing, show fallback
-if (offline || !result.isPlaying) {
-  return fallback || null;
-}
-
-const scrollingText = `${result.title} by ${result.artist}`;
+const scrollingText =
+  !offline && result.isPlaying
+    ? `${result.title} by ${result.artist}`
+    : "Sorry, not listening to Spotify right now. Check again later.";
 ```
 
 ### The Final JSX
@@ -320,7 +317,7 @@ return (
         <SpotifyLogo
           width={16}
           height={16}
-          color={"#25d865"}
+          color={!offline && result.isPlaying ? "#25d865" : "#a3a3a3"}
         />
       </div>
       <div ref={containerRef} className="w-full inline-block overflow-hidden">
@@ -340,26 +337,19 @@ return (
 
 ## Integration with Next.js App
 
-Integrating the component into my Next.js footer was straightforward. I added a fallback though, that when no music is playing, it shows my name and year:
+Integrating the component into my Next.js app was straightforward. I created a new component which can be used anywhere throughout the app. I have used it inside this blog itself.
 
 ```tsx
-export default async function Footer() {
+import getNowPlayingItem from "@/components/SpotifyStatus/SpotifyAPI";
+import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
+
+export default async function SpotifyMDX() {
   const initialData = await getNowPlayingItem();
-  //Other footer related things
+
   return (
-    <footer className="flex flex-col justify-center m-4 gap-4 mt-32">
-      {/* Other components */}
-      <section className="text-neutral-400 text-xs">
-        <SpotifyStatus
-          initialData={initialData}
-          fallback={
-            <div>
-              ({Data.version}) {Data.year}© {Data.firstName} {Data.lastName}.
-            </div>
-          }
-        />
-      </section>
-    </footer>
+    <div>
+      <SpotifyStatus initialData={initialData} />
+    </div>
   );
 }
 ```
@@ -389,19 +379,25 @@ In my `globals.css` file, I added this animation:
 
 ## Final Result
 
+Here is the component itself:
+
+<div className="p-2 rounded-md bg-neutral-800">
+  <SpotifyMDX />
+</div>
+
 Here are the two states of the component:
-<br/>
+
+<br />
 <div className="rounded-md p-2 bg-neutral-800 text-xs flex flex-col gap-3 items-center text-neutral-400">
-  <Image src={playing} alt="Playing State" className="rounded-md"/>
+  <Image src={playing} alt="Playing State" className="rounded-md" />
   <p>Fig 1: Component when songs are playing</p>
 </div>
-<br/>
+<br />
 <div className="rounded-md p-2 bg-neutral-800 text-xs flex flex-col gap-3 items-center text-neutral-400">
-  <Image src={info} alt="Not Playing State" className="rounded-md"/>
+  <Image src={info} alt="Not Playing State" className="rounded-md" />
   <p>Fig 2: Component when no songs are playing</p>
 </div>
-<br/>
-You can see it in action down below in the footer as well.
+<br />
 
 ## Challenges and Solutions
 
@@ -433,6 +429,10 @@ With Next.js, there's always the challenge of ensuring smooth hydration between 
 - Providing initial data from the server
 - Having sensible defaults for when data is loading
 
+### Challenge 4: The overhead of using this component
+
+Keep in mind that the constant polling, even with a 15-second interval, can add some overhead to your server. This can eventually slow down some parts of your site if implemented on a project wide component (like the header or footer) which is present in each route/page.
+
 ## Future Improvements
 
 There are several ways this component can be enhanced according to personal preferences:
@@ -449,7 +449,6 @@ Building this Spotify integration was a fun project that adds a personal touch t
 
 Feel free to adapt this approach for your own projects!
 
-
 ## Getting Started with Your Own Implementation
 
 To implement this on your own site:
@@ -460,4 +459,4 @@ To implement this on your own site:
 4. Set up your environment variables
 5. Clone or adapt the code shown in this post
 
-Happy coding and happy listening!
+Happy coding and happy listening!@/components/ui/BackButton

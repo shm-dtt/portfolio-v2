@@ -2,7 +2,6 @@ import React from "react";
 import { compareDesc, parse } from "date-fns";
 import Link from "next/link";
 import { getAllPosts } from "@/utils/mdx";
-import Navbar from "@/components/Navbar/Navbar";
 
 interface BlogMetadata {
   title: string;

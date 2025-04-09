@@ -1,6 +1,6 @@
 import Card from "@/app/experience/ExpCard";
 import { experience } from "@/app/experience/info";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/layout/Navbar";
 
 /**
  * The `Experience` component renders the experience section of the portfolio.
