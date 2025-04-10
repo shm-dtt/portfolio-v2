@@ -30,8 +30,8 @@ export async function GET(request: Request) {
     return new ImageResponse(
       (
         <div tw="flex">
-          <img src={image} alt="OG Image" />
-          <div tw="absolute inset-0 flex flex-col items-center justify-center text-center text-white text-3xl font-bold p-8">
+          {/* <img src={image} alt="OG Image" /> */}
+          <div tw="absolute inset-0 flex flex-col items-center justify-center text-center text-black text-3xl font-bold p-8">
             <h1 style={{ fontFamily: "BwBetoBold" }}>{title}</h1>
             <h2 style={{ fontFamily: "Gilroy" }}>soham dutta.</h2>
           </div>
