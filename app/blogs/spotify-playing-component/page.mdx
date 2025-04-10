@@ -4,14 +4,14 @@ import playing from './playing.png';
 import info from './info.png';
 import Image from 'next/image';
 import SpotifyMDX from './SpotifyMDX.tsx';
+import { generateMetadata } from '@/utils/metadata';
 
-export const metadata = {
-  title: 'Building a real time Spotify "Now Playing" Component',
-  alternates: {
-    canonical: "/blogs/spotify-playing-component",
-  },
-  date: "28/03/2025",
-};
+export const metadata = generateMetadata(
+  'Building a real time Spotify "Now Playing" Component',
+  'A detailed guide on building a real-time Spotify integration for your website using Next.js.',
+  '28/03/2025',
+  '/blogs/spotify-playing-component'
+);
 
 <BackButton />
 

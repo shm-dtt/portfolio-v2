@@ -1,12 +1,13 @@
 {/* Metadata and imports */}
 import BackButton from '@/components/ui/BackButton';
-export const metadata = {
-title: 'Redesign 2025',
-alternates: {
-canonical: '/blogs/redesign-2025',
-},
-date: '01/01/2025',
-};
+import { generateMetadata } from '@/utils/metadata';
+
+export const metadata = generateMetadata(
+  'Redesign 2025',
+  'Redesigning my portfolio to reflect my growth as a developer. A focus on minimalism, performance, and storytelling.',
+  '01/01/2025',
+  '/blogs/redesign-2025'
+);
 
 <BackButton />
 
