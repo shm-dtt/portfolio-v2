@@ -29,5 +29,5 @@
     "**/*.tsx",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "app/blogs/spotify-playing-component/*.tsx"]
+  "exclude": ["node_modules"]
 }

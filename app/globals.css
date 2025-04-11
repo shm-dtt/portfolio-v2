@@ -134,18 +134,3 @@ code:not(pre code) span {
   text-underline-offset: 2px;
   text-decoration-color: #737373;
 }
-
-.marquee {
-  animation: scroll-left 10s linear infinite alternate;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(
-      calc(-100% + 100% / (scrollWidth / 100%))
-    ); /* calculate the translation value based on the scrollWidth */
-  }
-}
