@@ -1,4 +1,3 @@
-
 import getNowPlayingItem from "@/components/SpotifyStatus/SpotifyAPI";
 import SpotifyStatus from "@/components/SpotifyStatus/SpotifyStatus";
 
