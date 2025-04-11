@@ -2,7 +2,7 @@ import { Data } from "@/utils/my-data";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 
-export default async function Home() {
+export default function Home() {
   return (
     <div className="mx-4">
       <Navbar />
