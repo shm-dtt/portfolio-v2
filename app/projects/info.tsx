@@ -16,7 +16,7 @@ export const projects = [
     description:
       "A simple python app to calculate total length of a bunch of local videos, at your specified playback speed.",
     techUsed: ["Python", "moviepy", "PyQt6"],
-    link: "https://github.com/shm-dsgn/video_duration",
+    link: "https://github.com/shm-dtt/video_duration",
   },
   {
     name: "Envoy",
@@ -25,7 +25,7 @@ export const projects = [
     description:
       "Email management tool enabling sending, scheduling, and tracking emails across timezones, ensuring seamless email management and real-time email notifications upon reading.",
     techUsed: ["Spring Boot", "Java", "MySQL", "Quartz Scheduler"],
-    link: "https://github.com/shm-dsgn/envoy",
+    link: "https://github.com/shm-dtt/envoy",
   },
   // {
   //   name: "Twiter Clone",
@@ -41,7 +41,7 @@ export const projects = [
   //     "Redis",
   //     "Tailwind CSS",
   //   ],
-  //   link: "https://github.com/shm-dsgn/twitter-clone",
+  //   link: "https://github.com/shm-dtt/twitter-clone",
   // },
   {
     name: "Blog On",

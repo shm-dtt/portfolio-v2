@@ -7,7 +7,7 @@ export default async function Footer() {
   const socialLinks = [
     { name: "GitHub", url: Data.github },
     { name: "LinkedIn", url: Data.linkedin },
-    { name: "Twitter", url: Data.twitter },
+    { name: "X/Twitter", url: Data.twitter },
     { name: "Dribbble", url: Data.dribbble },
   ];
 

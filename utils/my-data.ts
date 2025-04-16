@@ -7,9 +7,8 @@ export const Data = {
   currentCompanyLink: "https://www.nokia.com/",
   position: "Applied R&D Software Engineer",
   email: "sohamdutta2001@gmail.com",
-  twitter: "https://twitter.com/shmdsgn",
+  twitter: "https://twitter.com/shm_dtt",
   linkedin: "https://www.linkedin.com/in/shm-dtt",
-  github: "https://github.com/shm-dsgn",
-  portfolioV1: "https://shm-dsgn-v1.netlify.app/",
-  dribbble: "https://dribbble.com/shm-dsgn",
+  github: "https://github.com/shm-dtt",
+  dribbble: "https://dribbble.com/shm-dtt",
 };
