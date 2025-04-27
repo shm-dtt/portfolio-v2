@@ -5,17 +5,20 @@ title: 'Redesign 2025',
 alternates: {
 canonical: '/blogs/redesign-2025',
 },
-date: '01/01/2025',
+date: '01-01-2025',
 };
-
-<BackButton />
-
-{/* Blog starts from here ->-> */}
 
 # Redesign 2025
 
 <p className="text-neutral-400 mb-8 mt-2">
-  {metadata.date}
+  {new Date(metadata.date.split("-").reverse().join("-")).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    }
+  )}
 </p>
 ## Why I Redesigned My Portfolio
 

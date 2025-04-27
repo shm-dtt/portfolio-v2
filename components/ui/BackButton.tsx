@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
 
 /**
  * BackButton component renders a button that navigates back to the blogs page.
@@ -10,7 +11,7 @@ import Link from "next/link";
 const BackButton: React.FC = () => {
   return (
     <button className="my-8 text-neutral-400 hover:text-white">
-      <Link href="/blogs">◄ Back</Link>
+      <Link href="/blogs" className=" flex flex-row text-sm items-center gap-2"><ChevronLeft size={16}/> Back</Link>
     </button>
   );
 };

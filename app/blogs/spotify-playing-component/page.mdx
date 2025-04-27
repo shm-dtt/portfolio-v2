@@ -9,7 +9,7 @@ export const metadata = {
   alternates: {
     canonical: "/blogs/spotify-playing-component",
   },
-  date: "13/04/2025",
+  date: "13-04-2025",
 };
 
 <BackButton />
@@ -18,7 +18,16 @@ export const metadata = {
 
 # Building a real time Spotify "Now Playing" Component
 
-<p className="text-neutral-400 mb-8 mt-2">{metadata.date}</p>
+<p className="text-neutral-400 mb-8 mt-2">
+  {new Date(metadata.date.split("-").reverse().join("-")).toLocaleDateString(
+    "en-US",
+    {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    }
+  )}
+</p>
 
 As a music enthusiast and developer, I wanted to share my current music taste with visitors to my personal website. In this blog post, I'll walk through how I built a real-time "Now Playing" Spotify integration for my Next.js website.
 
@@ -384,12 +393,22 @@ Here are the two states of the component:
 
 <br />
 <div className="rounded-md p-2 bg-neutral-800 text-xs flex flex-col gap-3 items-center text-neutral-400">
-  <Image src={playing} alt="Playing State" className="rounded-md" loading="lazy" />
+  <Image
+    src={playing}
+    alt="Playing State"
+    className="rounded-md"
+    loading="lazy"
+  />
   <p>Fig 1: Component when songs are playing</p>
 </div>
 <br />
 <div className="rounded-md p-2 bg-neutral-800 text-xs flex flex-col gap-3 items-center text-neutral-400">
-  <Image src={info} alt="Not Playing State" className="rounded-md" loading="lazy" />
+  <Image
+    src={info}
+    alt="Not Playing State"
+    className="rounded-md"
+    loading="lazy"
+  />
   <p>Fig 2: Component when no songs are playing</p>
 </div>
 <br />

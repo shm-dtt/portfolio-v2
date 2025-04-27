@@ -23,7 +23,7 @@ export default async function Blog() {
   // Sort posts by date and group by year
   const groupedPosts = posts.reduce(
     (groups: Record<number, BlogPost[]>, post) => {
-      const date = parse(post.metadata.date, "dd/MM/yyyy", new Date());
+      const date = parse(post.metadata.date, "dd-MM-yyyy", new Date());
       const year = date.getFullYear();
 
       if (!groups[year]) {
@@ -44,8 +44,8 @@ export default async function Blog() {
   // For each year, sort posts in descending order
   sortedYears.forEach((year) => {
     groupedPosts[year].sort((a, b) => {
-      const dateA = parse(a.metadata.date, "dd/MM/yyyy", new Date());
-      const dateB = parse(b.metadata.date, "dd/MM/yyyy", new Date());
+      const dateA = parse(a.metadata.date, "dd-MM-yyyy", new Date());
+      const dateB = parse(b.metadata.date, "dd-MM-yyyy", new Date());
       return compareDesc(dateA, dateB);
     });
   });
@@ -60,7 +60,7 @@ export default async function Blog() {
               {groupedPosts[year].map((post) => {
                 const date = parse(
                   post.metadata.date,
-                  "dd/MM/yyyy",
+                  "dd-MM-yyyy",
                   new Date(),
                 );
                 const formattedDate = date.toLocaleDateString("en-IN", {

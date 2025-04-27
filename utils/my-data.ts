@@ -1,5 +1,5 @@
 export const Data = {
-  version: "v2.9",
+  version: "v3.0",
   firstName: "Soham",
   lastName: "Dutta",
   year: new Date().getFullYear(),
