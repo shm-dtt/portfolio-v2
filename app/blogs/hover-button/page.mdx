@@ -1,0 +1,154 @@
+{/* Metadata and imports */}
+import BlogHeader from '@/components/ui/BlogHeader';
+import { HoverButton } from '@/components/ui/HoverButton';
+
+export const metadata = {
+  title: 'Animated Hover Button Component',
+  alternates: {
+    canonical: "/blogs/hover-button",
+  },
+  date: "28-04-2025",
+};
+
+<BlogHeader title={metadata.title} date={metadata.date} link={metadata.alternates.canonical}/>
+
+In today's post, we'll break down how to create a sleek, animated hover button component using React and Tailwind CSS. This component features a smooth text transition effect when users hover over it - a subtle but engaging interaction that can enhance your website's user experience.
+
+## Understanding the Component
+
+The HoverButton component we'll build displays text that slides up and out of view when hovered, revealing identical text sliding up from below. This creates a satisfying transition effect that draws attention without being distracting.
+
+Here's what we're aiming for:
+- A button with text that animates on hover
+- Clean, performant animations using CSS transitions
+- Accessibility considerations built-in
+- Flexible styling through Tailwind CSS
+
+## The Code
+
+```tsx
+export const HoverButton = ({ text }: { text: string }) => {
+  return (
+    <p
+      className="group w-fit h-fit flex flex-col relative overflow-hidden cursor-pointer select-none"
+      aria-label={text}
+    >
+      <span className="transition-all duration-500 translate-y-0 group-hover:-translate-y-10">
+        {text}
+      </span>
+      <span className="transition-all duration-500 translate-y-10 absolute group-hover:-translate-y-0">
+        {text}
+      </span>
+    </p>
+  );
+};
+```
+
+## Breaking It Down
+
+Let's analyze this component step by step:
+
+### Component Structure
+
+The HoverButton is a functional React component that accepts a single prop:
+- `text`: The string that will be displayed on the button
+
+### The Container Element
+
+```tsx
+<p
+  className="group w-fit h-fit flex flex-col relative overflow-hidden cursor-pointer select-none"
+  aria-label={text}
+>
+```
+
+This paragraph element serves as our container with several important Tailwind classes:
+- `group`: Enables targeting child elements when the parent is hovered
+- `w-fit h-fit`: Makes the container size match its content
+- `flex flex-col`: Sets up a vertical flex container
+- `relative`: Positions the element as a reference for absolute positioning
+- `overflow-hidden`: Hides content that extends beyond the container's boundaries
+- `cursor-pointer`: Changes the cursor to a pointer on hover
+- `select-none`: Prevents text selection for a cleaner UI
+
+The `aria-label` attribute improves accessibility by providing a text label for screen readers.
+
+### The Text Elements
+
+The component contains two `span` elements with the same text content:
+
+```tsx
+<span className="transition-all duration-500 translate-y-0 group-hover:-translate-y-10">
+  {text}
+</span>
+```
+
+This first span is initially visible and moves upward (out of view) when hovered:
+- `transition-all duration-500`: Creates a smooth 500ms transition
+- `translate-y-0`: Initially positioned at its normal location
+- `group-hover:-translate-y-10`: When the parent is hovered, moves upward by 10 units
+
+```tsx
+<span className="transition-all duration-500 translate-y-10 absolute group-hover:-translate-y-0">
+  {text}
+</span>
+```
+
+This second span is initially positioned below the visible area and slides up into view on hover:
+- `transition-all duration-500`: Creates a smooth 500ms transition
+- `translate-y-10`: Initially positioned 10 units below its normal position
+- `absolute`: Takes it out of the normal document flow
+- `group-hover:-translate-y-0`: When the parent is hovered, moves to its normal position
+
+## Implementation Tips
+
+1. **Customize the Animation Speed**: Adjust the `duration-500` value to change how quickly the text slides. For a snappier effect, try `duration-300` or for a more relaxed transition, use `duration-700`.
+
+2. **Styling Variations**: You can add background colors, padding, borders, and other styling to the parent element to make it look more like a traditional button.
+
+3. **Event Handling**: To make this a functional button, add an `onClick` handler:
+   ```tsx
+   export const HoverButton = ({ text, onClick }: { text: string, onClick?: () => void }) => {
+     return (
+       <p
+         onClick={onClick}
+         className="group w-fit h-fit flex flex-col relative overflow-hidden cursor-pointer select-none"
+         aria-label={text}
+       >
+         {/* spans remain the same */}
+       </p>
+     );
+   };
+   ```
+
+4. **Accessibility**: Consider changing the `<p>` element to a `<button>` for better semantic meaning if this component will trigger an action:
+   ```tsx
+   <button
+     className="group w-fit h-fit flex flex-col relative overflow-hidden cursor-pointer select-none"
+     aria-label={text}
+     onClick={onClick}
+   >
+     {/* spans remain the same */}
+   </button>
+   ```
+
+## Usage Example
+
+Here's how you would use this component in your React application:
+
+<HoverButton text="Click/Hover on Me" />
+
+```tsx
+import { HoverButton } from './components/HoverButton';
+
+function App() {
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <HoverButton text="Click/Hover on Me" />
+    </div>
+  );
+}
+
+export default App;
+```
+

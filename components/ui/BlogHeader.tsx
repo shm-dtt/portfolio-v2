@@ -1,7 +1,7 @@
-"use client"
-
-import { ChevronLeft, Share } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
+import { getReadingTime } from "@/utils/mdx";
+import ShareButton from "./ShareButton";
 
 interface BlogHeaderProps {
   title: string;
@@ -10,19 +10,6 @@ interface BlogHeaderProps {
 }
 
 const BlogHeader: React.FC<BlogHeaderProps> = ({ title, date, link }) => {
-
-  const handleShare = async () => {
-    try {
-      await navigator.share({
-        title: title,
-        text: `${title} by Soham Dutta`,
-        url: link,
-      });
-    } catch (err) {
-      console.log(`Error: ${err}`);
-    }
-  };
-
   console.log(title);
   return (
     <div>
@@ -33,25 +20,23 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({ title, date, link }) => {
         <ChevronLeft size={16} /> Back
       </Link>
 
-      <h1 className="font-bold text-3xl">{title}</h1>
+      <h1 className="font-bold text-3xl mb-6">{title}</h1>
 
-      <hr className="my-4 border-neutral-600"></hr>
       <div className="flex flex-row items-center justify-between gap-1 text-sm text-neutral-400">
-        <p>
-          {new Date(date.split("-").reverse().join("-")).toLocaleDateString(
-            "en-US",
-            {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            }
-          )}
-        </p>
-        {/* •
-        <p>3min read</p> */}
-        <button onClick={handleShare} className=" cursor-pointer flex flex-row text-sm items-center gap-2 text-neutral-400 hover:text-white">
-        <Share size={16}/> Share
-        </button>
+        <div className="flex flex-row items-center gap-2">
+          <p>
+            {new Date(date.split("-").reverse().join("-")).toLocaleDateString(
+              "en-US",
+              {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              }
+            )}
+          </p>
+          •<p>{getReadingTime(link.replace("/blogs/", ""))} min read</p>
+        </div>
+        <ShareButton title={title} link={link} />
       </div>
 
       <hr className="mt-4 mb-8 border-neutral-600"></hr>
