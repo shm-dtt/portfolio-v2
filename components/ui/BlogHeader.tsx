@@ -1,6 +1,6 @@
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
-import { getReadingTime } from '@/utils/mdx';
+import { getReadingTime } from "@/utils/mdx";
 import ShareButton from "./ShareButton";
 
 interface BlogHeaderProps {
@@ -10,7 +10,6 @@ interface BlogHeaderProps {
 }
 
 const BlogHeader: React.FC<BlogHeaderProps> = ({ title, date, link }) => {
-
   console.log(title);
   return (
     <div>
@@ -21,22 +20,21 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({ title, date, link }) => {
         <ChevronLeft size={16} /> Back
       </Link>
 
-      <h1 className="font-bold text-3xl">{title}</h1>
+      <h1 className="font-bold text-3xl mb-6">{title}</h1>
 
-      <hr className="my-4 border-neutral-600"></hr>
       <div className="flex flex-row items-center justify-between gap-1 text-sm text-neutral-400">
         <div className="flex flex-row items-center gap-2">
-        <p>
-          {new Date(date.split("-").reverse().join("-")).toLocaleDateString(
-            "en-US",
-            {
-              year: "numeric",
-              month: "short",
-              day: "numeric",
-            }
-          )}
-        </p>•
-        <p>{getReadingTime(link.replace("/blogs/", ""))}min read</p>
+          <p>
+            {new Date(date.split("-").reverse().join("-")).toLocaleDateString(
+              "en-US",
+              {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              }
+            )}
+          </p>
+          •<p>{getReadingTime(link.replace("/blogs/", ""))} min read</p>
         </div>
         <ShareButton title={title} link={link} />
       </div>
