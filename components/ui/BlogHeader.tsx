@@ -1,3 +1,4 @@
+
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { getReadingTime } from "@/utils/mdx";
@@ -10,7 +11,6 @@ interface BlogHeaderProps {
 }
 
 const BlogHeader: React.FC<BlogHeaderProps> = ({ title, date, link }) => {
-  console.log(title);
   return (
     <div>
       <Link

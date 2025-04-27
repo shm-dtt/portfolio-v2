@@ -20,6 +20,7 @@ const Navbar: React.FC = () => {
             Blogs
           </Link>
           <Link href="/projects" className={`${isActive("/projects")}`}>
+
             Projects
           </Link>
           <Link href="/experience" className={`${isActive("/experience")}`}>
