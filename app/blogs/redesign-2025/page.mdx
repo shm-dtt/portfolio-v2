@@ -1,22 +1,16 @@
 {/* Metadata and imports */}
-import BackButton from '@/components/ui/BackButton';
+import BlogHeader from '@/components/ui/BlogHeader';
+
 export const metadata = {
-title: 'Redesign 2025',
-alternates: {
-canonical: '/blogs/redesign-2025',
-},
-date: '01/01/2025',
+  title: "Redesign 2025",
+  alternates: {
+    canonical: "/blogs/redesign-2025",
+  },
+  date: "01-01-2025",
 };
 
-<BackButton />
+<BlogHeader title={metadata.title} date={metadata.date} link={metadata.alternates.canonical}/>
 
-{/* Blog starts from here ->-> */}
-
-# Redesign 2025
-
-<p className="text-neutral-400 mb-8 mt-2">
-  {metadata.date}
-</p>
 ## Why I Redesigned My Portfolio
 
 Over the years, my portfolio has gone through several versions, but they no longer reflected who I am as a developer. So, I decided to redesign it with a focus on **minimalism, performance, and storytelling**.
@@ -37,7 +31,7 @@ Speed and responsiveness matter. I optimized this version by:
 - **Fewer Dependencies:** Replacing libraries with lightweight scripts.
 - **Responsive Design:** Seamless performance across all devices.
 
-The result? **A faster, smoother experience.**  
+The result? **A faster, smoother experience.**
 
 ## Blogging Space
 
@@ -53,10 +47,8 @@ For now, though, I’m happy with how far it’s come. And I’m even more excit
 
 Set in **[Inter](https://rsms.me/inter/)**. Built with **[Next.js](https://nextjs.org/)**, deployed on **[Vercel](https://vercel.com/)**. Styled using **[Tailwind CSS](https://tailwindcss.com/blog/tailwindcss-v4-beta)**. Version controlled with **[GitHub](https://github.com/)**.
 
-
 Inspired by **[Shu Ding](https://shud.in/)**, **[Paco
 Coursey](https://paco.me/)**, **[Lee Robinson](https://leerob.com/)**, and
 **[Olivier Larose](https://www.olivierlarose.com/)**.
-
 
 Thanks for stopping by and exploring my portfolio! If you’d like to collaborate or just say hi, feel free to reach out.

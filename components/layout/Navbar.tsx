@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
   const pathname = usePathname();
 
   const isActive = (route: string) =>
-    pathname === route ? "text-neutral-400 " : "my-underline";
+    pathname === route ? "text-white" : "text-neutral-400";
 
   const beautifyPathname = (path: string) => {
     if (path === "/") return "About";
@@ -37,32 +37,41 @@ const Navbar: React.FC = () => {
 
   return (
     <div>
-      <p className="text-2xl font-bold my-8">{beautifyPathname(pathname)}</p>
+      {/* <p className="text-2xl font-bold my-8">{beautifyPathname(pathname)}</p> */}
       <div className="flex justify-end" role="navigation">
         <nav className="flex gap-4">
           <Link
             href="/blogs"
-            className={`hover:text-neutral-400  ${isActive("/blogs")}`}
+            className={`${isActive("/blogs")}`}
           >
             Blogs
           </Link>
           <Link
             href="/projects"
-            className={`hover:text-neutral-400  ${isActive("/projects")}`}
+            className={`${isActive("/projects")}`}
           >
             Projects
           </Link>
           <Link
             href="/experience"
-            className={`hover:text-neutral-400  ${isActive("/experience")}`}
+            className={`${isActive("/experience")}`}
           >
             Experience
           </Link>
-          <Link href="/" className={`hover:text-neutral-400  ${isActive("/")}`}>
+          <Link
+            href="https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${isActive("/resume")}`}
+          >
+            Resume
+          </Link>
+          <Link href="/" className={`${isActive("/")}`}>
             About
           </Link>
         </nav>
       </div>
+      <hr className="mt-4 mb-8 border-neutral-700"></hr>
     </div>
   );
 };
