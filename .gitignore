@@ -35,5 +35,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/app/blogs/network-infra-automation-data-fabrics
-/app/blogs/hover-button
+# /app/blogs/network-infra-automation-data-fabrics
