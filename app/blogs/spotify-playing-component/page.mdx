@@ -1,5 +1,5 @@
 {/* Metadata and imports */}
-import BackButton from '@/components/ui/BackButton';
+import BlogHeader from '@/components/ui/BlogHeader';
 import playing from './playing.png';
 import info from './info.png';
 import Image from 'next/image';
@@ -12,22 +12,7 @@ export const metadata = {
   date: "13-04-2025",
 };
 
-<BackButton />
-
-{/* Blog starts from here ->-> */}
-
-# Building a real time Spotify "Now Playing" Component
-
-<p className="text-neutral-400 mb-8 mt-2">
-  {new Date(metadata.date.split("-").reverse().join("-")).toLocaleDateString(
-    "en-US",
-    {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }
-  )}
-</p>
+<BlogHeader title={metadata.title} date={metadata.date} link={metadata.alternates.canonical}/>
 
 As a music enthusiast and developer, I wanted to share my current music taste with visitors to my personal website. In this blog post, I'll walk through how I built a real-time "Now Playing" Spotify integration for my Next.js website.
 
