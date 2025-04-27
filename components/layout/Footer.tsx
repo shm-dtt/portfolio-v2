@@ -31,9 +31,7 @@ export default async function Footer() {
         ))}
       </nav>
 
-      <div className="flex justify-center">
-        <div className="border-t-[0.25px] transition-all duration-700 ease-in-out w-full border-neutral-700"></div>
-      </div>
+      <hr className=" border-neutral-700"></hr>
 
       <section className="text-neutral-400 text-xs">
         <div>
