@@ -15,7 +15,7 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({ title, date, link }) => {
     try {
       await navigator.share({
         title: title,
-        text: "Check out this blog post by Soham Dutta",
+        text: `${title} by Soham Dutta`,
         url: link,
       });
     } catch (err) {
