@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Card from "@/app/projects/ProjCard";
-import { projects } from "@/app/projects/info";
+import { projects } from "@/utils/my-data";
 import Navbar from "@/components/layout/Navbar";
 
 const Projects: React.FC = () => {

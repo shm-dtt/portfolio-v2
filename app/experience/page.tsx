@@ -1,5 +1,5 @@
 import Card from "@/app/experience/ExpCard";
-import { experience } from "@/app/experience/info";
+import { experience } from "@/utils/my-data";
 import Navbar from "@/components/layout/Navbar";
 
 /**
