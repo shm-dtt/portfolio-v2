@@ -15,6 +15,15 @@ export const Data = {
 
 export const projects = [
   {
+    name: "Marquer",
+    year: 2025,
+    tech: "Javascript",
+    description:
+      "Browser extension/add-on to share bookmark tab/folders/sub-folders with anyone.",
+    techUsed: ["HTML", "CSS", "JavaScript", "Manifest V3"],
+    link: "https://marquer.vercel.app",
+  },
+  {
     name: "Nest(in development)",
     year: 2025,
     tech: "NextJS, Tailwind",
@@ -75,8 +84,8 @@ export const experience = [
     position: "Applied R&D Software Engineer",
     duration: "July 2024 - Present",
     description:
-      "Working as an Applied R&D Software Engineer in the IP and Optical Networks division. Developed automation frameworks for DCGW and FSS, built utility tools to simplify releases and configuration management, and streamlined deployments and upgrades in collaboration with the PS team. ",
-    techUsed: ["Python", "Gherkin", "TOSCA", "YANG"],
+      "Working as an Applied Software Engineer in the VNO R&D at Nokia for Bharti Airtel, building scalable network automation solutions. Developed automation frameworks for DCGW and FSS, built utility tools to simplify releases and configuration management. Streamlined CRD management in Kubernetes with shell scripts, improving production issue resolution.",
+    techUsed: ["Python", "Bash", "SQL", "Docker"],
   },
   {
     company: "Nokia",
