@@ -5,6 +5,7 @@ import { HoverButton } from "@/components/ui/HoverButton";
 export default async function Footer() {
 
   const socialLinks = [
+    { name: "Email", url: Data.email },
     { name: "GitHub", url: Data.github },
     { name: "LinkedIn", url: Data.linkedin },
     { name: "X/Twitter", url: Data.twitter },

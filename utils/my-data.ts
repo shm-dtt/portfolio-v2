@@ -6,7 +6,7 @@ export const Data = {
   currentCompany: "Nokia",
   currentCompanyLink: "https://www.nokia.com/",
   position: "Applied R&D Software Engineer",
-  email: "sohamdutta2001@gmail.com",
+  email: "mailto:shmdsgn@gmail.com",
   twitter: "https://twitter.com/shm_dtt",
   linkedin: "https://www.linkedin.com/in/shm-dtt",
   github: "https://github.com/shm-dtt",
@@ -79,7 +79,7 @@ export const projects = [
 
 export const experience = [
   {
-    company: "Nokia",
+    company: "NOKIA",
     link: "https://www.nokia.com/",
     position: "Applied R&D Software Engineer",
     duration: "July 2024 - Present",
@@ -88,7 +88,7 @@ export const experience = [
     techUsed: ["Python", "Bash", "SQL", "Docker"],
   },
   {
-    company: "Nokia",
+    company: "NOKIA",
     link: "https://www.nokia.com/",
     position: "SDE Intern",
     duration: "Aug 2023 - May 2024",
@@ -107,7 +107,7 @@ export const experience = [
   },
   {
     company: "MLSA KIIT",
-    link: "https://mlsakiit.com/",
+    link: "https://github.com/MLSAKIIT/MSC-Codeportal",
     position: "Project Wing Member & Learner",
     duration: "Oct 2021 - Dec 2022",
     description:

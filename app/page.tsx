@@ -9,36 +9,32 @@ export default function Home() {
       <main className="flex flex-col my-4">
         <section className="flex flex-col z-1 py-8">
           <div className="flex flex-col gap-8">
-            <p>Hi, I&apos;m {Data.firstName}.
+            <p>
+              Hi, I&apos;m {Data.firstName}.
               <br />
-              A developer and designer residing in Bengaluru, passionate about
-              crafting seamless, user-centric solutions and exceptional web
-              experiences.
+              <br />
+              Software engineer crafting clean UIs and smooth user experiences.
+              passionate about building simple, useful products that solve
+              everyday problems.
             </p>
             <p>
-              I started my journey at{" "}
+              Building internal tools and automation systems for large-scale
+              pan-India telecom networks at{" "}
               <Link
                 href={Data.currentCompanyLink}
                 target="_blank"
-                className="font-normal my-underline"
-                aria-label={`Visit ${Data.currentCompany}`}
+                className="font-normal bg-blue-600"
+                aria-label="Visit Nokia"
               >
-                {Data.currentCompany}
-              </Link>{" "}
-              as an SDE Intern in 2023 and now work as an{" "}
-              <span className="font-normal">{Data.position}</span>.
+                NOKIA
+              </Link>
+              .
             </p>
 
             <p>
-              Reach out to me via{" "}
-              <Link
-                href={`mailto:${Data.email}`}
-                className="my-underline"
-                aria-label={`my mail ${Data.email}`}
-              >
-                email
-              </Link>{" "}
-              for any opportunities or collaborations.
+              Comfortable across the stack — from designing thoughtful
+              interfaces to building backend systems in Javascript, Spring-Boot
+              and Python.
             </p>
           </div>
         </section>
