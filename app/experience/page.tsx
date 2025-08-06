@@ -1,6 +1,5 @@
 import Card from "@/app/experience/ExpCard";
 import { experience } from "@/utils/my-data";
-import Navbar from "@/components/layout/Navbar";
 
 /**
  * The `Experience` component renders the experience section of the portfolio.
@@ -16,15 +15,12 @@ import Navbar from "@/components/layout/Navbar";
  */
 const Experience: React.FC = () => {
   return (
-    <div className="mx-4">
-      <Navbar />
-      <div className="flex flex-col items-center justify-center">
-        <br />
-        <div>
-          {experience.map((exp, i) => (
-            <Card key={`p_${i}`} i={i} {...exp} />
-          ))}
-        </div>
+    <div className="flex flex-col items-center justify-center">
+      <br />
+      <div>
+        {experience.map((exp, i) => (
+          <Card key={`p_${i}`} i={i} {...exp} />
+        ))}
       </div>
     </div>
   );
