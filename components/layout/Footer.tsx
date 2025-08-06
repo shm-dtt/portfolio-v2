@@ -3,7 +3,6 @@ import Link from "next/link";
 import { HoverButton } from "@/components/ui/HoverButton";
 
 export default async function Footer() {
-
   const socialLinks = [
     { name: "Email", url: Data.email },
     { name: "GitHub", url: Data.github },

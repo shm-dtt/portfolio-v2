@@ -1,4 +1,3 @@
-
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { getReadingTime } from "@/utils/mdx";
@@ -31,7 +30,7 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({ title, date, link }) => {
                 year: "numeric",
                 month: "short",
                 day: "numeric",
-              }
+              },
             )}
           </p>
           •<p>{getReadingTime(link.replace("/blogs/", ""))} min read</p>

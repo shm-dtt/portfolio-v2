@@ -19,14 +19,18 @@ const components = {
     <h3 className="font-medium text-xl mt-10 mb-4" {...props} />
   ),
   h4: (props: HeadingProps) => <h4 className="text-lg" {...props} />,
-  p: (props: ParagraphProps) => <p className="text-neutral-400 my-4" {...props} />,
+  p: (props: ParagraphProps) => (
+    <p className="text-neutral-400 my-4" {...props} />
+  ),
   ol: (props: ListProps) => (
     <ol className="list-decimal pl-5 space-y-1 text-neutral-400" {...props} />
   ),
   ul: (props: ListProps) => (
     <ul className="list-disc pl-5 space-y-1 text-neutral-400" {...props} />
   ),
-  li: (props: ListItemProps) => <li className="pl-1 pt-1 text-neutral-400" {...props} />,
+  li: (props: ListItemProps) => (
+    <li className="pl-1 pt-1 text-neutral-400" {...props} />
+  ),
   em: (props: ComponentPropsWithoutRef<"em">) => (
     <em className="font-medium" {...props} />
   ),

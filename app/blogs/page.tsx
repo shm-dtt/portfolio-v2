@@ -16,7 +16,6 @@ interface BlogPost {
   slug: string;
 }
 
-
 export default async function Blog() {
   const posts: BlogPost[] = await getAllPosts();
 
@@ -51,39 +50,35 @@ export default async function Blog() {
   });
 
   return (
-      <div className="mb-32 mt-16">
-        {sortedYears.map((year) => (
-          <div key={year} className="flex items-start my-2">
-            <div className="w-1/6">{year}</div>
+    <div className="mb-32 mt-16">
+      {sortedYears.map((year) => (
+        <div key={year} className="flex items-start my-2">
+          <div className="w-1/6">{year}</div>
 
-            <div className="space-y-2 w-full" key={year}>
-              {groupedPosts[year].map((post) => {
-                const date = parse(
-                  post.metadata.date,
-                  "dd-MM-yyyy",
-                  new Date(),
-                );
-                const formattedDate = date.toLocaleDateString("en-IN", {
-                  day: "2-digit",
-                  month: "2-digit",
-                });
+          <div className="space-y-2 w-full" key={year}>
+            {groupedPosts[year].map((post) => {
+              const date = parse(post.metadata.date, "dd-MM-yyyy", new Date());
+              const formattedDate = date.toLocaleDateString("en-IN", {
+                day: "2-digit",
+                month: "2-digit",
+              });
 
-                return (
-                  <div key={post.slug} className="w-full">
-                    <Link
-                      href={`/blogs/${post.slug}`}
-                      className="flex items-end justify-between group hover:text-neutral-400 transition-colors duration-200"
-                    >
-                      <p>{post.metadata.title}</p>
-                      <span className="text-sm">{formattedDate}</span>
-                    </Link>
-                    <div className="border-t-[0.25px] w-full border-neutral-700 mt-2"></div>
-                  </div>
-                );
-              })}
-            </div>
+              return (
+                <div key={post.slug} className="w-full">
+                  <Link
+                    href={`/blogs/${post.slug}`}
+                    className="flex items-end justify-between group hover:text-neutral-400 transition-colors duration-200"
+                  >
+                    <p>{post.metadata.title}</p>
+                    <span className="text-sm">{formattedDate}</span>
+                  </Link>
+                  <div className="border-t-[0.25px] w-full border-neutral-700 mt-2"></div>
+                </div>
+              );
+            })}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
+    </div>
   );
 }

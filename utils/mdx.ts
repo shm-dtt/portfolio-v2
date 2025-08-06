@@ -10,11 +10,11 @@ import path from "path";
 function calculateReadingTime(text: string, wordsPerMinute = 222): number {
   // Remove code blocks, import statements, and metadata from the word count
   const cleanedText = text
-    .replace(/```[\s\S]*?```/g, '') // Remove code blocks
-    .replace(/import[\s\S]*?from.*;/g, '') // Remove import statements
-    .replace(/export const metadata = ({[\s\S]*?});/g, '') // Remove metadata
-    .replace(/<.*?>/g, ''); // Remove HTML/JSX tags
-    
+    .replace(/```[\s\S]*?```/g, "") // Remove code blocks
+    .replace(/import[\s\S]*?from.*;/g, "") // Remove import statements
+    .replace(/export const metadata = ({[\s\S]*?});/g, "") // Remove metadata
+    .replace(/<.*?>/g, ""); // Remove HTML/JSX tags
+
   const wordCount = cleanedText.trim().split(/\s+/).length;
   return Math.ceil(wordCount / wordsPerMinute);
 }
@@ -52,7 +52,7 @@ export async function getAllPosts() {
       }
 
       const metadata = eval(`(${metadataMatch[1]})`);
-      
+
       // Calculate reading time based on the full content
       const readingTime = calculateReadingTime(fileContents);
 

@@ -27,8 +27,7 @@ export const projects = [
     name: "Nest",
     year: 2025,
     tech: "NextJS, Tailwind",
-    description:
-      "Web App for finding the best spot for your Wi-Fi router.",
+    description: "Web App for finding the best spot for your Wi-Fi router.",
     techUsed: ["NextJS", "Tailwind CSS", "TypeScript"],
     link: "https://github.com/shm-dtt/nest",
   },
