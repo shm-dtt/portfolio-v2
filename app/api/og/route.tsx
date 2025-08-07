@@ -4,18 +4,20 @@ export const runtime = "edge";
 
 export async function GET(request: Request) {
   try {
-    //api/og?title
-
     const { searchParams } = new URL(request.url);
+    const urlPath = searchParams.get("url");
 
-    console.log(searchParams);
+    console.log(urlPath);
 
-    // const hasTitle = searchParams.has("title");
-    // const title = hasTitle
-    //   ? searchParams.get("title")?.slice(0, 100)
-    //   : "My portfolio";
-    return new ImageResponse(<div>jcnjnc</div>);
+    return new ImageResponse(
+      (
+        <div>
+          {urlPath}
+        </div>
+      )
+    );
   } catch (e: any) {
-    return new Response("Failled to generate image", { status: 500 });
+    console.error("Error generating OG image:", e);
+    return new Response("Failed to generate image", { status: 500 });
   }
 }

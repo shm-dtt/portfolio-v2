@@ -14,6 +14,8 @@ interface BlogMetadata {
 interface BlogPost {
   metadata: BlogMetadata;
   slug: string;
+  readingTime: number;
+  ogImageURL: string | null;
 }
 
 export default async function Blog() {

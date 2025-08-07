@@ -1,12 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-/**
- * Calculates reading time based on word count and reading speed
- * @param text The text content to calculate reading time for
- * @param wordsPerMinute Average reading speed (default: 200 words per minute)
- * @returns Reading time in minutes (rounded up)
- */
 function calculateReadingTime(text: string, wordsPerMinute = 222): number {
   // Remove code blocks, import statements, and metadata from the word count
   const cleanedText = text
@@ -19,17 +13,15 @@ function calculateReadingTime(text: string, wordsPerMinute = 222): number {
   return Math.ceil(wordCount / wordsPerMinute);
 }
 
-/**
- * Retrieves all blog posts from the "app/blogs" directory.
- *
- * This function reads the directory contents, filters out non-directory entries and the "api" directory,
- * and then reads the "page.mdx" file within each directory to extract metadata.
- *
- * @returns {Promise<Array<{ metadata: any, slug: string, readingTime: number }>>} A promise that resolves to an array of objects,
- * each containing the metadata, slug, and reading time of a blog post.
- *
- * @throws {Error} If no metadata is found in an MDX file.
- */
+
+function generateOGImageURL(title: string): string {
+  // Use environment variable or fallback to localhost for development
+  const baseURL = process.env.NEXT_PUBLIC_BASE_URL || 
+    (process.env.NODE_ENV === 'production' ? 'https://sohamdutta.in' : 'http://localhost:3000');
+  return `${baseURL}/api/og?url=${encodeURIComponent(title)}`;
+}
+
+
 export async function getAllPosts() {
   const postsDirectory = path.join(process.cwd(), "app/blogs");
   const entries = await fs.promises.readdir(postsDirectory, {
@@ -56,10 +48,18 @@ export async function getAllPosts() {
       // Calculate reading time based on the full content
       const readingTime = calculateReadingTime(fileContents);
 
+      // Generate OG image URL if title exists
+      const ogImageURL = metadata?.title 
+        ? generateOGImageURL(metadata.title)
+        : generateOGImageURL("Blog Post");
+
+      console.log(ogImageURL);
+
       return {
         metadata,
         slug: dir.name,
         readingTime,
+        ogImageURL,
       };
     });
 
