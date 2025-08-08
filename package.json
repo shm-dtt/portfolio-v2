@@ -33,6 +33,9 @@
     "eslint-config-next": "^15.3.0",
     "postcss": "^8.5.3",
     "prettier": "^3.4.2",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-pretty-code": "^0.14.1",
+    "rehype-slug": "^6.0.0",
     "tailwindcss": "^4.1.5",
     "typescript": "^5",
     "velite": "^0.2.4"

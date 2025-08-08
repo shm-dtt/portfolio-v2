@@ -44,6 +44,7 @@ const nextConfig: NextConfig = {
     // mdxRs: true,
     viewTransition: true,
   },
+  allowedDevOrigins: ['local-origin.dev', '*.local-origin.dev'],
 };
 
 export default nextConfig;

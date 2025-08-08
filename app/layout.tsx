@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth scroll-pt-10">
       <body
         className={`${inter.className} mx-auto my-12 max-w-2xl md:text-base text-sm`}
       >

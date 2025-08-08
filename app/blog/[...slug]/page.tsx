@@ -4,6 +4,8 @@ import ShareButton from "@/components/ui/ShareButton";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
+import "@/styles/mdx.css";
+
 interface PostPageProps {
   params: {
     slug: string[];
@@ -23,7 +25,7 @@ export async function generateStaticParams(): Promise<
 > {
   return posts.map((post) => ({
     slug: post.slugAsParams.split("/"),
-  }));
+  })); 
 }
 
 export default async function PostPage({ params }: PostPageProps) {
@@ -49,7 +51,8 @@ export default async function PostPage({ params }: PostPageProps) {
       >
         <ChevronLeft size={16} /> Back
       </Link>
-      <h1 className="text-2xl font-bold">{post.title}</h1>
+    <h1 className="text-2xl font-bold mb-2">{post.title}</h1>
+    <p className="text-sm text-neutral-400 mt-0">{post.description}</p>
       <div className="flex flex-row items-center justify-between gap-1 text-sm text-neutral-400">
         <div className="flex flex-row items-center gap-2">
           <p>
