@@ -1,10 +1,9 @@
 import { defineConfig, defineCollection, s } from "velite";
 
-//blog/hello-world
-
-const computedFields = <T extends { slug: string }>(data: T) => ({
+const computedFields = <T extends { slug: string; body: string }>(data: T) => ({
   ...data,
   slugAsParams: data.slug.split("/").slice(1).join("/"),
+  readingTime: Math.round(data.body.length / 1000),
 });
 
 const posts = defineCollection({
@@ -35,5 +34,5 @@ export default defineConfig({
   mdx: {
     remarkPlugins: [],
     rehypePlugins: [],
-  }
+  },
 });
