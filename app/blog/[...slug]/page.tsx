@@ -63,7 +63,7 @@ export default async function PostPage({ params }: PostPageProps) {
               year: "numeric",
             })}
           </p>
-          •<p>{post.readingTime} min read</p>
+          •<p>{post.metadata.readingTime} min read</p>
         </div>
         <ShareButton title={post.title} link={post.slugAsParams} />
       </div>

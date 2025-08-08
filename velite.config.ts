@@ -6,7 +6,6 @@ import rehypePrettyCode from "rehype-pretty-code";
 const computedFields = <T extends { slug: string; body: string }>(data: T) => ({
   ...data,
   slugAsParams: data.slug.split("/").slice(1).join("/"),
-  readingTime: Math.round(data.body.length / 1000),
 });
 
 const posts = defineCollection({
@@ -20,6 +19,7 @@ const posts = defineCollection({
       date: s.isodate(),
       published: s.boolean().default(true),
       body: s.mdx(),
+      metadata: s.metadata(),
     })
     .transform(computedFields),
 });
