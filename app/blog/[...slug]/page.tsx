@@ -5,6 +5,7 @@ import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 
 import "@/styles/mdx.css";
+import { HoverButton } from "@/components/ui/HoverButton";
 
 interface PostPageProps {
   params: {
@@ -47,7 +48,7 @@ export default async function PostPage({ params }: PostPageProps) {
     <div className="flex flex-col w-full h-full prose prose-invert dark:prose-invert">
       <Link
         href="/blog"
-        className="my-8 flex flex-row text-sm items-center gap-2 text-neutral-400 hover:text-white"
+        className="my-8 flex flex-row text-sm items-center gap-2 text-neutral-400 hover:text-white no-underline"
       >
         <ChevronLeft size={16} /> Back
       </Link>
@@ -67,7 +68,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <ShareButton title={post.title} link={post.slugAsParams} />
       </div>
       <hr className="mt-2 mb-8 border-neutral-600"></hr>
-      <MDXContent code={post.body || ""} />
+      <MDXContent code={post.body || ""} components={{HoverButton}} />
     </div>
   );
 }
