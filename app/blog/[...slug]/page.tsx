@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import "@/styles/mdx.css";
 import { HoverButton } from "@/components/ui/HoverButton";
+import NotFound from "@/app/not-found";
 
 interface PostPageProps {
   params: {
@@ -26,22 +27,14 @@ export async function generateStaticParams(): Promise<
 > {
   return posts.map((post) => ({
     slug: post.slugAsParams.split("/"),
-  })); 
+  }));
 }
 
 export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params);
   if (!post) {
     return (
-      <div className="flex flex-col w-full h-full items-center justify-center">
-        <h1 className="text-2xl font-bold">Post not found</h1>
-        <Link
-          href="/blog"
-          className="my-8 flex flex-row text-sm items-center gap-2 text-neutral-400 hover:text-white"
-        >
-          <ChevronLeft size={16} /> Back
-        </Link>
-      </div>
+      <NotFound homeLink="/blog" />
     );
   }
   return (
@@ -52,8 +45,8 @@ export default async function PostPage({ params }: PostPageProps) {
       >
         <ChevronLeft size={16} /> Back
       </Link>
-    <h1 className="text-2xl font-bold mb-2">{post.title}</h1>
-    <p className="text-sm text-neutral-400 mt-0">{post.description}</p>
+      <h1 className="text-2xl font-bold mb-2">{post.title}</h1>
+      <p className="text-sm text-neutral-400 mt-0">{post.description}</p>
       <div className="flex flex-row items-center justify-between gap-1 text-sm text-neutral-400">
         <div className="flex flex-row items-center gap-2">
           <p>
@@ -68,7 +61,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <ShareButton title={post.title} link={post.slugAsParams} />
       </div>
       <hr className="mt-2 mb-8 border-neutral-600"></hr>
-      <MDXContent code={post.body || ""} components={{HoverButton}} />
+      <MDXContent code={post.body || ""} components={{ HoverButton }} />
     </div>
   );
 }
