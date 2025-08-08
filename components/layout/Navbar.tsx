@@ -16,8 +16,8 @@ const Navbar: React.FC = () => {
     <div>
       <div className="flex justify-end" role="navigation">
         <nav className="flex gap-4">
-          <Link href="/blogs" className={`${isActive("/blogs")}`}>
-            Blogs
+          <Link href="/blog" className={`${isActive("/blog")}`}>
+            Blog
           </Link>
           <Link href="/projects" className={`${isActive("/projects")}`}>
             Projects
