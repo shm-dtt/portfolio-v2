@@ -20,7 +20,7 @@ export default function NotFound({ homeLink = "/" }: { homeLink?: string }) {
             Nothing to see here. Move along, citizen.
           </p>
           <p className="text-gray-400">
-            I got hungry and I ate the page, so the page you're looking for doesn't exist!
+            I got hungry and I ate the page, so the page you&apos;re looking for doesn&apos;t exist!
           </p>
         </div>
 
