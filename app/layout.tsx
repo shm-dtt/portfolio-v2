@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "I am a Full Stack Developer, Currently working at Nokia as an Applied R&D Software Engineer in Bengaluru, India",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_BASE_URL ?? Data.links.portfolio,
+    process.env.NEXT_PUBLIC_APP_URL ?? Data.links.portfolio,
   ),
 };
 

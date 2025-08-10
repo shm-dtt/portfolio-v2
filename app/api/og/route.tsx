@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
     }
 
     const heading =
-      title.length > 140 ? `${title.substring(0, 140)}...` : title;
+      title.length > 120 ? `${title.substring(0, 120)}...` : title;
 
     return new ImageResponse(
       (
@@ -45,17 +45,13 @@ export async function GET(req: NextRequest) {
           }}
         >
           <div tw="flex flex-col flex-1 py-10">
-            <div tw="flex text-xl uppercase tracking-tight">BLOG POST</div>
-            <div tw="flex text-6xl pt-12">{heading}</div>
+            <div tw="flex text-3xl uppercase tracking-tight">BLOG</div>
+            <div tw="flex text-7xl pt-12">{heading}</div>
+            <div tw="flex text-4xl pt-16">By {Data.fullName}</div>
           </div>
-          <div tw="flex items-center w-full justify-between">
-            <div tw="flex text-xl">
-              {Data.links.github.replace(/^https?:\/\//, "")}
-            </div>
-            <div tw="flex items-center text-xl">
-              <div tw="flex ml-2">
-                {Data.links.portfolio.replace(/^https?:\/\//, "")}
-              </div>
+          <div tw="flex items-center w-full justify-end text-3xl">
+            <div tw="flex ml-2">
+              {Data.links.portfolio.replace(/^https?:\/\//, "")}
             </div>
           </div>
         </div>
