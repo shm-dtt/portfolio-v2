@@ -1,4 +1,4 @@
-import { Data } from "@/utils/my-data";
+import { Data } from "@/utils/siteConfig";
 import Link from "next/link";
 
 export default function Home() {
@@ -29,9 +29,8 @@ export default function Home() {
           </p>
 
           <p>
-            Comfortable across the stack — from designing thoughtful
-            interfaces to building backend systems in Javascript, Spring-Boot
-            and Python.
+            Comfortable across the stack — from designing thoughtful interfaces
+            to building backend systems in Javascript, Spring-Boot and Python.
           </p>
         </div>
       </section>

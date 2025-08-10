@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { posts } from "#site/content";
 import { sortPosts } from "@/utils/util";
+import { Metadata } from "next";
 
 interface PostItems {
   slug: string;
@@ -9,6 +10,11 @@ interface PostItems {
   description?: string;
   date: string; // ISO date string
 }
+
+export const metadata: Metadata = {
+  title: "Blogs - Soham Dutta",
+  description: "All the interesting blogs that I have written.",
+};
 
 export default async function Blog() {
   // Sort posts by date (newest first)
@@ -22,7 +28,7 @@ export default async function Blog() {
       groups[year].push(post);
       return groups;
     },
-    {}
+    {},
   );
 
   // Sort years in descending order
@@ -40,7 +46,7 @@ export default async function Blog() {
             {groupedPosts[year].map((post) => {
               const formattedDate = new Date(post.date).toLocaleDateString(
                 "en-IN",
-                { day: "2-digit", month: "short" }
+                { day: "2-digit", month: "short" },
               );
 
               return (
