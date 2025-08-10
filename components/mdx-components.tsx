@@ -1,6 +1,6 @@
 import Image from "next/image";
 import * as runtime from "react/jsx-runtime";
-import { HoverButton } from "./ui/HoverButton";
+import { HoverButton } from "./ui/hover-button";
 
 const MDXComponents = (code: string) => {
   const fn = new Function(code);
@@ -8,16 +8,16 @@ const MDXComponents = (code: string) => {
 };
 
 const components = {
-    Image,
-    HoverButton,
-}
+  Image,
+  HoverButton,
+};
 
 interface MdxProps {
-    code: string;
+  code: string;
 }
 
 interface ExtendedMdxProps extends MdxProps {
-  components: object
+  components: object;
 }
 
 export function MDXContent({ code }: ExtendedMdxProps) {

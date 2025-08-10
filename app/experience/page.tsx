@@ -1,18 +1,12 @@
-import Card from "@/app/experience/ExpCard";
-import { experience } from "@/utils/my-data";
+import Card from "@/components/ui/experience-card";
+import { experience } from "@/utils/siteConfig";
+import { Metadata } from "next";
 
-/**
- * The `Experience` component renders the experience section of the portfolio.
- * It includes a `Navbar` component and a list of experience cards.
- *
- * @component
- * @example
- * return (
- *   <Experience />
- * )
- *
- * @returns {JSX.Element} The rendered experience section.
- */
+export const metadata: Metadata = {
+  title: "Experience - Soham Dutta",
+  description: "My professional experience so far.",
+};
+
 const Experience: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">

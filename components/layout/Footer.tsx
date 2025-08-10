@@ -1,14 +1,14 @@
-import { Data } from "@/utils/my-data";
+import { Data } from "@/utils/siteConfig";
 import Link from "next/link";
-import { HoverButton } from "@/components/ui/HoverButton";
+import { HoverButton } from "@/components/ui/hover-button";
 
 export default async function Footer() {
   const socialLinks = [
     { name: "Email", url: Data.email },
-    { name: "GitHub", url: Data.github },
-    { name: "LinkedIn", url: Data.linkedin },
-    { name: "X/Twitter", url: Data.twitter },
-    { name: "Dribbble", url: Data.dribbble },
+    { name: "GitHub", url: Data.links.github },
+    { name: "LinkedIn", url: Data.links.linkedin },
+    { name: "X/Twitter", url: Data.links.twitter },
+    { name: "Dribbble", url: Data.links.dribbble },
   ];
 
   return (

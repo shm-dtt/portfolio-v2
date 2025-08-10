@@ -11,20 +11,6 @@ interface CardProps {
   i: number;
 }
 
-/**
- * Card component to display experience details.
- *
- * @component
- * @param {CardProps} props - The properties for the Card component.
- * @param {string} props.company - The name of the company.
- * @param {string} props.link - The URL link to the company or project.
- * @param {string} props.position - The position held at the company.
- * @param {string} props.duration - The duration of the position.
- * @param {string} props.description - A brief description of the role or project.
- * @param {string[]} props.techUsed - An array of technologies used in the role or project.
- *
- * @returns {JSX.Element} The rendered Card component.
- */
 const Card: React.FC<CardProps> = ({
   company,
   link,

@@ -2,15 +2,21 @@ export const Data = {
   version: "v3.0",
   firstName: "Soham",
   lastName: "Dutta",
+  fullName: "Soham Dutta",
   year: new Date().getFullYear(),
   currentCompany: "Nokia",
   currentCompanyLink: "https://www.nokia.com/",
   position: "Applied R&D Software Engineer",
-  email: "mailto:shmdsgn@gmail.com",
-  twitter: "https://twitter.com/shm_dtt",
-  linkedin: "https://www.linkedin.com/in/shm-dtt",
-  github: "https://github.com/shm-dtt",
-  dribbble: "https://dribbble.com/shm-dtt",
+  email: "mailto:sohamdutta2001@gmail.com",
+  links: {
+    portfolio: "https://sohamdutta.in",
+    twitter: "https://twitter.com/shm_dtt",
+    linkedin: "https://www.linkedin.com/in/shm-dtt",
+    github: "https://github.com/shm-dtt",
+    dribbble: "https://dribbble.com/shm-dtt",
+    resume:
+      "https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view",
+  },
 };
 
 export const projects = [
