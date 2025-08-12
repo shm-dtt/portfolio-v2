@@ -21,6 +21,15 @@ export const Data = {
 
 export const projects = [
   {
+    name: "KeyTones",
+    year: 2025,
+    tech: "Next.js",
+    description:
+      "Fast and free tool to extract color palettes from images",
+    techUsed: ["NextJS", "Tailwind CSS", "shadcn/ui"],
+    link: "https://keytones.vercel.app",
+  },
+  {
     name: "Chroma-Vue",
     year: 2025,
     tech: "Python",
