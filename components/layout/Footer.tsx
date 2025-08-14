@@ -1,4 +1,4 @@
-import { Data } from "@/utils/siteConfig";
+import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
 import { HoverButton } from "@/components/ui/hover-button";
 

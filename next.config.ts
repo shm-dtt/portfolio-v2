@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { Data } from "@/utils/siteConfig";
+import { Data } from "@/lib/siteConfig";
 
 const isDev = process.argv.indexOf("dev") !== -1;
 const isBuild = process.argv.indexOf("build") !== -1;

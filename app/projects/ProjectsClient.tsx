@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Card from "@/components/ui/project-tile";
-import { projects } from "@/utils/siteConfig";
+import { projects } from "@/lib/siteConfig";
 
 export default function ProjectsClient() {
   const [openedIndex, setOpenedIndex] = useState<number | null>(null);

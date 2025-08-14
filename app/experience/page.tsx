@@ -1,5 +1,5 @@
 import Card from "@/components/ui/experience-card";
-import { experience } from "@/utils/siteConfig";
+import { experience } from "@/lib/siteConfig";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

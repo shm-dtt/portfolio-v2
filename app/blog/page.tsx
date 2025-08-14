@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { posts } from "#site/content";
-import { isWithinOneWeek, sortPosts } from "@/utils/util";
+import { isWithinOneWeek, sortPosts } from "@/lib/utils";
 import { Metadata } from "next";
 
 interface PostItems {

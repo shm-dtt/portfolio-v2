@@ -1,5 +1,5 @@
 "use client";
-import { Data } from "@/utils/siteConfig";
+import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

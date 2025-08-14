@@ -8,7 +8,7 @@ import "@/styles/mdx.css";
 import { HoverButton } from "@/components/ui/hover-button";
 import NotFound from "@/app/not-found";
 import { Metadata } from "next";
-import { Data } from "@/utils/siteConfig";
+import { Data } from "@/lib/siteConfig";
 import ScrollToTop from "@/components/ui/scroll-to-top";
 
 interface PostPageProps {
