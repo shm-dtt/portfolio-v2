@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Code blocks styling */
 [data-rehype-pretty-code-figure] pre {
   @apply px-0;
 }
@@ -38,4 +39,26 @@
 
 .subheading-anchor {
   @apply no-underline hover:underline;
+}
+
+/* Inline code styling - this targets inline code elements */
+:not(pre) > code {
+  @apply bg-zinc-800 text-zinc-200 px-1.5 py-0.5 rounded text-sm font-mono;
+  font-size: 0.875em;
+}
+
+/* Ensure inline code in prose has proper styling */
+.prose :not(pre) > code {
+  @apply bg-zinc-800 text-zinc-200 px-1.5 py-0.5 rounded text-sm font-mono;
+  font-size: 0.875em;
+}
+
+/* Override prose default code styling */
+.prose code {
+  @apply font-mono;
+}
+
+.prose code::before,
+.prose code::after {
+  content: none;
 }

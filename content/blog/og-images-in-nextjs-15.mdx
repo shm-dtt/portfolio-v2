@@ -1,0 +1,220 @@
+---
+title: Dynamic OG Images in Next.js 15
+description: Learn how to generate dynamic Open Graph images for your Next.js 15 website with app-router.
+date: 2025-08-15
+published: true
+---
+
+For a long time, I wanted to have those dynamic images/previews that I see when I share any links anywhere on the internet. Now, with Next.js 15, I can do that with ease. In this blog post, I'll walk you through how to generate dynamic Open Graph images for your Next.js website.
+
+## Example
+
+For my site I have this setup. If I share a link to Whatsapp for one of my posts, it looks like this.
+
+<Image
+  className="mx-auto rounded-lg"
+  alt="og image for blog"
+  src="/images/blog/og-image/sample.png"
+  width={600}
+  height={100}
+/>
+
+Open Graph (OG) images provide visual representations for content when it's shared on social media platforms. It adds extra visual appeal to a posted link, helps with branding and can entice more clicks.
+
+## Generating the Image
+
+### 1. Creating the API route
+
+First, we need a route file which will be called everytime any page requests for the OG image and this file will return it.
+
+For the app router, create the following file `/app/api/og/route.tsx`. All that makes it work is the `ImageResponse` component from `next/og` package.
+
+We are also going to need to tell NextJS that this api route will use the ["edge" runtime.](https://nextjs.org/docs/app/api-reference/edge)
+
+```tsx
+import { ImageResponse } from "next/og";
+export const runtime = "edge";
+```
+
+### 2. Send the image back!!!
+
+Now, we need to send the image back to the user, specifically to that route we are going to call.
+
+To do this we simply need to define an async function called GET, and return a simple image for now.
+
+```tsx
+import { NextRequest } from "next/server";
+
+export async function GET(req: NextRequest) {
+  try {
+    return new ImageResponse(<div>Hello World</div>);
+  } catch (e: any) {
+    return new Response("Failed to generate OG image", { status: 500 });
+  }
+}
+```
+
+Now if you navigate to https://localhost:3000/api/og you should see a simple image with the text hello in it.
+
+### 3. Let's go dynamic.
+
+To be able to use things such as the blog title, we will want to send some search params to the route to tell it what to render. So if I request the link `/api/og?title="Hello"`, we can render the text Hello.
+
+We need the requested URL and check if the searchParams has a title defined.
+
+```tsx
+export async function GET(req: NextRequest) {
+  try {
+    const { searchParams } = req.nextUrl;
+    const hasTitle = searchParams.has("title");
+
+    const title = hasTitle
+      ? searchParams.get("title")?.slice(0, 100)
+      : "My website";
+
+    return new ImageResponse(
+      (
+        <div tw="flex flex-col w-full h-full items-center justify-center bg-white">
+          {title}
+        </div>
+      )
+    );
+  } catch (e: any) {
+    return new Response("Failed to generate OG image", { status: 500 });
+  }
+}
+```
+Now if we go to the url `https://localhost:3000/api/og?title=Hello%20World`, we will see the words Hello World in our image. Now lets style this!
+
+### 4. Time to be stylish? (with images and custom fonts)
+
+To style this image, we can use inline styles as you would in react by adding the style prop, or we can use Tailwind. In order to use tailwind, we don't use `className` as you may be used to. Instead you want to pass the prop `tw` to your elements instead.
+
+Also to use custom images and fonts, we need to have them in a folder. I have kept them in `/assets/fonts` and `/assets/images`. But to actually use them? We can't import directly from the filesystem, so we need to convert them to array buffers.
+
+```tsx
+const productSans = fetch(
+  new URL("../../../assets/fonts/ProductSans-Medium.ttf", import.meta.url),
+).then((res) => res.arrayBuffer());
+
+// Load image as array buffer
+const image = fetch(
+  new URL("../../../assets/images/og-blog.jpg", import.meta.url),
+).then((res) => res.arrayBuffer());
+
+```
+
+Now we can use them in our image.
+
+```tsx
+export async function GET(req: NextRequest) {
+  try {
+    const fontRegular = await productSans;
+    const img = await image;
+    // Convert image to base64 for background
+    const imgBase64 = `data:image/jpeg;base64,${Buffer.from(img).toString(
+      "base64",
+    )}`;
+
+    const { searchParams } = req.nextUrl;
+    const title = searchParams.get("title");
+
+    if (!title) {
+      return new Response("No title provided", { status: 500 });
+    }
+
+    const heading =
+      title.length > 120 ? `${title.substring(0, 120)}...` : title;
+
+    return new ImageResponse(
+      (
+        <div
+          tw="flex flex-col w-full h-full p-12 text-white"
+          style={{
+            backgroundImage: `url(${imgBase64})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div tw="flex flex-col flex-1 py-10">
+            <div tw="flex text-3xl uppercase tracking-tight">BLOG</div>
+            <div tw="flex text-7xl pt-12">{heading}</div>
+            <div tw="flex text-4xl pt-16">By {Data.fullName}</div>
+          </div>
+          <div tw="flex items-center w-full justify-end text-3xl">
+            <div tw="flex ml-2">
+              {Data.links.portfolio.replace(/^https?:\/\//, "")}
+            </div>
+          </div>
+        </div>
+      ),
+      {
+        width: 1200,
+        height: 630,
+        fonts: [
+          {
+            name: "Product Sans Medium",
+            data: fontRegular,
+            weight: 400,
+            style: "normal",
+          },
+        ],
+      },
+    );
+  } catch (error) {
+    return new Response("Failed to generate image", { status: 500 });
+  }
+}
+```
+
+## Now how to use the OG image ?
+
+To use the image, you have 2 options. Static metadata, or dynamic metadata. You will most likely want dynamic as this is the main purpose of an OG route.
+
+In the route that you want the OG image to be for, so for my example its the blog post page, located at `/app/blog/[...slug]/page.tsx`
+
+In here, I have a function called generateMetadata. You can view the documentation on this [here](https://nextjs.org/docs/app/api-reference/functions/generate-metadata).
+
+```tsx
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
+  const post = await getPostFromParams(params);
+
+  if (!post) {
+    return {};
+  }
+
+  const ogSearchParams = new URLSearchParams();
+  ogSearchParams.set("title", post.title);
+
+  return {
+    // Other metadata here...
+    openGraph: {
+      title: post?.title,
+      description: post?.description,
+      type: "article",
+      url: post?.slug,
+      images: [
+        {
+          url: `/api/og?${ogSearchParams.toString()}`,
+          width: 1200,
+          height: 630,
+          alt: post?.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post?.title,
+      description: post?.description,
+      images: [`/api/og?${ogSearchParams.toString()}`],
+    },
+  };
+}
+
+```
+
+What the above is doing is taking in the visited page param, in my case this is just the post slug. Fetching the post based on that slug, and then building the OG image url with the search parameters we can use.
+
+Now whenever this page's link is posted, it will fetch the image from that URL.
