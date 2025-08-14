@@ -10,6 +10,7 @@ import NotFound from "@/app/not-found";
 import { Metadata } from "next";
 import { Data } from "@/lib/siteConfig";
 import ScrollToTop from "@/components/ui/scroll-to-top";
+import FloatingTocButton from "@/components/ui/table-of-contents";
 
 interface PostPageProps {
   params: {
@@ -107,6 +108,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <MDXContent code={post.body || ""} components={{ HoverButton }} />
     </div>
     <ScrollToTop/>
+    <FloatingTocButton/>
     </>
   );
 }
