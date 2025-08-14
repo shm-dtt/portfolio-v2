@@ -9,6 +9,7 @@ import { HoverButton } from "@/components/ui/hover-button";
 import NotFound from "@/app/not-found";
 import { Metadata } from "next";
 import { Data } from "@/utils/siteConfig";
+import ScrollToTop from "@/components/ui/scroll-to-top";
 
 interface PostPageProps {
   params: {
@@ -79,6 +80,7 @@ export default async function PostPage({ params }: PostPageProps) {
     return <NotFound homeLink="/blog" />;
   }
   return (
+    <>
     <div className="flex flex-col w-full h-full prose prose-invert dark:prose-invert">
       <Link
         href="/blog"
@@ -104,5 +106,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <hr className="mt-2 mb-8 border-neutral-600"></hr>
       <MDXContent code={post.body || ""} components={{ HoverButton }} />
     </div>
+    <ScrollToTop/>
+    </>
   );
 }
