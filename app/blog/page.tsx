@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { posts } from "#site/content";
-import { sortPosts } from "@/utils/util";
+import { isWithinOneWeek, sortPosts } from "@/utils/util";
 import { Metadata } from "next";
 
 interface PostItems {
@@ -28,7 +28,7 @@ export default async function Blog() {
       groups[year].push(post);
       return groups;
     },
-    {},
+    {}
   );
 
   // Sort years in descending order
@@ -46,8 +46,10 @@ export default async function Blog() {
             {groupedPosts[year].map((post) => {
               const formattedDate = new Date(post.date).toLocaleDateString(
                 "en-IN",
-                { day: "2-digit", month: "short" },
+                { day: "2-digit", month: "short" }
               );
+
+              const showNewBadge = isWithinOneWeek(post.date);
 
               return (
                 <div key={post.slug} className="w-full">
@@ -55,7 +57,15 @@ export default async function Blog() {
                     href={`/${post.slug}`}
                     className="flex items-end justify-between group hover:text-neutral-400 transition-colors duration-200"
                   >
-                    <p className="flex-1 min-w-0">{post.title}</p>
+                    <span className="flex-1 min-w-0">
+                      {post.title}
+                      {showNewBadge && (
+                        <span className="bg-neutral-700 text-xs py-1 px-2 ml-2 rounded-lg">
+                          NEW
+                        </span>
+                      )}
+                    </span>
+
                     <span className="text-sm whitespace-nowrap">
                       {formattedDate}
                     </span>
