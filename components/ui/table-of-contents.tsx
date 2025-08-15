@@ -53,8 +53,8 @@ export default function FloatingTocButton({ slug }: { slug: string }) {
     );
 
     tocItems.forEach((item) => {
-      const heading = document.getElementById(item.id);
-      if (heading) observer.observe(heading);
+      const element = document.getElementById(item.id);
+      if (element) observer.observe(element);
     });
 
     return () => observer.disconnect();
@@ -67,6 +67,11 @@ export default function FloatingTocButton({ slug }: { slug: string }) {
       setIsOpen(false);
     }
   };
+
+  // Helper function to get indentation style based on level
+  const getIndentationStyle = (level: number) => ({
+    marginLeft: `${(level - 1) * 16}px`,
+  });
 
   if (toc.length === 0) return null;
 
@@ -108,10 +113,10 @@ export default function FloatingTocButton({ slug }: { slug: string }) {
                 <li key={item.id}>
                   <button
                     onClick={() => handleClick(item.id)}
+                    style={getIndentationStyle(item.level)}
                     className={cn(
                       "block text-sm text-left w-full hover:text-white transition-colors duration-200 py-1 px-2 rounded hover:bg-neutral-800",
                       item.level === 1 && "font-medium",
-                      `ml-${(item.level - 1) * 3}`, // <-- dynamic indentation
                       activeId === item.id
                         ? "text-white font-medium bg-neutral-800"
                         : "text-neutral-400"
