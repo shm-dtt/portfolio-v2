@@ -1,0 +1,105 @@
+---
+title: Applications in OSI layers
+description: How applications interact with the OSI model, real-world examples and the role of networking devices at each layer.
+date: 2025-08-23
+published: false
+---
+
+By now, we all know what is OSI model, it layers and all that stuff we studied about in out college lectures. Right?
+
+7 layers!! From 1 to 7, they go like **Physical**, **Data Link**, **Network**, **Transport**, **Session**, **Presentation** and **Application** Layer.
+
+But, where is my application sitting with respect to this model???
+
+The intuitive answer would be...**"duh, my application is in the Application Layer!"** But in some cases it is more interesting than that.
+
+## The Layers and what they do.
+
+The 7 layers each describe a specific networking component.
+
+- Layer 7: Application - HTTP/FTP/gRPC/etc
+- Layer 6: Presentation - Encoding, Serialization
+- Layer 5: Session - Connection establishment, TLS
+- Layer 4: Transport - UDP/TCP
+- Layer 3: Network - IP
+- Layer 2: Data link - Frames, Mac address, Ethernet
+- Layer 1: Physical - Electric signals, fiber or radio waves
+
+### Example
+
+Lets say you have an application that sends a POST request to an HTTPS webpage.
+
+#### Sender (the Client)
+
+- Layer 7
+  - POST request with JSON data from the client to HTTPS server
+- Layer 6
+  - That JSON data is serialized and encoded to flat byte strings.
+  - This helps the data to become platform independent, and into a standardized, easy-to-transfer format.
+- Layer 5
+  - Request to establish TCP connection/TLS (Also sometimes we might not need to establish a session/connection, let's say in case of UDP)
+- Layer 4
+  - Sends SYN request target port 443 (default port for https)
+  - SYN is a request to establish a TCP connection, which might not be needed for UDP
+- Layer 3
+  - SYN is placed an IP packet(s) and adds the source/dest IPs
+- Layer 2
+  - Each packet goes into a single frame and adds the source/destination MAC addresses
+- Layer 1
+  - Each frame becomes string of bits which converted into either a radio signal (wi-fi), electric signal (ethernet), or light (fiber)
+
+But this structure is not set in stone. Few layers can inherit from other layers.
+
+#### Receiver (the Server)
+
+- Layer 1
+  - Radio, electric or light is received and converted into digital bits
+- Layer 2
+  - The bits from Layer 1 is assembled into frames
+- Layer 3
+  - The frames from layer 2 are assembled into IP packet.
+- Layer 4
+  - The IP packets from layer 3 are assembled into TCP segments
+  - Deals with Congestion control/flow control/retransmission in case Of TCP
+  - If Segment is SYN we don't need to go further into more layers as we are still processing the connection request
+- Layer 5
+  - The connection session is established or identified
+  - We only arrive at this layer when necessary (three way handshake is done)
+- Layer 6
+  - Deserialize flat byte strings back to JSON for the app to consume
+- Layer 7
+  - Application understands the JSON POST request and your express json or apache request receive event is triggered
+
+#### Visualization
+
+This image shows how the flow goes for a HTTP request (TCP)
+We start with the client, and once it reaches the session layer, and sees, oh we need to create a session, it keeps the serialized data, does a 3 way handshake first with SYN and ACK, and once the connection is established, the data is sent.
+
+<Image
+  className="mx-auto rounded-lg"
+  alt="3 way handshake"
+  src="/images/blog/osi-model/3-way-handshake.png"
+  width={600}
+  height={100}
+/>
+
+## But what happens in real world?
+
+Your client isn't connected to the server directly right? There's switches, routers, load balancers, proxies, VPNs, CDNs and many more things in between. Then what? What happens there?
+
+Those things look into your data. Not literally but yes. For example:
+
+- **Switches** look till the layer 2 (Data Link for the MAC addresses) to see which network to send to.
+  - Wireshark (in raw capture mode) can capture Ethernet frames before IP decoding
+- **Routers** look till the layer 3 (Network) to see which IP to 'route' the data to.
+  - Cisco IOS / Juniper Junos routers – route IP packets via OSPF, BGP, etc.
+- **Firewalls** look till the transport layer to see which IPs & ports to send the data to and which to block. (ISP uses this method to block certain websites)
+- **Load balancers/CDNs** look till layer 7 (Application) to cache data/ or the data is sent to a different server based on the `/xyz/abc` path.
+  - Cloudflare operates at L3–L7: DNS, Anycast routing, DDoS protection, HTTP proxying, TLS termination.
+- **VPNs** are essentially a layer 3 (Network) tunneling mechanism, encapsulating your packets to provide privacy and security over public networks. (esssentially they put our packets and put them in a different IP packet and send it to the destination IP)
+
+## Shortcomings of OSI model
+
+- OSI model has too many layers which can be hard to comprehend
+- Hard to argue about which layers does what exactly
+- Simpler to deal with layers 5-6-7 as just one layer (application) - TCP/IP model does just that, it is a protocol stack

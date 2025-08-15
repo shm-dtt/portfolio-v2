@@ -108,7 +108,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <MDXContent code={post.body || ""} components={{ HoverButton }} />
     </div>
     <ScrollToTop/>
-    <FloatingTocButton/>
+    <FloatingTocButton slug={`blog/${post.slugAsParams}`} />
     </>
   );
 }

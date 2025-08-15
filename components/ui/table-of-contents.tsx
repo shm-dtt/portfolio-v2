@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { List, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { posts } from "#site/content";
 
 interface TocItem {
   id: string;
@@ -10,29 +11,36 @@ interface TocItem {
   level: number;
 }
 
-export default function FloatingTocButton() {
+// Recursively flatten toc data into TocItem[]
+function flattenToc(toc: any[], level = 1): TocItem[] {
+  let items: TocItem[] = [];
+  toc.forEach((entry) => {
+    const id = entry.url.replace(/^#/, "");
+    items.push({
+      id,
+      text: entry.title,
+      level,
+    });
+    if (entry.items && entry.items.length > 0) {
+      items = items.concat(flattenToc(entry.items, level + 1));
+    }
+  });
+  return items;
+}
+
+export default function FloatingTocButton({ slug }: { slug: string }) {
   const [toc, setToc] = useState<TocItem[]>([]);
   const [activeId, setActiveId] = useState<string>("");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Extract headings from the page
-    const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
-    const tocItems: TocItem[] = [];
+    const post = posts.find((p) => p.slug === slug);
+    if (!post?.toc) return;
 
-    headings.forEach((heading) => {
-      if (heading.id) {
-        tocItems.push({
-          id: heading.id,
-          text: heading.textContent || "",
-          level: parseInt(heading.tagName.charAt(1)),
-        });
-      }
-    });
-
+    const tocItems = flattenToc(post.toc);
     setToc(tocItems);
 
-    // Set up intersection observer for active section
+    // Intersection observer for active heading
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -41,46 +49,29 @@ export default function FloatingTocButton() {
           }
         });
       },
-      {
-        rootMargin: "-20% 0% -35% 0%",
-        threshold: 0,
-      }
+      { rootMargin: "-20% 0% -35% 0%", threshold: 0 }
     );
 
-    headings.forEach((heading) => {
-      if (heading.id) {
-        observer.observe(heading);
-      }
+    tocItems.forEach((item) => {
+      const heading = document.getElementById(item.id);
+      if (heading) observer.observe(heading);
     });
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+    return () => observer.disconnect();
+  }, [slug]);
 
   const handleClick = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-      setIsOpen(false); // Close TOC after clicking
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsOpen(false);
     }
   };
 
-  const toggleToc = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // Don't render if no headings
-  if (toc.length === 0) {
-    return null;
-  }
+  if (toc.length === 0) return null;
 
   return (
     <>
-      {/* Backdrop */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
@@ -120,11 +111,7 @@ export default function FloatingTocButton() {
                     className={cn(
                       "block text-sm text-left w-full hover:text-white transition-colors duration-200 py-1 px-2 rounded hover:bg-neutral-800",
                       item.level === 1 && "font-medium",
-                      item.level === 2 && "ml-0",
-                      item.level === 3 && "ml-3",
-                      item.level === 4 && "ml-6",
-                      item.level === 5 && "ml-9",
-                      item.level === 6 && "ml-12",
+                      `ml-${(item.level - 1) * 3}`, // <-- dynamic indentation
                       activeId === item.id
                         ? "text-white font-medium bg-neutral-800"
                         : "text-neutral-400"
@@ -139,9 +126,9 @@ export default function FloatingTocButton() {
         </div>
       </div>
 
-      {/* TOC Button - Always visible when there are headings */}
+      {/* Floating Button */}
       <button
-        onClick={toggleToc}
+        onClick={() => setIsOpen(!isOpen)}
         className={cn(
           "fixed right-6 bottom-6 z-50 p-3 bg-neutral-800 hover:bg-neutral-700 text-white rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 focus:ring-offset-neutral-900",
           isOpen && "bg-neutral-700"
