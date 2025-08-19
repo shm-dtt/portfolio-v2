@@ -4,6 +4,8 @@ import { posts } from "#site/content";
 import { isWithinOneWeek, sortPosts } from "@/lib/utils";
 import { Metadata } from "next";
 
+export const revalidate = 10800; // 3 hours
+
 interface PostItems {
   slug: string;
   title: string;

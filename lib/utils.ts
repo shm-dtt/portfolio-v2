@@ -12,7 +12,7 @@ export function sortPosts(posts: Array<Post>) {
 export function isWithinOneWeek(postDate: string) {
   const now = new Date();
   const post = new Date(postDate);
-  const oneWeekAgo = new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000);
+  const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
   return post >= oneWeekAgo;
 }
 
