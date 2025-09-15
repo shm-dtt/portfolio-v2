@@ -21,6 +21,15 @@ export const Data = {
 
 export const projects = [
   {
+    name: "Wallendar",
+    year: 2025,
+    tech: "Next.js, Zustand",
+    description:
+      "Web-app to transform your images into calendar desktop wallpapers.",
+    techUsed: ["NextJS", "Zustand", "shadcn/ui"],
+    link: "https://wallendar.shop",
+  },
+  {
     name: "KeyTones",
     year: 2025,
     tech: "Next.js",
@@ -32,7 +41,7 @@ export const projects = [
   {
     name: "Chroma-Vue",
     year: 2025,
-    tech: "Python",
+    tech: "Python, FFmpeg, Docker",
     description:
       "A fast video color timeline generator that extracts the average color from each frame and creates a beautiful visual timeline.",
     techUsed: ["Python", "FFmpeg", "Docker"],
