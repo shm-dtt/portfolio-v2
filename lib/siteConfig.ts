@@ -25,7 +25,7 @@ export const projects = [
     year: 2025,
     tech: "Next.js, Zustand",
     description:
-      "Web-app to transform your images into calendar desktop wallpapers.",
+      "A Web-app to transform your images into calendar desktop wallpapers.",
     techUsed: ["NextJS", "Zustand", "shadcn/ui"],
     link: "https://wallendar.shop",
   },
