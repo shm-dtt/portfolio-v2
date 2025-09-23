@@ -17,15 +17,6 @@ const Navbar: React.FC = () => {
     <div>
       <div className="flex justify-end" role="navigation">
         <nav className="flex gap-4">
-          <Link href="/blog" className={`${isActive("/blog")}`}>
-            Blog
-          </Link>
-          <Link href="/projects" className={`${isActive("/projects")}`}>
-            Projects
-          </Link>
-          <Link href="/experience" className={`${isActive("/experience")}`}>
-            Experience
-          </Link>
           <Link
             href={Data.links.resume}
             target="_blank"
@@ -33,6 +24,15 @@ const Navbar: React.FC = () => {
             className={`${isActive("/resume")}`}
           >
             Resume
+          </Link>
+          <Link href="/experience" className={`${isActive("/experience")}`}>
+            Experience
+          </Link>
+          <Link href="/projects" className={`${isActive("/projects")}`}>
+            Projects
+          </Link>
+          <Link href="/blog" className={`${isActive("/blog")}`}>
+            Blog
           </Link>
           <Link href="/" className={`${isActive("/")}`}>
             About
