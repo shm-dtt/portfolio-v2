@@ -1,0 +1,175 @@
+---
+title: QUIC - What is it?
+description: Let's have a look at the QUIC protocol.
+date: 2025-09-26
+published: true
+---
+
+Although I am late to the party, I recently got to know about QUIC from Hussein Nasser's [Udemy course on Network Engineering](https://www.udemy.com/course/fundamentals-of-networking-for-effective-backend-design) and it kind of made me curious.
+
+Before we get into the nitty-grtitty of QUIC, let's have a look at what Head of Line Blocking is.
+
+## HoL (Head of Line) blocking
+
+HoL blocking happens when a single delayed or lost packet prevents all the other packets behind it from being processed — even if those later packets arrived correctly.
+
+Out-of-order delivery occurs when sequenced packets arrive out of order. This may happen due to different paths taken by the packets or from packets being dropped and resent. HOL blocking can significantly increase packet reordering
+
+### Blocking in HTTP/1.1
+
+In HTTP/1.1, the connection model originally used one TCP connection per request. To improve efficiency, browsers introduced persistent connections, where multiple requests could be sent over the same TCP connection.
+
+On top of this, HTTP/1.1 also defined pipelining, which allowed a client to send multiple requests without waiting for responses in between. However, servers were required to send responses in the same order as the requests were received.
+
+<div className="rounded-md px-1 bg-white text-xs flex flex-col  items-center text-neutral-400">
+  <Image
+    src="/images/blog/quic/HTTP_pipelining2.svg"
+    alt="Playing State"
+    className="rounded-md"
+    loading="lazy"
+    width={400}
+    height={400}
+  />
+  <p>Source: wikipedia.org</p>
+</div>
+
+This ordering requirement led to a problem: if the first response was slow, all subsequent responses would be delayed, even if they were already ready to send. This is known as head-of-line (HOL) blocking.
+
+Because pipelining was tricky to implement correctly and often caused more issues than benefits, it was rarely used in practice, and modern browsers have dropped support for it.
+
+### Enter multiplexing in HTTP/2
+
+TCP multiplexing is the process of using TCP port numbers to combine multiple application data streams into a single physical TCP connection, allowing multiple processes on a single host to share network resources efficiently.
+
+At the sender, TCP's transport layer multiplexes data by adding source and destination port numbers to each segment, directing them to the correct application at the receiver.
+
+HTTP/2 solves this by introducing multiplexing so that you can issue new requests over the same connection without having to wait for the previous ones to complete.
+
+In simple words, multiple requests/responses can be interleaved (no need for strict order like HTTP/1.1).
+
+### Ah shi-, here we go again!
+
+HTTP/2 does however still suffer from another kind of HOL, namely on the TCP level. One lost packet in the TCP stream makes all streams wait until that packet is re-transmitted and received. This creates **transport-level HoL blocking**.
+
+## The solution with QUIC
+
+Unlike HTTPS, which relies on TLS over TCP, QUIC is built directly on top of UDP. This shift brings one major benefit: the time to first meaningful communication is reduced significantly.
+
+TCP, being connection-oriented, must perform a three-way handshake to initiate any connection. After this, encryption parameters must be negotiated for TLS. Only then does the data the user was looking for actually start flowing. This means that it takes multiple round trips just to establish a path for two devices to communicate. This results in latency for the user. In a world where every piece of information is a click away, speed is everything, so reducing latency is critical.
+
+<div className="rounded-md px-1 bg-white text-xs flex flex-col items-center text-neutral-400">
+  <Image
+    src="/images/blog/quic/gcp-cloud-cdn-performance.gif"
+    alt="Playing State"
+    className="rounded-md"
+    loading="lazy"
+    width={500}
+    height={500}
+    unoptimized
+  />
+  <p>Source: google.com</p>
+</div>
+
+QUIC eliminates much of this overhead by using UDP. It integrates encryption setup and key exchange into its initial handshake, requiring only a single round trip to establish a secure communication path.
+
+Additionally, QUIC handles packet loss detection and retransmission on a per-stream basis. This means that if packets are lost, only the affected stream is delayed, while other streams continue without interruption.
+
+### Key features of QUIC and HTTP/3
+
+QUIC brings together ideas from TCP, TLS, and HTTP/2 — but reimagined on top of UDP
+
+- Reduced connection establishment time
+- Improved congestion control feedback
+- Multiplexing without head of line blocking
+- Connection migration
+- Optional unreliable delivery
+
+#### Built-in Security with TLS 1.3
+All QUIC traffic is secured by default, ensuring confidentiality, integrity, and forward secrecy.
+
+#### Faster Handshake
+A brand-new connection takes just 1 round trip to establish. With session resumption, QUIC enables 0-RTT so data can be sent immediately.
+
+#### Multiplexed Streams
+Multiple independent streams run within the same connection. Packet loss in one stream doesn’t stall others, eliminating head-of-line blocking.
+
+#### Connection Migration
+QUIC connections aren’t tied to a single IP address. If your network changes (e.g., switching from Wi-Fi to mobile data), the connection continues seamlessly.
+
+#### Smarter Congestion & Flow Control
+QUIC has its own loss recovery and congestion control, separate from TCP’s legacy, allowing faster evolution and better adaptation to modern networks. Stream-level and connection-level flow control ensure no single stream hogs resources, preventing both accidental and malicious overload.
+
+
+### Streams
+
+In TCP, a connection is just **one ordered stream of bytes**. If you’re downloading a web page with multiple images, scripts, and stylesheets, all that data flows through a single lane. This means if one packet is lost, the entire connection waits until it’s recovered.
+
+Think of it as a single-lane highway — one car tapping the brakes forces everyone behind to slow down.  
+QUIC solves this problem by introducing **streams within a connection**.
+
+<div className="rounded-md px-1 bg-white text-xs flex flex-col items-center text-neutral-400">
+  <Image
+    src="/images/blog/quic/streams.png"
+    alt="Playing State"
+    className="rounded-md"
+    loading="lazy"
+    width={500}
+    height={500}
+  />
+  <p>Source: cdnetworks.com</p>
+</div>
+
+#### How QUIC Streams Work
+
+- **Multiple lanes (streams)** - A single QUIC connection can carry many independent streams in parallel.
+
+- **Types of Streams** - Each stream has an ID that encodes who started it (client or server) and whether it’s bidirectional or unidirectional.
+  - Bidirectional streams: data flows both ways (like a phone call).
+  - Unidirectional streams: data flows one way only (like a radio broadcast).
+
+- **Independent delivery** - If packets in one stream are lost, only that stream waits. Other streams keep moving forward without delay.
+
+- **Prioritization** - QUIC prioritizes streams based on their importance. Streams with higher priority are more likely to be delivered before others. For example, a video player can prioritize the current video segment over background analytics uploads.
+
+## Conclusion
+
+QUIC is no longer just an experimental protocol — it’s already in action. In fact, if you open any YouTube video today, chances are it’s being delivered over QUIC.
+
+Here’s a quick preview: below you can see a YouTube video streaming over QUIC, with the browser’s network tab showing the protocol as h3 (HTTP/3 over QUIC).
+
+<div className="rounded-md px-1 bg-white text-xs flex flex-col items-center text-neutral-400">
+  <Image
+    src="/images/blog/quic/yt-preview.png"
+    alt="Playing State"
+    className="rounded-md"
+    loading="lazy"
+    width={500}
+    height={500}
+  />
+  <Image
+    src="/images/blog/quic/network-tab.png"
+    alt="Playing State"
+    className="rounded-md"
+    loading="lazy"
+    width={500}
+    height={500}
+  />
+</div>
+
+The adoption of QUIC isn't just about faster YouTube videos—it's reshaping how we build and experience the modern web. From mobile users switching between networks to applications requiring real-time responsiveness, QUIC's benefits extend far beyond traditional browsing.
+
+As more services adopt HTTP/3 and QUIC, we're moving toward a web that's not just faster, but more resilient and efficient. What started as Google's experiment has become the new standard for how data travels across the internet.
+
+Will discuss the security aspect with TLS 1.3 over a new blog. 
+
+Thanks for reading so far.  
+Cheers and Kudos  
+-Soham Dutta
+
+### References
+
+- [RFC9000](https://datatracker.ietf.org/doc/html/rfc9000)
+- [The Road to QUIC](https://blog.cloudflare.com/the-road-to-quic/) by Alessandro Ghedini
+- [Head-of-Line Blocking: Explanation and Designing a Flexible Network Layer](https://medium.com/@aditimishra_541/head-of-line-blocking-explanation-and-designing-a-flexible-network-layer-6ef4b53488bc) by Aditi Mishra
+- [What is QUIC? Everything You Need to Know](https://www.auvik.com/franklyit/blog/what-is-quic-protocol/) by Steve Petryschuk
+- [What Are QUIC and HTTP/3?](https://www.f5.com/glossary/quic-http3)
