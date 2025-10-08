@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @layer base {
   *,
@@ -14,44 +13,38 @@
 body {
   background-color: #121212;
   color: #d1d5db;
-  --sb-track-color: #121212;
-  --sb-thumb-color: #909090;
-  --sb-size: 8px;
 }
 
-/* Hide scrollbar */
-::-webkit-scrollbar {
+/* Hide scrollbar by default */
+/* ::-webkit-scrollbar {
   display: none;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-/* body::-webkit-scrollbar {
-  width: var(--sb-size)
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 8px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 8px;
-  
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
 } */
+
+/* Show scrollbar only for scrollbar-container when needed */
+.scrollbar-container::-webkit-scrollbar {
+  display: block;
+  height: 6px;
+}
+
+.scrollbar-container::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb {
+  background: #737373;
+  border-radius: 3px;
+}
+
+.scrollbar-container::-webkit-scrollbar-thumb:hover {
+  background: #909090;
+}
+
+/* Fallback for Firefox */
+.scrollbar-container {
+  scrollbar-width: thin;
+  scrollbar-color: #737373 #2a2a2a;
+}
 
 :root {
   --sh-class: #7aa2f7;

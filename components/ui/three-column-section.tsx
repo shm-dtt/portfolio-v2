@@ -11,7 +11,8 @@ export default function ThreeColumnSection() {
     .slice(0, 2);
 
   return (
-      <div className="grid grid-cols-3 gap-6 min-w-xl overflow-x-auto">
+    <ScrollAware className="relative overflow-x-auto py-8 beautiful-scrollbar">
+      <div className="grid grid-cols-3 gap-6 min-w-xl">
         {/* Building Column */}
         <div className="flex flex-col gap-6">
           <h2 className="text-neutral-400 text-sm">Building</h2>
@@ -83,5 +84,6 @@ export default function ThreeColumnSection() {
           </div>
         </div>
       </div>
+    </ScrollAware>
   );
 }
