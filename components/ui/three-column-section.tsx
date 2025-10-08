@@ -1,14 +1,19 @@
 import Link from "next/link";
+import { useMemo } from "react";
 import { projects } from "@/lib/siteConfig";
 import { posts } from "#site/content";
 import { ArrowUpRight } from "lucide-react";
 import ScrollAware from "@/components/ui/scroll-aware";
 
 export default function ThreeColumnSection() {
-  const featuredProjects = projects.slice(1, 3);
-  const writingContent = posts
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 2);
+  const featuredProjects = useMemo(() => projects.slice(1, 3), []);
+  
+  const writingContent = useMemo(() => 
+    posts
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+      .slice(0, 2),
+    []
+  );
 
   return (
     <ScrollAware className="relative overflow-x-auto py-8 beautiful-scrollbar">
