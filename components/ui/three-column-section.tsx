@@ -3,7 +3,6 @@ import { useMemo } from "react";
 import { projects } from "@/lib/siteConfig";
 import { posts } from "#site/content";
 import { ArrowUpRight } from "lucide-react";
-import ScrollAware from "@/components/ui/scroll-aware";
 
 export default function ThreeColumnSection() {
   const featuredProjects = useMemo(() => projects.slice(1, 3), []);
@@ -16,7 +15,7 @@ export default function ThreeColumnSection() {
   );
 
   return (
-    <ScrollAware className="relative overflow-x-auto py-8 beautiful-scrollbar">
+    <div className="relative overflow-x-auto py-8 beautiful-scrollbar">
       <div className="grid grid-cols-3 gap-6 min-w-xl">
         {/* Building Column */}
         <div className="flex flex-col gap-6">
@@ -89,6 +88,6 @@ export default function ThreeColumnSection() {
           </div>
         </div>
       </div>
-    </ScrollAware>
+    </div>
   );
 }
