@@ -16,34 +16,48 @@ body {
 }
 
 /* Hide scrollbar by default */
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
-} */
+}
 
-/* Show scrollbar only for scrollbar-container when needed */
-.scrollbar-container::-webkit-scrollbar {
+/* Show horizontal scrollbar only for beautiful-scrollbar when needed */
+.beautiful-scrollbar::-webkit-scrollbar {
   display: block;
   height: 6px;
 }
 
-.scrollbar-container::-webkit-scrollbar-track {
+.beautiful-scrollbar::-webkit-scrollbar:vertical {
+  display: none;
+}
+
+.beautiful-scrollbar::-webkit-scrollbar-track {
   background: #2a2a2a;
   border-radius: 3px;
 }
 
-.scrollbar-container::-webkit-scrollbar-thumb {
+.beautiful-scrollbar::-webkit-scrollbar-thumb {
   background: #737373;
   border-radius: 3px;
 }
 
-.scrollbar-container::-webkit-scrollbar-thumb:hover {
+.beautiful-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #909090;
 }
 
-/* Fallback for Firefox */
-.scrollbar-container {
+/* Fallback for Firefox - hide vertical scrollbar but keep scroll functionality */
+.beautiful-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #737373 #2a2a2a;
+}
+
+/* Hide vertical scrollbar globally but keep scroll functionality */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* WebKit */
 }
 
 :root {
