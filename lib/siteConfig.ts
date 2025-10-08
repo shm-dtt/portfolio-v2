@@ -1,5 +1,5 @@
 export const Data = {
-  version: "v3.0",
+  version: "v3.1",
   firstName: "Soham",
   lastName: "Dutta",
   fullName: "Soham Dutta",
@@ -43,7 +43,7 @@ export const projects = [
     year: 2025,
     tech: "Python, FFmpeg, Docker",
     description:
-      "A fast video color timeline generator that extracts the average color from each frame and creates a beautiful visual timeline.",
+      "A fast video color timeline generator that extracts the average color from each frame.",
     techUsed: ["Python", "FFmpeg", "Docker"],
     link: "https://github.com/shm-dtt/chroma-vue",
   },
