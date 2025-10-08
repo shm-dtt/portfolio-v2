@@ -14,44 +14,52 @@
 body {
   background-color: #121212;
   color: #d1d5db;
-  --sb-track-color: #121212;
-  --sb-thumb-color: #909090;
-  --sb-size: 8px;
 }
 
-/* Hide scrollbar */
+/* Hide scrollbar by default */
 ::-webkit-scrollbar {
   display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+/* Show horizontal scrollbar only for beautiful-scrollbar when needed */
+.beautiful-scrollbar::-webkit-scrollbar {
+  display: block;
+  height: 6px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-/* body::-webkit-scrollbar {
-  width: var(--sb-size)
+.beautiful-scrollbar::-webkit-scrollbar:vertical {
+  display: none;
 }
 
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 8px;
+.beautiful-scrollbar::-webkit-scrollbar-track {
+  background: #121212;
+  border-radius: 3px;
 }
 
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 8px;
-  
+.beautiful-scrollbar::-webkit-scrollbar-thumb {
+  background: #737373;
+  border-radius: 3px;
 }
 
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
-} */
+.beautiful-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #909090;
+}
+
+/* Fallback for Firefox - hide vertical scrollbar but keep scroll functionality */
+.beautiful-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #737373 #121212;
+}
+
+/* Hide vertical scrollbar globally but keep scroll functionality */
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
 
 :root {
   --sh-class: #7aa2f7;

@@ -1,5 +1,6 @@
 import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
+import ThreeColumnSection from "@/components/ui/three-column-section";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <ThreeColumnSection />
     </main>
   );
 }
