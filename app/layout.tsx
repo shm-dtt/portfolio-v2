@@ -5,9 +5,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { Data } from "@/lib/siteConfig";
-const inter = Inter({
+const dm_sans = DM_Sans({
   subsets: ["latin"],
   preload: true,
   display: "swap",
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth scroll-pt-10">
       <body
-        className={`${inter.className} mx-auto my-12 max-w-2xl md:text-base text-sm`}
+        className={`${dm_sans.className} mx-auto my-12 max-w-2xl md:text-base text-sm`}
       >
         <div className="mx-4">
           <Navbar />
