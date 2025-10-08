@@ -5,9 +5,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import { Inter } from "next/font/google";
+import { DM_Sans, Inter } from "next/font/google";
 import { Data } from "@/lib/siteConfig";
-const inter = Inter({
+const inter = DM_Sans({
   subsets: ["latin"],
   preload: true,
   display: "swap",

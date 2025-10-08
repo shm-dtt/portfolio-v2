@@ -31,7 +31,7 @@ body {
 }
 
 .beautiful-scrollbar::-webkit-scrollbar-track {
-  background: #2a2a2a;
+  background: #121212;
   border-radius: 3px;
 }
 
@@ -47,7 +47,7 @@ body {
 /* Fallback for Firefox - hide vertical scrollbar but keep scroll functionality */
 .beautiful-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #737373 #2a2a2a;
+  scrollbar-color: #737373 #121212;
 }
 
 /* Hide vertical scrollbar globally but keep scroll functionality */

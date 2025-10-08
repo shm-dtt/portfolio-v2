@@ -25,7 +25,7 @@ export default function ThreeColumnSection() {
               >
                 {projects[0].name}
               </Link>
-              <p className="text-gray-400 text-sm mt-1">
+              <p className="text-neutral-400 text-sm mt-1">
                 {projects[0].description}
               </p>
             </div>
@@ -46,7 +46,7 @@ export default function ThreeColumnSection() {
                   {project.name}
                   <ArrowUpRight className="w-3 h-3" />
                 </Link>
-                <p className="text-gray-400 text-sm mt-1">
+                <p className="text-neutral-400 text-sm mt-1">
                   {project.description}
                 </p>
               </div>
@@ -72,7 +72,7 @@ export default function ThreeColumnSection() {
                 >
                   {item.title}
                 </Link>
-                <p className="text-gray-400 text-sm mt-1">{item.description}</p>
+                <p className="text-neutral-400 text-sm mt-1">{item.description}</p>
               </div>
             ))}
             <Link
