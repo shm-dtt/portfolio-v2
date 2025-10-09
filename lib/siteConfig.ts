@@ -15,7 +15,7 @@ export const Data = {
     github: "https://github.com/shm-dtt",
     dribbble: "https://dribbble.com/shm-dtt",
     resume:
-      "https://drive.google.com/file/d/1-1-9ht1R1086T9KF3m0Ooy4swHL-NFPv/view",
+      "https://drive.google.com/file/d/1qAFE4F0gICqyKKE63k_3b8sDt-m6ySGH/view?usp=drive_link",
   },
 };
 
