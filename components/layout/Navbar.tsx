@@ -2,6 +2,7 @@
 import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { HoverButton } from "../ui/hover-button";
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -23,19 +24,19 @@ const Navbar: React.FC = () => {
             rel="noopener noreferrer"
             className={`${isActive("/resume")}`}
           >
-            Resume
+            <HoverButton text="Resume" />
           </Link>
           <Link href="/experience" className={`${isActive("/experience")}`}>
-            Experience
+            <HoverButton text="Experience" />
           </Link>
           <Link href="/projects" className={`${isActive("/projects")}`}>
-            Projects
+            <HoverButton text="Projects" />
           </Link>
           <Link href="/blog" className={`${isActive("/blog")}`}>
-            Blog
+            <HoverButton text="Blog" />
           </Link>
           <Link href="/" className={`${isActive("/")}`}>
-            About
+            <HoverButton text="About" />
           </Link>
         </nav>
       </div>
