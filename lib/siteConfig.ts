@@ -116,8 +116,8 @@ export const experience = [
     position: "Applied R&D Software Engineer",
     duration: "July 2024 - Present",
     description:
-      "Building automation tools for Bharti Airtel’s VNO infrastructure as part of Nokia's R&D team. Developed frameworks for DCGW and FSS, automated brownfield configuration extraction, and streamlined CRD lifecycle management in Kubernetes using shell scripts. Focused on simplifying network operations and accelerating production workflows.",
-    techUsed: ["Python", "Bash", "SQL", "Docker"],
+      "",
+    techUsed: ["Python", "Spring Boot", "Java", "SQL", "React", "Javascript", "Kubernetes"],
   },
   {
     company: "NOKIA",

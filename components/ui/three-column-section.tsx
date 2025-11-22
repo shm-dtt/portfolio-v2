@@ -15,7 +15,7 @@ export default function ThreeColumnSection() {
   );
 
   return (
-    <div className="relative overflow-x-auto py-8 beautiful-scrollbar">
+    <div className="relative overflow-x-auto py-4 beautiful-scrollbar">
       <div className="grid grid-cols-3 gap-6 min-w-xl">
         {/* Building Column */}
         <div className="flex flex-col gap-6">

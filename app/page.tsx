@@ -1,19 +1,32 @@
 import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
 import ThreeColumnSection from "@/components/ui/three-column-section";
-
+import { Newsreader } from "next/font/google";
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  preload: true,
+  display: "swap",
+  weight: ["500"],
+  style: ["italic"],
+  fallback: ["Arial", "sans-serif"],
+});
 export default function Home() {
   return (
     <main className="flex flex-col my-4">
-      <section className="flex flex-col z-1 py-8">
+      <section className="flex flex-col z-1 py-6">
         <div className="flex flex-col gap-8">
           <p>
             Hi, I&apos;m {Data.firstName}.
             <br />
             <br />
-            Software engineer crafting clean UIs and smooth user experiences.
-            passionate about building simple, useful products that solve
-            everyday problems.
+            <span className={`${newsreader.className} italic text-[16px]`}>
+              Crafting clean UIs and smooth user experiences.
+            </span>
+            <br />
+            <span>
+              Passionate about building simple, useful products that solve
+              everyday problems.
+            </span>
           </p>
           <p>
             Building internal tools and automation systems for large-scale
