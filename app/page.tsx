@@ -2,6 +2,7 @@ import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
 import ThreeColumnSection from "@/components/ui/three-column-section";
 import { Newsreader } from "next/font/google";
+import ProjectsClient from "@/app/projects/ProjectsClient";
 const newsreader = Newsreader({
   subsets: ["latin"],
   preload: true,
@@ -48,7 +49,8 @@ export default function Home() {
           </p>
         </div>
       </section>
-      <ThreeColumnSection />
+      {/* <ThreeColumnSection /> */}
+      <ProjectsClient />
     </main>
   );
 }
