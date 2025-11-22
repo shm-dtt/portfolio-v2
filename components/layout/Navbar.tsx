@@ -2,44 +2,53 @@
 import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { HoverButton } from "../ui/hover-button";
+
+interface NavItem {
+  label: string;
+  href: string;
+  isExternal?: boolean;
+  exactMatch?: boolean;
+}
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
 
-  const isActive = (route: string) => {
-    if (route === "/") {
-      return pathname === "/" ? "text-white" : "text-neutral-400";
+  const navItems: NavItem[] = [
+    { label: "Resume", href: Data.links.resume, isExternal: true },
+    { label: "Experience", href: "/experience" },
+    { label: "Projects", href: "/projects" },
+    { label: "Blog", href: "/blog" },
+    { label: "About", href: "/", exactMatch: true },
+  ];
+
+  const isActive = (item: NavItem): boolean => {
+    if (item.exactMatch) {
+      return pathname === item.href;
     }
-    return pathname.startsWith(route) ? "text-white" : "text-neutral-400";
+    return pathname.startsWith(item.href);
+  };
+
+  const getLinkClassName = (item: NavItem): string => {
+    return isActive(item) ? "text-white" : "text-neutral-400";
   };
 
   return (
     <div>
-      <div className="flex justify-end" role="navigation">
-        <nav className="flex gap-4">
+      <nav className="flex justify-end gap-4" role="navigation">
+        {navItems.map((item) => (
           <Link
-            href={Data.links.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${isActive("/resume")}`}
+            key={item.href}
+            href={item.href}
+            target={item.isExternal ? "_blank" : undefined}
+            rel={item.isExternal ? "noopener noreferrer" : undefined}
+            className={getLinkClassName(item)}
           >
-            Resume
+            <HoverButton text={item.label} />
           </Link>
-          <Link href="/experience" className={`${isActive("/experience")}`}>
-            Experience
-          </Link>
-          <Link href="/projects" className={`${isActive("/projects")}`}>
-            Projects
-          </Link>
-          <Link href="/blog" className={`${isActive("/blog")}`}>
-            Blog
-          </Link>
-          <Link href="/" className={`${isActive("/")}`}>
-            About
-          </Link>
-        </nav>
-      </div>
-      <hr className="mt-4 mb-8 border-neutral-700"></hr>
+        ))}
+      </nav>
+      <hr className="mt-4 mb-8 border-neutral-700" />
     </div>
   );
 };
