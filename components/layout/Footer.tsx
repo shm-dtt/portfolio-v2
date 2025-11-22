@@ -1,33 +1,62 @@
+"use client";
+
 import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
-import { HoverButton } from "@/components/ui/hover-button";
+import {
+  EnvelopeIcon,
+  GithubLogoIcon,
+  LinkedinLogoIcon,
+  XLogoIcon,
+  DribbbleLogoIcon,
+} from "@phosphor-icons/react";
 
-export default async function Footer() {
+export default function Footer() {
   const socialLinks = [
-    { name: "Email", url: Data.email },
-    { name: "GitHub", url: Data.links.github },
-    { name: "LinkedIn", url: Data.links.linkedin },
-    { name: "X/Twitter", url: Data.links.twitter },
-    { name: "Dribbble", url: Data.links.dribbble },
+    {
+      name: "Email",
+      url: Data.email,
+      icon: <EnvelopeIcon className="w-5 h-5" weight="fill" />,
+      hoverColor: "hover:text-green-400",
+    },
+    {
+      name: "GitHub",
+      url: Data.links.github,
+      icon: <GithubLogoIcon className="w-5 h-5" weight="fill" />,
+      hoverColor: "hover:text-gray-300",
+    },
+    {
+      name: "LinkedIn",
+      url: Data.links.linkedin,
+      icon: <LinkedinLogoIcon className="w-5 h-5" weight="fill" />,
+      hoverColor: "hover:text-[#0077b5]",
+    },
+    {
+      name: "X/Twitter",
+      url: Data.links.twitter,
+      icon: <XLogoIcon className="w-5 h-5" />,
+      hoverColor: "hover:text-[#1DA1F2]",
+    },
+    {
+      name: "Dribbble",
+      url: Data.links.dribbble,
+      icon: <DribbbleLogoIcon className="w-5 h-5" weight="fill" />,
+      hoverColor: "hover:text-[#ea4c89]",
+    },
   ];
 
   return (
     <footer className="flex flex-col justify-center m-4 gap-4 mt-24">
-      <nav className="flex gap-1 text-sm">
-        {socialLinks.map((platform, idx) => (
-          <div key={platform.name} className="flex items-center">
-            <Link
-              href={platform.url}
-              target="_blank"
-              className="text-neutral-400 hover:text-white"
-              aria-label={platform.name}
-            >
-              <HoverButton text={platform.name} />
-            </Link>
-            {idx < socialLinks.length - 1 && (
-              <span className="text-neutral-400 text-xs mx-1">•</span>
-            )}
-          </div>
+      <nav className="flex gap-4 text-sm">
+        {socialLinks.map((platform) => (
+          <Link
+            key={platform.name}
+            href={platform.url}
+            target="_blank"
+            className={` transition-colors ${platform.hoverColor}`}
+            aria-label={platform.name}
+          >
+            {platform.icon}
+          </Link>
         ))}
       </nav>
 
