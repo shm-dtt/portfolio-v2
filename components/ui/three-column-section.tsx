@@ -5,8 +5,6 @@ import { posts } from "#site/content";
 import { ArrowUpRight } from "lucide-react";
 
 export default function ThreeColumnSection() {
-  const featuredProjects = useMemo(() => projects.slice(1, 3), []);
-  
   const writingContent = useMemo(() => 
     posts
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -15,8 +13,8 @@ export default function ThreeColumnSection() {
   );
 
   return (
-    <div className="relative overflow-x-auto py-4 beautiful-scrollbar">
-      <div className="grid grid-cols-3 gap-6 min-w-xl">
+    <div className="py-4">
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-6">
         {/* Building Column */}
         <div className="flex flex-col gap-6">
           <h2 className="text-neutral-400 text-sm">Building</h2>
@@ -33,32 +31,10 @@ export default function ThreeColumnSection() {
                 {projects[0].description}
               </p>
             </div>
-          </div>
-        </div>
-
-        {/* Projects Column */}
-        <div className="flex flex-col gap-6">
-          <h2 className="text-neutral-400 text-sm">Projects</h2>
-          <div className="flex flex-col gap-6">
-            {featuredProjects.map((project, index) => (
-              <div key={index} className="flex flex-col gap-2">
-                <Link
-                  href={project.link}
-                  target="_blank"
-                  className="my-underline inline-flex items-center gap-1"
-                >
-                  {project.name}
-                  <ArrowUpRight className="w-3 h-3" />
-                </Link>
-                <p className="text-neutral-400 text-sm mt-1">
-                  {project.description}
-                </p>
-              </div>
-            ))}
             <Link
               href="/projects"
               className="my-underline inline-flex items-center gap-1"
-            > 
+            >
               All Projects <ArrowUpRight className="w-3 h-3" />
             </Link>
           </div>

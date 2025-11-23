@@ -8,7 +8,7 @@ interface CardProps {
   logo: string;
   position: string;
   duration: string;
-  description: string;
+  description: string[];
   techUsed: string[];
   i: number;
 }
@@ -48,7 +48,13 @@ const Card: React.FC<CardProps> = ({
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-neutral-400">{description}</p>
+        {description.length > 0 && (
+          <ul className="text-sm text-neutral-400 list-disc space-y-1 pl-4">
+            {description.map((item, index) => (
+              <li key={`${i}-desc-${index}`} className="pl-0.5">{item}</li>
+            ))}
+          </ul>
+        )}
         <div className="flex flex-wrap gap-2 mt-4 mb-8">
           {techUsed.map((tech, index) => (
             <p

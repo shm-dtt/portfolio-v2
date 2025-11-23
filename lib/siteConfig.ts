@@ -115,8 +115,11 @@ export const experience = [
     logo: "https://media.licdn.com/dms/image/v2/D4E0BAQGvo3aurmZZjQ/company-logo_200_200/B4EZqbzf6YKsAI-/0/1763550560619/nokia_logo?e=1765411200&v=beta&t=A4R5HQkEcetxqC_XNjmHcpjpQ6cEYPP-E7at3IJgAGU",
     position: "Applied R&D Software Engineer",
     duration: "July 2024 - Present",
-    description:
-      "",
+    description: [
+      "Built large-scale automation systems (Python, SQL) for Airtel, T-Mobile and VodafoneThree, cutting manual effort by up to 94% and improving network performance by 35% across production environments.",
+      "Delivered end-to-end tools including a React-based Excel validator used by 50+ engineers, enterprise-grade VPN automation with encrypted credential handling, and workflow automation that accelerated customer operations by 10%.",
+      "Automated multi-site deployment upgrades and configuration migrations across 32+ data centers, reducing execution time from hours to minutes and significantly lowering operational overhead."
+    ],
     techUsed: ["Python", "SQL", "React", "Javascript", "K8s", "Linux"],
   },
   {
@@ -125,8 +128,11 @@ export const experience = [
     logo: "https://media.licdn.com/dms/image/v2/D4E0BAQGvo3aurmZZjQ/company-logo_200_200/B4EZqbzf6YKsAI-/0/1763550560619/nokia_logo?e=1765411200&v=beta&t=A4R5HQkEcetxqC_XNjmHcpjpQ6cEYPP-E7at3IJgAGU",
     position: "SDE Intern",
     duration: "Aug 2023 - May 2024",
-    description:
-      "Build and maintain key components for network management tools in projects like TSPortal and SingTel. Collaborated with cross-functional teams to deliver efficient solutions, optimize performance, and promote best coding practices. Also performed code reviews among interns, participated in brainstorming sessions and learning opportunities.",
+    description: [
+      "Improved network management tools using Spring Boot, JavaScript, and MySQL for 15+ enterprise clients, including Vodafone and Singtel.",
+      "Optimized SQL and refactored backend logic to cut page load times by 15% and enhance overall system performance.",
+      "Built backend services for Node User Profile and Optics Reporting modules, handling data for over 1,000 network devices."
+    ],
     techUsed: [
       "Spring Boot",
       "Java",
@@ -144,8 +150,11 @@ export const experience = [
     logo: "https://github.com/MLSAKIIT.png",
     position: "Project Wing Member & Learner",
     duration: "Oct 2021 - Dec 2022",
-    description:
-      "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking. Designed the UI and built a complete web app with online compiler and user registration. Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
+    description: [
+      "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking.",
+      "Designed the UI and built a complete web app with online compiler and user registration.",
+      "Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
+    ],
     techUsed: ["React", "JavaScript", "Bootstrap"],
   },
 ];

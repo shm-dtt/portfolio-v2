@@ -3,6 +3,14 @@ import Link from "next/link";
 import ThreeColumnSection from "@/components/ui/three-column-section";
 import { Newsreader } from "next/font/google";
 import ProjectsClient from "@/app/projects/ProjectsClient";
+import {
+  React,
+  Nextjs,
+  TypeScript,
+  Spring,
+  Python,
+  Java,
+} from "@/components/icons/IconLibrary";
 const newsreader = Newsreader({
   subsets: ["latin"],
   preload: true,
@@ -12,6 +20,8 @@ const newsreader = Newsreader({
   fallback: ["Arial", "sans-serif"],
 });
 export default function Home() {
+  const iconClassName = "w-4 h-4 inline-block align-middle ";
+
   return (
     <main className="flex flex-col my-4">
       <section className="flex flex-col z-1 py-6">
@@ -44,13 +54,16 @@ export default function Home() {
           </p>
 
           <p>
-            Comfortable across the stack — from designing interfaces using React and Next.js
-            to building backend systems in Typescript, Java, Spring-Boot and Python.
+            Comfortable across the stack - from designing interfaces using React{" "}
+            <React className={iconClassName} />, Next.js{" "}
+            <Nextjs className={iconClassName} /> to building backend systems in
+            Typescript <TypeScript className={iconClassName} />, Python{" "}
+            <Python className={iconClassName} />, Java{" "}
+            <Java className={iconClassName} /> and Spring-Boot{" "}
+            <Spring className={iconClassName} />
           </p>
         </div>
       </section>
-      {/* <ThreeColumnSection /> */}
-      <ProjectsClient />
     </main>
   );
 }
