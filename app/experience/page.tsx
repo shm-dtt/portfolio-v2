@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 const Experience: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <br />
       <div>
         {experience.map((exp, i) => (
           <Card key={`p_${i}`} i={i} {...exp} />

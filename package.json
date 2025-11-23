@@ -1,9 +1,9 @@
 {
   "name": "portfolio-v2",
-  "version": "3.0",
+  "version": "3.2",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "concurrently \"next dev --turbopack\" \"velite --watch\"",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "next lint",
@@ -30,6 +30,7 @@
     "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "^16.0.1",
     "postcss": "^8.5.6",
