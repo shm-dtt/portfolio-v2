@@ -39,7 +39,7 @@ export default async function Blog() {
     .sort((a, b) => b - a);
 
   return (
-    <div className="mb-32 mt-16">
+    <div className="mb-32 mt-16 group">
       {sortedYears.map((year) => (
         <div key={year} className="flex items-start my-2">
           <div className="w-1/6">{year}</div>
@@ -57,7 +57,7 @@ export default async function Blog() {
                 <div key={post.slug} className="w-full">
                   <Link
                     href={`/${post.slug}`}
-                    className="flex items-end justify-between group hover:text-neutral-400 transition-colors duration-200"
+                    className="flex items-end justify-between text-white group-hover:text-neutral-400 hover:text-white transition-colors duration-200"
                   >
                     <span className="flex-1 min-w-0">
                       {post.title}
