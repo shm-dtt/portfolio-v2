@@ -7,7 +7,6 @@ import {
   GithubLogoIcon,
   LinkedinLogoIcon,
   XLogoIcon,
-  DribbbleLogoIcon,
 } from "@phosphor-icons/react";
 
 export default function Footer() {
@@ -31,31 +30,25 @@ export default function Footer() {
       hoverColor: "hover:text-[#0077b5]",
     },
     {
-      name: "X/Twitter",
+      name: "X",
       url: Data.links.twitter,
       icon: <XLogoIcon className="w-5 h-5" />,
       hoverColor: "hover:text-[#1DA1F2]",
-    },
-    {
-      name: "Dribbble",
-      url: Data.links.dribbble,
-      icon: <DribbbleLogoIcon className="w-5 h-5" weight="fill" />,
-      hoverColor: "hover:text-[#ea4c89]",
     },
   ];
 
   return (
     <footer className="flex flex-col justify-center m-4 gap-4 mt-24">
-      <nav className="flex gap-4 text-sm">
+      <nav className="flex gap-4 text-xs">
         {socialLinks.map((platform) => (
           <Link
             key={platform.name}
             href={platform.url}
             target="_blank"
-            className={` transition-colors ${platform.hoverColor}`}
+            className={` transition-colors ${platform.hoverColor} flex flex-row items-center gap-1`}
             aria-label={platform.name}
           >
-            {platform.icon}
+            {platform.icon} {platform.name}
           </Link>
         ))}
       </nav>

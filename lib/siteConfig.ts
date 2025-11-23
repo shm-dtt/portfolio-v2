@@ -1,5 +1,5 @@
 export const Data = {
-  version: "v3.1",
+  version: "v3.2",
   firstName: "Soham",
   lastName: "Dutta",
   fullName: "Soham Dutta",
@@ -13,7 +13,6 @@ export const Data = {
     twitter: "https://twitter.com/shm_dtt",
     linkedin: "https://www.linkedin.com/in/shm-dtt",
     github: "https://github.com/shm-dtt",
-    dribbble: "https://dribbble.com/shm-dtt",
     resume:
       "https://drive.google.com/file/d/1qAFE4F0gICqyKKE63k_3b8sDt-m6ySGH/view?usp=drive_link",
   },
@@ -59,7 +58,7 @@ export const projects = [
   {
     name: "Nest",
     year: 2025,
-    tech: "NextJS, Tailwind",
+    tech: "Next.js, Tailwind",
     description: "Web App for finding the best spot for your Wi-Fi router.",
     techUsed: ["NextJS", "Tailwind CSS", "TypeScript"],
     link: "https://github.com/shm-dtt/nest",
@@ -113,15 +112,17 @@ export const experience = [
   {
     company: "NOKIA",
     link: "https://www.nokia.com/",
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQGvo3aurmZZjQ/company-logo_200_200/B4EZqbzf6YKsAI-/0/1763550560619/nokia_logo?e=1765411200&v=beta&t=A4R5HQkEcetxqC_XNjmHcpjpQ6cEYPP-E7at3IJgAGU",
     position: "Applied R&D Software Engineer",
     duration: "July 2024 - Present",
     description:
       "",
-    techUsed: ["Python", "Spring Boot", "Java", "SQL", "React", "Javascript", "Kubernetes"],
+    techUsed: ["Python", "SQL", "React", "Javascript", "K8s", "Linux"],
   },
   {
     company: "NOKIA",
     link: "https://www.nokia.com/",
+    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQGvo3aurmZZjQ/company-logo_200_200/B4EZqbzf6YKsAI-/0/1763550560619/nokia_logo?e=1765411200&v=beta&t=A4R5HQkEcetxqC_XNjmHcpjpQ6cEYPP-E7at3IJgAGU",
     position: "SDE Intern",
     duration: "Aug 2023 - May 2024",
     description:
@@ -140,10 +141,11 @@ export const experience = [
   {
     company: "MLSA KIIT",
     link: "https://github.com/MLSAKIIT/MSC-Codeportal",
+    logo: "https://github.com/MLSAKIIT.png",
     position: "Project Wing Member & Learner",
     duration: "Oct 2021 - Dec 2022",
     description:
       "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking. Designed the UI and built a complete web app with online compiler and user registration. Learned about Javascript, ReactJS, Bootstrap, JSON and implemented it.",
-    techUsed: ["JSON", "React JS", "Bootstrap", "JavaScript"],
+    techUsed: ["React", "JavaScript", "Bootstrap"],
   },
 ];

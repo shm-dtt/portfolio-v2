@@ -44,8 +44,8 @@ export default function Home() {
           </p>
 
           <p>
-            Comfortable across the stack — from designing thoughtful interfaces
-            to building backend systems in Javascript, Spring-Boot and Python.
+            Comfortable across the stack — from designing interfaces using React and Next.js
+            to building backend systems in Typescript, Java, Spring-Boot and Python.
           </p>
         </div>
       </section>

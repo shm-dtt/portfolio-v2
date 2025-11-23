@@ -9,16 +9,18 @@ if (!process.env.VELITE_STARTED && (isDev || isBuild)) {
 }
 
 const nextConfig: NextConfig = {
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: "https",
-  //       hostname: "i.scdn.co",
-  //       port: "",
-  //       pathname: "/image/**",
-  //     },
-  //   ],
-  // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "media.licdn.com",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
+      },
+    ],
+  },
   redirects: async () => {
     return [
       {
@@ -39,6 +41,7 @@ const nextConfig: NextConfig = {
     viewTransition: true,
   },
   allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
+
 };
 
 export default nextConfig;

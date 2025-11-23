@@ -17,7 +17,6 @@ const Navbar: React.FC = () => {
   const navItems: NavItem[] = [
     { label: "Resume", href: Data.links.resume, isExternal: true },
     { label: "Experience", href: "/experience" },
-    { label: "Projects", href: "/projects" },
     { label: "Blog", href: "/blog" },
     { label: "About", href: "/", exactMatch: true },
   ];
