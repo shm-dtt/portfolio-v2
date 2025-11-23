@@ -27,6 +27,7 @@ export const projects = [
       "A Web-app to transform your images into calendar desktop wallpapers.",
     techUsed: ["NextJS", "Zustand", "shadcn/ui"],
     link: "https://wallendar.shop",
+    image: "/image.png",
   },
   {
     name: "KeyTones",
@@ -107,6 +108,8 @@ export const projects = [
     link: "https://shm-brain-games.netlify.app/",
   },
 ];
+
+export const BUILDING = projects[0];
 
 export const experience = [
   {

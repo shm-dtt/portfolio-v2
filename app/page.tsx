@@ -1,6 +1,6 @@
 import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
-import ThreeColumnSection from "@/components/ui/three-column-section";
+import TwoColumnSection from "@/components/ui/two-column-section";
 import { Newsreader } from "next/font/google";
 import ProjectsClient from "@/app/projects/ProjectsClient";
 import {
@@ -64,6 +64,7 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <TwoColumnSection/>
     </main>
   );
 }
