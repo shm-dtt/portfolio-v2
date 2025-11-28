@@ -2,38 +2,29 @@
 
 import { Data } from "@/lib/siteConfig";
 import Link from "next/link";
-import {
-  EnvelopeIcon,
-  GithubLogoIcon,
-  LinkedinLogoIcon,
-  XLogoIcon,
-} from "@phosphor-icons/react";
+import { Gmail, XformerlyTwitter, GitHub, LinkedIn } from "@/components/icons/IconLibrary";
 
 export default function Footer() {
   const socialLinks = [
     {
       name: "Email",
       url: Data.email,
-      icon: <EnvelopeIcon className="w-5 h-5" weight="fill" />,
-      hoverColor: "hover:text-green-400",
+      icon: <Gmail className="w-4 h-4 inline-block align-middle "/>,
     },
     {
       name: "GitHub",
       url: Data.links.github,
-      icon: <GithubLogoIcon className="w-5 h-5" weight="fill" />,
-      hoverColor: "hover:text-gray-300",
+      icon: <GitHub className="w-4 h-4 inline-block align-middle "/>,
     },
     {
       name: "LinkedIn",
       url: Data.links.linkedin,
-      icon: <LinkedinLogoIcon className="w-5 h-5" weight="fill" />,
-      hoverColor: "hover:text-[#0077b5]",
+      icon: <LinkedIn className="w-4 h-4 inline-block align-middle "/>,
     },
     {
       name: "X",
       url: Data.links.twitter,
-      icon: <XLogoIcon className="w-5 h-5" />,
-      hoverColor: "hover:text-[#1DA1F2]",
+      icon: <XformerlyTwitter className="w-4 h-4 inline-block align-middle " />,
     },
   ];
 
@@ -45,7 +36,7 @@ export default function Footer() {
             key={platform.name}
             href={platform.url}
             target="_blank"
-            className={` transition-colors ${platform.hoverColor} flex flex-row items-center gap-1`}
+            className= "transition-colors hover:text-gray-300 flex flex-row items-center gap-1"
             aria-label={platform.name}
           >
             {platform.icon} {platform.name}
