@@ -115,9 +115,9 @@ export const experience = [
   {
     company: "NOKIA",
     link: "https://www.nokia.com/",
-    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQGvo3aurmZZjQ/company-logo_200_200/B4EZqbzf6YKsAI-/0/1763550560619/nokia_logo?e=1765411200&v=beta&t=A4R5HQkEcetxqC_XNjmHcpjpQ6cEYPP-E7at3IJgAGU",
+    logo: "/static/images/nokia_logo.jpg",
     position: "Applied R&D Software Engineer",
-    duration: "July 2024 - Present",
+    duration: "July 2024 - Jan 2026",
     description: [
       "Built large-scale automation systems (Python, SQL) for Airtel, T-Mobile and VodafoneThree, cutting manual effort by up to 94% and improving network performance by 35% across production environments.",
       "Delivered end-to-end tools including a React-based Excel validator used by 50+ engineers, enterprise-grade VPN automation with encrypted credential handling, and workflow automation that accelerated customer operations by 10%.",
@@ -128,7 +128,7 @@ export const experience = [
   {
     company: "NOKIA",
     link: "https://www.nokia.com/",
-    logo: "https://media.licdn.com/dms/image/v2/D4E0BAQGvo3aurmZZjQ/company-logo_200_200/B4EZqbzf6YKsAI-/0/1763550560619/nokia_logo?e=1765411200&v=beta&t=A4R5HQkEcetxqC_XNjmHcpjpQ6cEYPP-E7at3IJgAGU",
+    logo: "/static/images/nokia_logo.jpg",
     position: "SDE Intern",
     duration: "Aug 2023 - May 2024",
     description: [
@@ -151,7 +151,7 @@ export const experience = [
     company: "MLSA KIIT",
     link: "https://github.com/MLSAKIIT/MSC-Codeportal",
     logo: "https://github.com/MLSAKIIT.png",
-    position: "Project Wing Member & Learner",
+    position: "Project Wing Member",
     duration: "Oct 2021 - Dec 2022",
     description: [
       "Qode is an online code editor with 450 DSA tracker with multiple language support and progress tracking.",

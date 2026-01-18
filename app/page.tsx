@@ -39,7 +39,7 @@ export default function Home() {
               everyday problems.
             </span>
           </p>
-          <p>
+          {/* <p>
             Building internal tools and automation systems for large-scale
             pan-India telecom networks at{" "}
             <Link
@@ -51,7 +51,7 @@ export default function Home() {
               NOKIA
             </Link>
             .
-          </p>
+          </p> */}
 
           <p>
             Comfortable across the stack - from designing interfaces using React{" "}
