@@ -115,7 +115,7 @@ export const experience = [
   {
     company: "NOKIA",
     link: "https://www.nokia.com/",
-    logo: "/static/images/nokia_logo.jpg",
+    logo: "/images/nokia_logo.jpg",
     position: "Applied R&D Software Engineer",
     duration: "July 2024 - Jan 2026",
     description: [
@@ -128,7 +128,7 @@ export const experience = [
   {
     company: "NOKIA",
     link: "https://www.nokia.com/",
-    logo: "/static/images/nokia_logo.jpg",
+    logo: "/images/nokia_logo.jpg",
     position: "SDE Intern",
     duration: "Aug 2023 - May 2024",
     description: [

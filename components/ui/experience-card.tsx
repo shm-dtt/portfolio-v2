@@ -32,6 +32,7 @@ const Card: React.FC<CardProps> = ({
           width={40}
           height={40}
           className="rounded-md"
+          unoptimized={logo.startsWith("/")}
         />
         <div className="flex flex-col">
           <Link
