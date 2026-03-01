@@ -39,19 +39,17 @@ export default function Home() {
               everyday problems.
             </span>
           </p>
-          {/* <p>
-            Building internal tools and automation systems for large-scale
-            pan-India telecom networks at{" "}
+          <p>
+            Working with data and AI, serving personalized shopping experience to millions of customers at {" "}
             <Link
               href={Data.currentCompanyLink}
               target="_blank"
-              className="font-normal bg-blue-600"
-              aria-label="Visit Nokia"
+              className="font-normal text-[#009FE0]"
+              aria-label="Visit Albertsons"
             >
-              NOKIA
+              {Data.currentCompany}
             </Link>
-            .
-          </p> */}
+          </p>
 
           <p>
             Comfortable across the stack - from designing interfaces using React{" "}

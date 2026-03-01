@@ -4,9 +4,9 @@ export const Data = {
   lastName: "Dutta",
   fullName: "Soham Dutta",
   year: new Date().getFullYear(),
-  currentCompany: "Nokia",
-  currentCompanyLink: "https://www.nokia.com/",
-  position: "Applied R&D Software Engineer",
+  currentCompany: "Albertsons",
+  currentCompanyLink: "https://www.albertsons.com/",
+  position: "Software Engineer",
   email: "mailto:sohamdutta2001@gmail.com",
   links: {
     portfolio: "https://sohamdutta.in",
@@ -113,6 +113,17 @@ export const BUILDING = projects[0];
 
 export const experience = [
   {
+    company: "Albertsons Companies India",
+    link: "https://www.albertsons.com/",
+    logo: "/images/aci_logo.png",
+    position: "Software Engineer",
+    duration: "Jan 2026 - Present",
+    description: [
+      "Part of the Data/AI team under Personalization domain.",
+    ],
+    techUsed: ["Python", "React", "JavaScript", "React"],
+  },
+  {
     company: "NOKIA",
     link: "https://www.nokia.com/",
     logo: "/images/nokia_logo.jpg",
@@ -123,7 +134,7 @@ export const experience = [
       "Delivered end-to-end tools including a React-based Excel validator used by 50+ engineers, enterprise-grade VPN automation with encrypted credential handling, and workflow automation that accelerated customer operations by 10%.",
       "Automated multi-site deployment upgrades and configuration migrations across 32+ data centers, reducing execution time from hours to minutes and significantly lowering operational overhead."
     ],
-    techUsed: ["Python", "SQL", "React", "Javascript", "K8s", "Linux"],
+    techUsed: ["Python", "SQL", "React", "JavaScript", "K8s", "Linux"],
   },
   {
     company: "NOKIA",
@@ -143,7 +154,7 @@ export const experience = [
       "Thymeleaf",
       "Polymer.js",
       "jQuery",
-      "Javascript",
+      "JavaScript",
       "Bootstrap",
     ],
   },
