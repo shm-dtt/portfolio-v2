@@ -33,7 +33,7 @@
     "concurrently": "^10.0.3",
     "eslint": "^9",
     "eslint-config-next": "^16.0.1",
-    "postcss": "^8.5.10",
+    "postcss": "^8.5.11",
     "prettier": "^3.6.2",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-pretty-code": "^0.14.1",
