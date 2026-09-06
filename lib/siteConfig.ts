@@ -114,14 +114,17 @@ export const BUILDING = projects[0];
 export const experience = [
   {
     company: "Albertsons Companies India",
-    link: "https://www.albertsons.com/",
+    link: "https://albertsonscompanies.com/",
     logo: "/images/aci_logo.png",
     position: "Software Engineer",
     duration: "Jan 2026 - Present",
     description: [
-      "Part of the Data/AI team under Personalization domain.",
+      "Led key enhancements for the XER experimentation platform, improving deployment reliability, governance, and scalability through optimized build strategies, RBAC, and approval workflows.",
+      "Automated experimentation operations by enabling seamless experiment replication, deployment orchestration, release tagging, and rollback generation, significantly reducing manual effort and operational overhead.",
+      "Developed AI-driven solutions, including a LangGraph-powered conversational assistant with human-in-the-loop validation to simplify targeting rule creation and improve user productivity.",
+      "Delivered personalized digital experiences and streamlined platform access by integrating Adobe AEM, backend decisioning services, ServiceNow, and experimentation workflows for improved user experience and operational efficiency."
     ],
-    techUsed: ["Python", "React", "JavaScript", "React"],
+    techUsed: ["Spring Boot", "React", "JavaScript", "MySQL"],
   },
   {
     company: "NOKIA",

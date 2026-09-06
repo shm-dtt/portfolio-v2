@@ -23,6 +23,8 @@ const Card: React.FC<CardProps> = ({
   techUsed,
   i
 }) => {
+  const isCurrentRole = i === 0;
+
   return (
     <div className="flex flex-col gap-3 my-8">
       <div className="flex items-center gap-2">
@@ -40,12 +42,15 @@ const Card: React.FC<CardProps> = ({
             target="_blank"
             className="inline-flex items-center group"
           >
+            {isCurrentRole && (
+              <span className="mr-2 rounded-full bg-emerald-500/15 px-2 py-0.5 text-xs font-medium text-emerald-400">
+                Working
+              </span>
+            )}
             {position} • {company}
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
-          <p className="text-sm text-neutral-400 group-hover:text-white transition-colors duration-300">
-            {duration}
-          </p>
+          <p className="text-sm text-neutral-400">{duration}</p>
         </div>
       </div>
       <div className="flex flex-col gap-2">
